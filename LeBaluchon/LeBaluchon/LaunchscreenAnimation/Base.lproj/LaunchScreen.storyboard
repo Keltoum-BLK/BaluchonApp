@@ -22,24 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Eek-R9-fi7">
-                                <rect key="frame" x="30" y="172" width="315" height="276"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Eek-R9-fi7">
+                                <rect key="frame" x="30" y="172" width="315" height="275"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="arg-N3-0Yk">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="240.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="arg-N3-0Yk">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="225"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE BALUCHON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-tV-qYQ">
-                                        <rect key="frame" x="0.0" y="240.5" width="315" height="35.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE BALUCHON" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-tV-qYQ">
+                                        <rect key="frame" x="0.0" y="225" width="315" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="o96-PR-ChD"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="czB-tV-qYQ" firstAttribute="top" secondItem="arg-N3-0Yk" secondAttribute="bottom" id="Jk8-tE-ZH7"/>
                                     <constraint firstItem="arg-N3-0Yk" firstAttribute="top" secondItem="Eek-R9-fi7" secondAttribute="top" id="eez-fK-Kmx"/>
                                     <constraint firstAttribute="trailing" secondItem="czB-tV-qYQ" secondAttribute="trailing" id="iUo-9h-8kZ"/>
-                                    <constraint firstItem="czB-tV-qYQ" firstAttribute="top" secondItem="arg-N3-0Yk" secondAttribute="bottom" id="n0W-l7-Fcz"/>
                                     <constraint firstAttribute="bottom" secondItem="czB-tV-qYQ" secondAttribute="bottom" id="nAU-we-f6T"/>
                                     <constraint firstItem="czB-tV-qYQ" firstAttribute="leading" secondItem="Eek-R9-fi7" secondAttribute="leading" id="sbh-yb-4rX"/>
                                 </constraints>
@@ -50,7 +51,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eek-R9-fi7" secondAttribute="trailing" constant="30" id="4MF-Xm-6HC"/>
                             <constraint firstItem="Eek-R9-fi7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4xF-uu-GLK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eek-R9-fi7" secondAttribute="bottom" constant="219" id="GCh-Ss-jco"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eek-R9-fi7" secondAttribute="bottom" constant="220" id="GCh-Ss-jco"/>
                             <constraint firstItem="Eek-R9-fi7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="172" id="Jkr-5e-XY5"/>
                         </constraints>
                     </view>
