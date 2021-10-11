@@ -17,6 +17,7 @@ class LogoAnimation: UIView {
         return UIImageView(gifImage: gifImage, loopCount: 1)
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
