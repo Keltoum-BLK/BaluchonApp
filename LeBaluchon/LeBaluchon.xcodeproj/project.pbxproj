@@ -11,6 +11,7 @@
 		0659553918268E6829F06EC5 /* Pods_LeBaluchonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109562FDA81C38F607507A12 /* Pods_LeBaluchonTests.framework */; };
 		B93088F226F7964800D1CF4E /* LaunchLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B93088F126F7964800D1CF4E /* LaunchLogo.gif */; };
 		B94F6E952714344A0068C92A /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E942714344A0068C92A /* LaunchController.swift */; };
+		B94F6E97271478370068C92A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E96271478370068C92A /* Constants.swift */; };
 		B985395E26F4F29F00F368C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985395D26F4F29F00F368C6 /* AppDelegate.swift */; };
 		B985396026F4F29F00F368C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985395F26F4F29F00F368C6 /* SceneDelegate.swift */; };
 		B985396526F4F29F00F368C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B985396326F4F29F00F368C6 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		B7A4E328410953FA5809FFC0 /* Pods-LeBaluchon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.release.xcconfig"; path = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.release.xcconfig"; sourceTree = "<group>"; };
 		B93088F126F7964800D1CF4E /* LaunchLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LaunchLogo.gif; path = ../../../images/LaunchLogo.gif; sourceTree = "<group>"; };
 		B94F6E942714344A0068C92A /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
+		B94F6E96271478370068C92A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B985395A26F4F29F00F368C6 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B985395D26F4F29F00F368C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B985395F26F4F29F00F368C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				B98ED286270B3B6000DCB134 /* Translate.swift */,
 				B98ED282270B031300DCB134 /* Weather.swift */,
 				B98ED284270B3B5600DCB134 /* Currency.swift */,
+				B94F6E96271478370068C92A /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				B985396026F4F29F00F368C6 /* SceneDelegate.swift in Sources */,
 				B985399126F4F38100F368C6 /* CurrencyViewController.swift in Sources */,
 				B985399526F4FEB300F368C6 /* Extension UIView.swift in Sources */,
+				B94F6E97271478370068C92A /* Constants.swift in Sources */,
 				B98ED283270B031300DCB134 /* Weather.swift in Sources */,
 				B98ED287270B3B6000DCB134 /* Translate.swift in Sources */,
 				B98ED27C270AFE3000DCB134 /* TranslateController.swift in Sources */,

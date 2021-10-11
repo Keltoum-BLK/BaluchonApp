@@ -10,9 +10,21 @@ import UIKit
 class TranslateController: UIViewController {
     
     @IBOutlet weak var translateHeader: UIView!
-    @IBOutlet weak var textToTranslate: UITextField!
-    @IBOutlet weak var translatedText: UITextField!
+    @IBOutlet weak var translateField: UITextField!
+    @IBOutlet weak var fieldTranslated: UITextField!
     @IBOutlet weak var translateContainer: UIStackView!
+    @IBOutlet weak var pickLanguage: UIPickerView!
+
+    @IBOutlet weak var firstChoice: UIButton!
+
+  
+    @IBOutlet weak var secondChoice: UIButton!
+    
+    @IBOutlet weak var switchChoice: UIButton!
+    
+    let pickerArray: [String] = Constants.shared.languageArray
+    var translateBtnTurn = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -21,6 +33,8 @@ class TranslateController: UIViewController {
     
     
     func setUp() {
+        pickLanguage.delegate = self
+        pickLanguage.dataSource = self
         translateHeader.layer.cornerRadius = 20
         translateHeader.layer.cornerRadius = 20
         translateHeader.layer.shadowColor = UIColor.black.cgColor
@@ -33,18 +47,56 @@ class TranslateController: UIViewController {
         translateContainer.layer.shadowOpacity = 0.5
         translateContainer.layer.shadowOffset = CGSize(width: 0, height: 20)
         translateContainer.layer.shadowRadius = 20
-        
-        textToTranslate.layer.shadowRadius = 40
-        translatedText.layer.shadowRadius = 40
+        switchChoice.layer.cornerRadius = 20
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    
+    
+    @IBAction func selectLanguages(_ sender: Any) {
+        translateField.isHidden = true
+        fieldTranslated.isHidden = true
+        pickLanguage.isHidden = false
+    }
+    
+    
+    @IBAction func switchLanguages(_ sender: Any) {
+        
+        let firstButtonText = firstChoice.titleLabel?.text
+        firstChoice.setTitle(secondChoice.titleLabel?.text, for: .normal)
+        secondChoice.setTitle(firstButtonText, for: .normal)
+        
+        Constants.shared.swapString(string1: &(translateField.text)!, string2: &(fieldTranslated.text)!)
+        
+    }
+    
+
+    
+}
+
+extension TranslateController : UIPickerViewDelegate, UIPickerViewDataSource {
+  
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let firstLanguage = pickerView.selectedRow(inComponent: 0)
+        let secondLanguage = pickerView.selectedRow(inComponent: 1)
+        
+        firstChoice.setTitle(pickerArray[firstLanguage], for: .normal)
+        secondChoice.setTitle(pickerArray[secondLanguage], for: .normal)
+        
+        pickLanguage.isHidden = true
+        translateField.isHidden = false
+        fieldTranslated.isHidden = false
+        
+    }
 }

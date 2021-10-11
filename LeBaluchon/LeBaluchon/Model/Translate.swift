@@ -8,8 +8,11 @@
 import Foundation
 
 
-struct Translate: Codable {
+struct Translate: Decodable {
 
-    
+    struct TextTrasnlated: Decodable {
+        
+        
+    }
     
 }
