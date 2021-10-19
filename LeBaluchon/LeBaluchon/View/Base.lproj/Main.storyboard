@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jej-9j-nhZ">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -105,10 +105,10 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uq-uX-YgW">
-                                <rect key="frame" x="20" y="80" width="161.33333333333334" height="45.333333333333343"/>
+                                <rect key="frame" x="20" y="80" width="161.5" height="45.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRADUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZn-Ch-DwG">
-                                        <rect key="frame" x="10" y="7.9999999999999982" width="141.33333333333334" height="29.333333333333329"/>
+                                        <rect key="frame" x="10" y="8" width="141.5" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -123,14 +123,14 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-zi-b1M">
-                                <rect key="frame" x="20" y="180" width="374" height="633"/>
+                                <rect key="frame" x="20" y="200" width="374" height="613"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-Fv-f6R">
                                         <rect key="frame" x="10" y="0.0" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-qs-lBb">
-                                                <rect key="frame" x="0.0" y="0.0" width="111.33333333333333" height="40"/>
-                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="40"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Langue 1">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -140,7 +140,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37e-Tb-3UW">
-                                                <rect key="frame" x="121.33333333333334" y="0.0" width="111.33333333333334" height="40"/>
+                                                <rect key="frame" x="91" y="0.0" width="81" height="40"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -152,8 +152,8 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNo-eR-mhh">
-                                                <rect key="frame" x="242.66666666666671" y="0.0" width="111.33333333333334" height="40"/>
-                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="22"/>
+                                                <rect key="frame" x="182" y="0.0" width="81" height="40"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Langue 2">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -162,22 +162,34 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                     <action selector="selectLanguages:" destination="IUq-5D-iv1" eventType="touchUpInside" id="9Bp-sA-UFf"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-V5-HUk">
+                                                <rect key="frame" x="273" y="0.0" width="81" height="40"/>
+                                                <color key="backgroundColor" red="0.063063163734383518" green="0.72437263257575757" blue="0.075202921257970901" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="arrowshape.turn.up.right.fill" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goTranslate:" destination="IUq-5D-iv1" eventType="touchUpInside" id="LQC-C2-ZOG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B7A-d9-OlB">
-                                        <rect key="frame" x="10" y="50" width="354" height="533"/>
+                                        <rect key="frame" x="10" y="50" width="354" height="513"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Que veux tu traduire?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-DA-QNU" userLabel="Text To Translate">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="261.66666666666669"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Que veux tu traduire?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-DA-QNU" userLabel="Text To Translate">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="251.5"/>
                                                 <color key="backgroundColor" red="0.19968473637131082" green="0.73969552529354921" blue="0.99449210150707068" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send"/>
                                             </textField>
                                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtZ-wS-cYn">
-                                                <rect key="frame" x="0.0" y="266.66666666666669" width="354" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="256.5" width="354" height="0.0"/>
                                             </pickerView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-ZE-60v">
-                                                <rect key="frame" x="0.0" y="271.66666666666674" width="354" height="261.33333333333326"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="La traduction est ici..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-ZE-60v">
+                                                <rect key="frame" x="0.0" y="261.5" width="354" height="251.5"/>
                                                 <color key="backgroundColor" red="0.98851953417663119" green="0.96475646042323371" blue="1" alpha="0.53179325331125826" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -185,7 +197,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source Cloud Translation API" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seS-O3-gGj">
-                                        <rect key="frame" x="119.00000000000001" y="593" width="136.33333333333337" height="40"/>
+                                        <rect key="frame" x="119" y="573" width="136.5" height="40"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -208,7 +220,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                             <constraint firstItem="QV7-zi-b1M" firstAttribute="leading" secondItem="Yr5-Rs-qKL" secondAttribute="leading" constant="20" id="F8z-vd-kyp"/>
                             <constraint firstAttribute="trailing" secondItem="OhY-s0-tJB" secondAttribute="trailing" id="OIE-r1-r9q"/>
                             <constraint firstItem="wrE-9j-h1C" firstAttribute="bottom" secondItem="QV7-zi-b1M" secondAttribute="bottom" id="X7c-8N-6BV"/>
-                            <constraint firstItem="QV7-zi-b1M" firstAttribute="top" secondItem="Yr5-Rs-qKL" secondAttribute="top" constant="180" id="Xy5-IU-S9e"/>
+                            <constraint firstItem="QV7-zi-b1M" firstAttribute="top" secondItem="Yr5-Rs-qKL" secondAttribute="top" constant="200" id="Xy5-IU-S9e"/>
                             <constraint firstItem="0uq-uX-YgW" firstAttribute="top" secondItem="Yr5-Rs-qKL" secondAttribute="top" constant="80" id="cWe-Jg-4Tg"/>
                             <constraint firstItem="OhY-s0-tJB" firstAttribute="leading" secondItem="Yr5-Rs-qKL" secondAttribute="leading" id="dfh-zl-KLu"/>
                             <constraint firstItem="0uq-uX-YgW" firstAttribute="leading" secondItem="Yr5-Rs-qKL" secondAttribute="leading" constant="20" id="gQ1-qH-6Bb"/>
@@ -221,6 +233,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                     <connections>
                         <outlet property="fieldTranslated" destination="BXQ-ZE-60v" id="TZR-Ve-otZ"/>
                         <outlet property="firstChoice" destination="tGl-qs-lBb" id="k3S-Ig-C9i"/>
+                        <outlet property="goTranslateBtn" destination="Pjl-V5-HUk" id="lga-ov-iDe"/>
                         <outlet property="pickLanguage" destination="BtZ-wS-cYn" id="3mu-X1-cDA"/>
                         <outlet property="secondChoice" destination="kNo-eR-mhh" id="FMl-3G-UNb"/>
                         <outlet property="switchChoice" destination="37e-Tb-3UW" id="MhZ-wS-gIb"/>
@@ -245,10 +258,10 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jse-XS-0vv">
-                                <rect key="frame" x="16" y="80" width="195.33333333333334" height="45.666666666666657"/>
+                                <rect key="frame" x="16" y="80" width="195.5" height="45.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONVERTISSEUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3B-xi-EzS">
-                                        <rect key="frame" x="10" y="8.0000000000000018" width="175.33333333333334" height="29.666666666666671"/>
+                                        <rect key="frame" x="10" y="8" width="175.5" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -296,10 +309,10 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-qR-98Y">
-                                <rect key="frame" x="19.999999999999993" y="80" width="95.333333333333314" height="45.666666666666657"/>
+                                <rect key="frame" x="20" y="80" width="95.5" height="45.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="METEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-b7-vNb" userLabel="weather Header Page">
-                                        <rect key="frame" x="10" y="8.0000000000000018" width="75.333333333333329" height="29.666666666666671"/>
+                                        <rect key="frame" x="10" y="8" width="75.5" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -341,6 +354,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
         <image name="Translate" width="2480" height="4430"/>
         <image name="Weather" width="2480" height="4430"/>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="icons8-google-traduction-32" width="32" height="32"/>
         <image name="icons8-money-32" width="32" height="32"/>
         <image name="iconsW" width="32" height="32"/>

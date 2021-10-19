@@ -14,12 +14,9 @@ class TranslateController: UIViewController {
     @IBOutlet weak var fieldTranslated: UITextField!
     @IBOutlet weak var translateContainer: UIStackView!
     @IBOutlet weak var pickLanguage: UIPickerView!
-
     @IBOutlet weak var firstChoice: UIButton!
-
-  
+    @IBOutlet weak var goTranslateBtn: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
-    
     @IBOutlet weak var switchChoice: UIButton!
     
     let pickerArray: [String] = Constants.shared.languageArray
@@ -48,6 +45,7 @@ class TranslateController: UIViewController {
         translateContainer.layer.shadowOffset = CGSize(width: 0, height: 20)
         translateContainer.layer.shadowRadius = 20
         switchChoice.layer.cornerRadius = 20
+        goTranslateBtn.layer.cornerRadius = 20
     }
     
     
@@ -70,6 +68,9 @@ class TranslateController: UIViewController {
     }
     
 
+    @IBAction func goTranslate(_ sender: Any) {
+        
+    }
     
 }
 
