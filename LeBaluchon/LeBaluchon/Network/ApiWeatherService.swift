@@ -11,7 +11,7 @@ class ApiWeatherService {
     private var dataTask: URLSessionDataTask?
     static let shared = ApiWeatherService()
     
-    let apiKeyWeather = "d39aa9247aa0e8e120ee04f68df6ff6b"
+    
     
     
     func givingTheWeather(source: String, q: String, target: String){

@@ -31,6 +31,7 @@
 		B98ED285270B3B5600DCB134 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED284270B3B5600DCB134 /* Currency.swift */; };
 		B98ED287270B3B6000DCB134 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED286270B3B6000DCB134 /* Translate.swift */; };
 		B9A6B871270C47F1007DC772 /* Odin Rounded - Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9A6B870270C47F1007DC772 /* Odin Rounded - Bold.otf */; };
+		B9ACF2DD271ED07D00319D20 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACF2DC271ED07D00319D20 /* Secrets.swift */; };
 		E6D5E1D935F130D5C7F712BF /* Pods_LeBaluchon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A0623248132485D4070EC7 /* Pods_LeBaluchon.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		B98ED284270B3B5600DCB134 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B98ED286270B3B6000DCB134 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		B9A6B870270C47F1007DC772 /* Odin Rounded - Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Odin Rounded - Bold.otf"; path = "../../../../../P12/P12Come-Chill/Come&Chill/Come&Chill/Font/Odin Rounded - Bold.otf"; sourceTree = "<group>"; };
+		B9ACF2DC271ED07D00319D20 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		C5096817C17022258FB788FF /* Pods_LeBaluchon_LeBaluchonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBaluchon_LeBaluchonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A6C67D0D70262E8531F12D /* Pods-LeBaluchonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchonTests.debug.xcconfig"; path = "Target Support Files/Pods-LeBaluchonTests/Pods-LeBaluchonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB81017770372FB2D5A8086B /* Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig"; path = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests/Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		B985395C26F4F29F00F368C6 /* LeBaluchon */ = {
 			isa = PBXGroup;
 			children = (
+				B9ACF2DB271ED06600319D20 /* Secrets */,
 				B98ED27F270AFE6900DCB134 /* Support Files */,
 				B98ED278270AFD8C00DCB134 /* Model */,
 				B98ED279270AFD9600DCB134 /* View */,
@@ -256,6 +259,14 @@
 				B985396B26F4F2A000F368C6 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		B9ACF2DB271ED06600319D20 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				B9ACF2DC271ED07D00319D20 /* Secrets.swift */,
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B985395E26F4F29F00F368C6 /* AppDelegate.swift in Sources */,
+				B9ACF2DD271ED07D00319D20 /* Secrets.swift in Sources */,
 				B94F6E952714344A0068C92A /* LaunchController.swift in Sources */,
 				B985396026F4F29F00F368C6 /* SceneDelegate.swift in Sources */,
 				B985399126F4F38100F368C6 /* CurrencyViewController.swift in Sources */,

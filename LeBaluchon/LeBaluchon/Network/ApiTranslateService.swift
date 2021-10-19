@@ -11,7 +11,7 @@ class ApiTranslateService {
 
     static let shared = ApiTranslateService()
     private var dataTask: URLSessionDataTask?
-    let apiKeyTranslate = "AIzaSyCo95wNsNcsUAMC0PIowXUQjEtnSFx5sjk"
+  
     
     enum NetworkError: Error {
         case badUrl

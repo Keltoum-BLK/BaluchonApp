@@ -13,7 +13,7 @@ class ApiCurrencyService {
     static let shared = ApiCurrencyService()
     
    
-    let apiKeyCurrency = "03479052e9afb24dc5416b800447e4ad"
+  
     
     func getTheCurrency() -> String {
         let listOfCurrenciesUrl = "http://data.fixer.io/api/symbols?access_key=\(apiKeyCurrency)"
