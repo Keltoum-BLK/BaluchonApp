@@ -16,7 +16,7 @@ class ApiCurrencyService {
   
     
     func getTheCurrency() -> String {
-        let listOfCurrenciesUrl = "http://data.fixer.io/api/symbols?access_key=\(apiKeyCurrency)"
+        let listOfCurrenciesUrl = "http://data.fixer.io/api/symbols?access_key=\(SecretsKeys.apiKeyCurrency)"
         
         return "DZD"
     }

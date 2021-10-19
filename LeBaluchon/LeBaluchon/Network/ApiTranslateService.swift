@@ -21,7 +21,7 @@ class ApiTranslateService {
     
     func translate(source: String, q: String, target: String) {
         
-        let urlTranslate = "https://translation.googleapis.com/language/translate/v2?key=\(apiKeyTranslate)&source=\(source)&target=\(target)&q=\(q)"
+        let urlTranslate = "https://translation.googleapis.com/language/translate/v2?key=\(SecretsKeys.apiKeyTranslate)&source=\(source)&target=\(target)&q=\(q)"
         
         guard let url = URL(string: urlTranslate) else { return }
         

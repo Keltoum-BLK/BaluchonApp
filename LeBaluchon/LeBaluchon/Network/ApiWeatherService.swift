@@ -16,7 +16,7 @@ class ApiWeatherService {
     
     func givingTheWeather(source: String, q: String, target: String){
         let weatherSettings = "&units=metric&lang=fr"
-        var urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=\(q)&appid=\(apiKeyWeather)" + weatherSettings
+        var urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=\(q)&appid=\(SecretsKeys.apiKeyWeather)" + weatherSettings
         
         guard let url = URL(string: urlLocalizedWeather) else { return }
         
