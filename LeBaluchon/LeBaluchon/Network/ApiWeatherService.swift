@@ -8,21 +8,39 @@
 import Foundation
 
 class ApiWeatherService {
-    private var dataTask: URLSessionDataTask?
+    
+    //MARK: Singleton
     static let shared = ApiWeatherService()
+    private init() {}
     
-    
-    
-    
-    func givingTheWeather(source: String, q: String, target: String){
+    //MARK: Error Manager
+    enum APIError: Error {
+        case decoding
+        case server
+    }
+    //MARK: Properties
+    private var dataTask: URLSessionDataTask?
+    var weatherSession = URLSession(configuration: .default)
+
+    init(weatherSession: URLSession) {
+        
+        self.weatherSession = weatherSession
+    }
+   
+    //MARK: Methods
+    func givingTheWeather(city: String, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
+        
         let weatherSettings = "&units=metric&lang=fr"
-        var urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=\(q)&appid=\(SecretsKeys.apiKeyWeather)" + weatherSettings
+        var urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(SecretsKeys.apiKeyWeather)" + weatherSettings
         
         guard let url = URL(string: urlLocalizedWeather) else { return }
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
            
-    
+            guard error == nil else { completion(.failure(.server))
+                return
+            }
+            
         }
     }
     
