@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jej-9j-nhZ">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -20,14 +20,14 @@
             <objects>
                 <viewController id="Jej-9j-nhZ" customClass="LaunchController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OH8-oR-NFt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weather" translatesAutoresizingMaskIntoConstraints="NO" id="Rwi-iC-jXs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etF-b5-sas">
-                                <rect key="frame" x="44" y="244" width="327" height="368"/>
+                                <rect key="frame" x="44" y="244" width="341" height="398"/>
                                 <string key="text">Bienvenue sur l'application Le Baluchon.
 Vous trouverez tout ce qui vous est utile pour voyager: 
 💵 Convertisseur de devise
@@ -38,7 +38,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjC-rO-oIv">
-                                <rect key="frame" x="40" y="668" width="324" height="48"/>
+                                <rect key="frame" x="40" y="698" width="338" height="48"/>
                                 <color key="backgroundColor" red="0.0" green="0.62952452459999997" blue="0.75701972149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -98,17 +98,17 @@ Vous trouverez tout ce qui vous est utile pour voyager:
             <objects>
                 <viewController id="IUq-5D-iv1" customClass="TranslateController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yr5-Rs-qKL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Translate" translatesAutoresizingMaskIntoConstraints="NO" id="OhY-s0-tJB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uq-uX-YgW">
-                                <rect key="frame" x="20" y="80" width="161.5" height="45.5"/>
+                                <rect key="frame" x="20" y="80" width="161.33333333333334" height="45.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRADUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZn-Ch-DwG">
-                                        <rect key="frame" x="10" y="8" width="141.5" height="29.5"/>
+                                        <rect key="frame" x="10" y="7.9999999999999982" width="141.33333333333334" height="29.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -123,13 +123,13 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-zi-b1M">
-                                <rect key="frame" x="20" y="200" width="374" height="613"/>
+                                <rect key="frame" x="20" y="200" width="388" height="643"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-Fv-f6R">
-                                        <rect key="frame" x="10" y="0.0" width="354" height="40"/>
+                                        <rect key="frame" x="10" y="0.0" width="368" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-qs-lBb">
-                                                <rect key="frame" x="0.0" y="0.0" width="81" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="40"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Langue 1">
@@ -140,7 +140,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37e-Tb-3UW">
-                                                <rect key="frame" x="91" y="0.0" width="81" height="40"/>
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="84.333333333333314" height="40"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -152,7 +152,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNo-eR-mhh">
-                                                <rect key="frame" x="182" y="0.0" width="81" height="40"/>
+                                                <rect key="frame" x="189" y="0.0" width="84.666666666666686" height="40"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Langue 2">
@@ -163,7 +163,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-V5-HUk">
-                                                <rect key="frame" x="273" y="0.0" width="81" height="40"/>
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="84.333333333333314" height="40"/>
                                                 <color key="backgroundColor" red="0.063063163734383518" green="0.72437263257575757" blue="0.075202921257970901" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -177,19 +177,19 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B7A-d9-OlB">
-                                        <rect key="frame" x="10" y="50" width="354" height="513"/>
+                                        <rect key="frame" x="10" y="50" width="368" height="543"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Que veux tu traduire?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-DA-QNU" userLabel="Text To Translate">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="251.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="266.66666666666669"/>
                                                 <color key="backgroundColor" red="0.19968473637131082" green="0.73969552529354921" blue="0.99449210150707068" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send"/>
                                             </textField>
                                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtZ-wS-cYn">
-                                                <rect key="frame" x="0.0" y="256.5" width="354" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="271.66666666666663" width="368" height="0.0"/>
                                             </pickerView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="La traduction est ici..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-ZE-60v">
-                                                <rect key="frame" x="0.0" y="261.5" width="354" height="251.5"/>
+                                                <rect key="frame" x="0.0" y="276.66666666666663" width="368" height="266.33333333333337"/>
                                                 <color key="backgroundColor" red="0.98851953417663119" green="0.96475646042323371" blue="1" alpha="0.53179325331125826" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -197,7 +197,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source Cloud Translation API" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seS-O3-gGj">
-                                        <rect key="frame" x="119" y="573" width="136.5" height="40"/>
+                                        <rect key="frame" x="126.00000000000001" y="603" width="136.33333333333337" height="40"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -251,17 +251,17 @@ Vous trouverez tout ce qui vous est utile pour voyager:
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CurrencyViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Currency" translatesAutoresizingMaskIntoConstraints="NO" id="IKo-lW-8c3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jse-XS-0vv">
-                                <rect key="frame" x="16" y="80" width="195.5" height="45.5"/>
+                                <rect key="frame" x="16" y="80" width="195.66666666666666" height="45.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONVERTISSEUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3B-xi-EzS">
-                                        <rect key="frame" x="10" y="8" width="175.5" height="29.5"/>
+                                        <rect key="frame" x="10" y="8.0000000000000018" width="175.66666666666666" height="29.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -302,17 +302,17 @@ Vous trouverez tout ce qui vous est utile pour voyager:
             <objects>
                 <viewController id="BBd-Rd-EvB" customClass="WeatherController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mVY-e1-2Ko">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weather" translatesAutoresizingMaskIntoConstraints="NO" id="jFv-mI-tsu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-qR-98Y">
-                                <rect key="frame" x="20" y="80" width="95.5" height="45.5"/>
+                                <rect key="frame" x="19.999999999999993" y="84" width="95.333333333333314" height="45.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="METEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-b7-vNb" userLabel="weather Header Page">
-                                        <rect key="frame" x="10" y="8" width="75.5" height="29.5"/>
+                                        <rect key="frame" x="10" y="7.9999999999999982" width="75.333333333333329" height="29.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -326,16 +326,147 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                     <constraint firstItem="nwQ-b7-vNb" firstAttribute="top" secondItem="lWy-qR-98Y" secondAttribute="top" constant="8" id="lZ0-Y1-Hyj"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gty-iY-Gtd">
+                                <rect key="frame" x="20" y="183" width="273" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="otd-VK-ewT">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5AG-ca-WQs"/>
+                                            <constraint firstAttribute="width" constant="50" id="acy-T6-jcA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBX-1i-jvF">
+                                        <rect key="frame" x="55" y="0.0" width="218" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ma localisation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceh-AP-IMU">
+                                <rect key="frame" x="20" y="139" width="258" height="25"/>
+                                <color key="backgroundColor" red="0.98851953420000005" green="0.96475646039999996" blue="1" alpha="0.53179325330000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ZYk-Xg-u5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLz-PX-ErI">
+                                <rect key="frame" x="330" y="184" width="78" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5lc-dw-iBB"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HjX-N7-u5C">
+                                <rect key="frame" x="20" y="230" width="388" height="546"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ville" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYR-pW-NNE">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JDq-9O-kCV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pays" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7Z-O2-U7X">
+                                        <rect key="frame" x="0.0" y="35" width="388" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VRE-Tc-q8O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-AY-Lmd">
+                                        <rect key="frame" x="0.0" y="80" width="388" height="411"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJE-Cn-FhL">
+                                        <rect key="frame" x="0.0" y="496" width="388" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bAW-at-bbd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8bg-ly-IBH">
+                                <rect key="frame" x="50" y="792.33333333333337" width="328" height="40.666666666666629"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ycu-Hh-IKr">
+                                        <rect key="frame" x="46.333333333333329" y="0.0" width="235.33333333333337" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lever de soleil: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvm-5X-yO3">
+                                                <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3up-0b-WVj">
+                                                <rect key="frame" x="117.66666666666666" y="0.0" width="117.66666666666666" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rO1-Z1-od0">
+                                        <rect key="frame" x="23" y="20.333333333333258" width="282" height="20.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coucher de soleil: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZn-Lh-Odx">
+                                                <rect key="frame" x="0.0" y="0.0" width="141" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKG-bc-03h">
+                                                <rect key="frame" x="141" y="0.0" width="141" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BpD-yn-t4v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jFv-mI-tsu" secondAttribute="trailing" id="1A3-uH-GUL"/>
+                            <constraint firstItem="Gty-iY-Gtd" firstAttribute="top" secondItem="BpD-yn-t4v" secondAttribute="top" constant="139" id="3bD-Mt-0AS"/>
+                            <constraint firstItem="BpD-yn-t4v" firstAttribute="trailing" secondItem="HjX-N7-u5C" secondAttribute="trailing" constant="20" id="4aR-pI-0Nm"/>
+                            <constraint firstItem="BpD-yn-t4v" firstAttribute="bottom" secondItem="HjX-N7-u5C" secondAttribute="bottom" constant="67" id="6pV-KF-9gj"/>
+                            <constraint firstItem="Ceh-AP-IMU" firstAttribute="leading" secondItem="BpD-yn-t4v" secondAttribute="leading" constant="20" id="8de-bd-VWW"/>
+                            <constraint firstItem="Gty-iY-Gtd" firstAttribute="leading" secondItem="mVY-e1-2Ko" secondAttribute="leading" constant="20" id="9kq-bO-8WS"/>
+                            <constraint firstItem="BpD-yn-t4v" firstAttribute="trailing" secondItem="JLz-PX-ErI" secondAttribute="trailing" constant="20" id="AMp-hk-qTr"/>
                             <constraint firstItem="jFv-mI-tsu" firstAttribute="leading" secondItem="mVY-e1-2Ko" secondAttribute="leading" id="CD5-DU-1d0"/>
-                            <constraint firstItem="lWy-qR-98Y" firstAttribute="top" secondItem="mVY-e1-2Ko" secondAttribute="top" constant="80" id="PsD-RH-IP4"/>
+                            <constraint firstItem="HjX-N7-u5C" firstAttribute="top" secondItem="BpD-yn-t4v" secondAttribute="top" constant="186" id="D6N-z4-va1"/>
+                            <constraint firstItem="HjX-N7-u5C" firstAttribute="leading" secondItem="BpD-yn-t4v" secondAttribute="leading" constant="20" id="DMQ-iA-jLb"/>
+                            <constraint firstItem="8bg-ly-IBH" firstAttribute="leading" secondItem="BpD-yn-t4v" secondAttribute="leading" constant="50" id="JHJ-On-ezS"/>
+                            <constraint firstItem="BpD-yn-t4v" firstAttribute="bottom" secondItem="8bg-ly-IBH" secondAttribute="bottom" constant="10" id="K1J-ic-wCD"/>
+                            <constraint firstAttribute="trailing" secondItem="Gty-iY-Gtd" secondAttribute="trailing" constant="135" id="P7a-zC-FcE"/>
+                            <constraint firstItem="BpD-yn-t4v" firstAttribute="trailing" secondItem="Ceh-AP-IMU" secondAttribute="trailing" constant="150" id="PQ4-YQ-ltO"/>
+                            <constraint firstItem="lWy-qR-98Y" firstAttribute="top" secondItem="BpD-yn-t4v" secondAttribute="top" constant="40" id="PsD-RH-IP4"/>
+                            <constraint firstItem="JLz-PX-ErI" firstAttribute="top" secondItem="BpD-yn-t4v" secondAttribute="top" constant="140" id="XcI-7a-yfI"/>
                             <constraint firstItem="jFv-mI-tsu" firstAttribute="top" secondItem="mVY-e1-2Ko" secondAttribute="top" id="YMe-nB-f1h"/>
                             <constraint firstItem="lWy-qR-98Y" firstAttribute="leading" secondItem="mVY-e1-2Ko" secondAttribute="leading" constant="20" id="cUp-HE-ddQ"/>
+                            <constraint firstItem="Ceh-AP-IMU" firstAttribute="top" secondItem="BpD-yn-t4v" secondAttribute="top" constant="95" id="ddc-oJ-RdB"/>
+                            <constraint firstItem="BpD-yn-t4v" firstAttribute="trailing" secondItem="8bg-ly-IBH" secondAttribute="trailing" constant="50" id="lVE-ZO-5gL"/>
+                            <constraint firstItem="JLz-PX-ErI" firstAttribute="leading" secondItem="BpD-yn-t4v" secondAttribute="leading" constant="330" id="pSg-LJ-DEa"/>
                             <constraint firstAttribute="bottom" secondItem="jFv-mI-tsu" secondAttribute="bottom" id="q1a-uj-5dk"/>
+                            <constraint firstItem="HjX-N7-u5C" firstAttribute="centerX" secondItem="BpD-yn-t4v" secondAttribute="centerX" id="zZS-O0-eAf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="iconsW" id="myj-nJ-bMc"/>
@@ -346,7 +477,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ND9-zi-sfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="434.39999999999998" y="849.62518740629696"/>
+            <point key="canvasLocation" x="433.33333333333337" y="849.10714285714278"/>
         </scene>
     </scenes>
     <resources>
@@ -355,9 +486,11 @@ Vous trouverez tout ce qui vous est utile pour voyager:
         <image name="Weather" width="2480" height="4430"/>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <image name="cloudy" width="2023" height="1923"/>
         <image name="icons8-google-traduction-32" width="32" height="32"/>
         <image name="icons8-money-32" width="32" height="32"/>
         <image name="iconsW" width="32" height="32"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

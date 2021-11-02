@@ -40,7 +40,11 @@ class ApiWeatherService {
             guard error == nil else { completion(.failure(.server))
                 return
             }
-            
+           
+            guard data == nil else {
+                completion(.failure(.decoding))
+                return
+            }
         }
     }
     

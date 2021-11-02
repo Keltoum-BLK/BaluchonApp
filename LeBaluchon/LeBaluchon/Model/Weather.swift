@@ -61,9 +61,8 @@ struct PageWeather: Decodable {
     let feelsLike : Temperature
     let tempMin: Temperature
     let tempMax: Temperature
-    let pressure: Temperature
-    let humidity: Temperature
-    let weatherInfo : [Weather]
+    let weather: [Weather]
+    let weatherDesc: [Weather]
 }
 
 
