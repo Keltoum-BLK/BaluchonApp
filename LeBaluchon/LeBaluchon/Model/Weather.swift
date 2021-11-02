@@ -18,16 +18,9 @@ struct PageWeather: Decodable {
     
     struct Temperature: Decodable {
         let temp: Double
-        let tempFeels: Double
-        let tempMin: Double
-        let tempMax: Double
        
-        
         enum CodingKeys : String, CodingKey {
             case temp
-            case tempFeels = "feels_like"
-            case tempMin = "temp_min"
-            case tempMax = "temp_max"
         }
     }
     
@@ -58,9 +51,6 @@ struct PageWeather: Decodable {
     let sunsetCountry: Country
     let city: City
     let temp : Temperature
-    let feelsLike : Temperature
-    let tempMin: Temperature
-    let tempMax: Temperature
     let weather: [Weather]
     let weatherDesc: [Weather]
 }
