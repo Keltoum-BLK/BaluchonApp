@@ -17,6 +17,7 @@ class ApiWeatherService {
     enum APIError: Error {
         case decoding
         case server
+        case emptyResponse
     }
     //MARK: Properties
     private var dataTask: URLSessionDataTask?
@@ -28,24 +29,38 @@ class ApiWeatherService {
     }
    
     //MARK: Methods
-    func givingTheWeather(city: String, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
+    func givingTheWeather(completion: @escaping (Result<PageWeather, APIError>) -> Void) {
         
-        let weatherSettings = "&units=metric&lang=fr"
-        var urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(SecretsKeys.apiKeyWeather)" + weatherSettings
+        let urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=paris&appid=d39aa9247aa0e8e120ee04f68df6ff6b&units=metric&lang=fr"
+        guard let urlPercentEscapes = urlLocalizedWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
-        guard let url = URL(string: urlLocalizedWeather) else { return }
+        guard let url = URL(string: urlPercentEscapes) else { return }
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-           
-            guard error == nil else { completion(.failure(.server))
-                return
-            }
-           
-            guard data == nil else {
-                completion(.failure(.decoding))
-                return
+            DispatchQueue.main.async {
+                guard error == nil else { completion(.failure(.server))
+                    print("Houla")
+                    return
+                }
+                guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    completion(.failure(.emptyResponse))
+                    print("OUtch")
+                    return
+                }
+                
+                guard let weatherInfo = try? JSONDecoder().decode(PageWeather.self, from: data) else {
+                    completion(.failure(.decoding))
+                    print("Aie")
+                    return
+                }
+                completion(.success(weatherInfo))
+                print("Yeah")
             }
         }
+        dataTask?.resume()
     }
-    
+            
 }
+    
+    
+

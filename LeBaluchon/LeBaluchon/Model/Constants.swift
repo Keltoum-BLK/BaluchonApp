@@ -13,8 +13,6 @@ class Constants {
     static let shared = Constants() 
     let languageArray = ["Anglais","Arabe", "Coréen", "Japonais", "Espagnol","Français", "Portuguais"]
     
-    
-    
     func swapString(string1 : inout String, string2: inout String) {
         (string1, string2) = (string2, string1)
     }

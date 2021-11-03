@@ -9,7 +9,9 @@ import UIKit
 
 class WeatherController: UIViewController {
 
-   
+   //MARK: Properties
+    private var pageWeather: PageWeather?
+    
     @IBOutlet weak var weatherHeaderBackground: UIView!
     @IBOutlet weak var myLocationLabel: UIView!
     @IBOutlet weak var locationPlace: UILabel!
@@ -23,11 +25,15 @@ class WeatherController: UIViewController {
     @IBOutlet weak var sunsetTime: UILabel!
     @IBOutlet weak var sunriseIcon: UIImageView!
     @IBOutlet weak var sunsetIcon: UIImageView!
+    @IBOutlet weak var searchCity: UISearchBar!
+    @IBOutlet weak var sunTimeContainer: UIStackView!
+    @IBOutlet weak var weatherContainer: UIStackView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       setUp()
+        setUp()
+        flecthWeatherData()
         
         // Do any additional setup after loading the view.
     }
@@ -50,6 +56,26 @@ class WeatherController: UIViewController {
         sunsetIcon.layer.cornerRadius = 40
         sunriseIcon.layer.cornerRadius = 40
     }
+    
+    func flecthWeatherData() {
+        ApiWeatherService.shared.givingTheWeather { result in
+            switch result {
+            case .success(let weatherLocation):
+                DispatchQueue.main.async {
+                    self.cityWeather.text = weatherLocation.city.name
+                    self.countryWeather.text = weatherLocation.country.country
+                    self.weatherTemperature.text = String(weatherLocation.temp.temp) + "°C"
+                    print(weatherLocation)
+                }
+            case .failure(let error):
+                            print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+
+    
 }
 
 

@@ -78,7 +78,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                 <tabBarController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="HB5-Fg-j0R" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="54k-VW-wWS"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xdd-wF-8h3" customClass="TabBar" customModule="LeBaluchon" customModuleProvider="target">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xdd-wF-8h3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -473,6 +473,9 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 <state key="normal">
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchCityAction:" destination="BBd-Rd-EvB" eventType="touchUpInside" id="gQO-e2-fp6"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HjX-N7-u5C">
                                 <rect key="frame" x="20" y="230" width="335" height="409"/>
@@ -495,6 +498,14 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <searchBar hidden="YES" contentMode="redraw" placeholder="Quelle ville voulez-vous consulter?" translatesAutoresizingMaskIntoConstraints="NO" id="gBZ-pW-VZw">
+                                        <rect key="frame" x="0.0" y="77.666666666666686" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="PCu-Yp-IU5"/>
+                                        </constraints>
+                                        <color key="barTintColor" red="0.0" green="0.76057893040000002" blue="0.91011315579999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-AY-Lmd">
                                         <rect key="frame" x="0.0" y="80" width="335" height="254"/>
                                     </imageView>
@@ -598,11 +609,14 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                         <outlet property="countryWeather" destination="m7Z-O2-U7X" id="WbQ-CS-k5n"/>
                         <outlet property="locationPlace" destination="OBX-1i-jvF" id="spM-f9-9uo"/>
                         <outlet property="myLocationLabel" destination="ODf-aq-2NP" id="rRC-kF-E0t"/>
+                        <outlet property="searchCity" destination="gBZ-pW-VZw" id="coL-C3-kMW"/>
                         <outlet property="searchWeatherLocation" destination="JLz-PX-ErI" id="8BH-v0-lvL"/>
+                        <outlet property="sunTimeContainer" destination="8bg-ly-IBH" id="ac4-L4-3DC"/>
                         <outlet property="sunriseIcon" destination="CnK-VD-Thr" id="euZ-Y3-4Cc"/>
                         <outlet property="sunriseTime" destination="3up-0b-WVj" id="R6Y-aP-QV4"/>
                         <outlet property="sunsetIcon" destination="sLN-a0-FSJ" id="PZg-dL-l22"/>
                         <outlet property="sunsetTime" destination="iKG-bc-03h" id="oZ1-jG-mLh"/>
+                        <outlet property="weatherContainer" destination="HjX-N7-u5C" id="jtL-dG-TgS"/>
                         <outlet property="weatherHeaderBackground" destination="lWy-qR-98Y" id="L2m-hv-ioN"/>
                         <outlet property="weatherIcon" destination="i8F-AY-Lmd" id="xFg-17-tCD"/>
                         <outlet property="weatherLocationIcon" destination="otd-VK-ewT" id="GEn-bC-ZdA"/>
