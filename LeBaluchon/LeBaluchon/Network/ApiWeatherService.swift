@@ -22,19 +22,31 @@ class ApiWeatherService {
     //MARK: Properties
     private var dataTask: URLSessionDataTask?
     var weatherSession = URLSession(configuration: .default)
-
+    
     init(weatherSession: URLSession) {
         
         self.weatherSession = weatherSession
     }
-   
+    
     //MARK: Methods
-    func givingTheWeather(completion: @escaping (Result<PageWeather, APIError>) -> Void) {
+    func givingTheWeather(city: String, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
         
-        let urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=paris&appid=d39aa9247aa0e8e120ee04f68df6ff6b&units=metric&lang=fr"
-        guard let urlPercentEscapes = urlLocalizedWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.openweathermap.org"
+        urlComponents.path = "/data/2.5/weather"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "q", value: city),
+            URLQueryItem(name: "api", value: SecretsKeys.apiKeyWeather),
+            URLQueryItem(name: "units", value: "metric"),
+            URLQueryItem(name: "lang", value: "fr")]
         
-        guard let url = URL(string: urlPercentEscapes) else { return }
+        guard let urlWeather = urlComponents.url?.absoluteString else { return }
+        
+        //        let urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=paris&appid=d39aa9247aa0e8e120ee04f68df6ff6b&units=metric&lang=fr"
+        //        guard let urlPercentEscapes = urlLocalizedWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        
+        guard let url = URL(string: urlWeather) else { return }
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
@@ -59,8 +71,8 @@ class ApiWeatherService {
         }
         dataTask?.resume()
     }
-            
+    
 }
-    
-    
+
+
 

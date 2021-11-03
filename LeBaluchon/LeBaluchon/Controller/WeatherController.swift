@@ -10,7 +10,6 @@ import UIKit
 class WeatherController: UIViewController {
 
    //MARK: Properties
-    private var pageWeather: PageWeather?
     
     @IBOutlet weak var weatherHeaderBackground: UIView!
     @IBOutlet weak var myLocationLabel: UIView!
@@ -58,7 +57,7 @@ class WeatherController: UIViewController {
     }
     
     func flecthWeatherData() {
-        ApiWeatherService.shared.givingTheWeather { result in
+        ApiWeatherService.shared.givingTheWeather(city: "paris") { result in
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
