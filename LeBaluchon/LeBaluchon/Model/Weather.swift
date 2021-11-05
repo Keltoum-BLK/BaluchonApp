@@ -9,13 +9,10 @@ import Foundation
 
 struct PageWeather: Decodable {
     
-    let country: Country?
-    let sunriseCountry: Country?
-    let sunsetCountry: Country?
-    let city: City?
-    let temp : Temperature?
+    let sys: Sys?
+    let name: String?
+    let temp: Main?
     let weather: [Weather]?
-    let weatherDesc: [Weather]?
     
     struct Weather: Decodable {
         let id: Int?
@@ -24,37 +21,25 @@ struct PageWeather: Decodable {
         let icon: String?
     }
     
-    struct Temperature: Decodable {
+    struct Main: Decodable {
         let temp: Double?
-       
+
         enum CodingKeys : String, CodingKey {
             case temp
         }
     }
     
-    struct Country : Decodable {
-        let idCountry: Int?
+    struct Sys : Decodable {
         let country: String?
         let sunrise: Int?
         let sunset: Int?
         
         enum CodingKeys: String, CodingKey {
-            case idCountry = "id"
             case country
             case sunrise
             case sunset
         }
     }
-        struct City: Decodable {
-            let idCity: Int?
-            let name: String?
-        
-            enum CodingKeys: String, CodingKey {
-                case idCity = "id"
-                case name
-            }
-        }
-   
 }
 
 

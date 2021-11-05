@@ -32,7 +32,8 @@ class WeatherController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        flecthWeatherData()
+        flecthWeatherDataLocation()
+        flecthWeatherDataSearch()
         
         // Do any additional setup after loading the view.
     }
@@ -56,12 +57,15 @@ class WeatherController: UIViewController {
         sunriseIcon.layer.cornerRadius = 40
     }
     
-    func flecthWeatherData() {
+    func flecthWeatherDataLocation() {
         ApiWeatherService.shared.givingTheWeather(city: "paris") { result in
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
                     print(weatherLocation)
+                   
+                    self.locationPlace.text = "\(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
+                    
                 }
             case .failure(let error):
                             print(error.localizedDescription)
@@ -70,7 +74,23 @@ class WeatherController: UIViewController {
       
     }
     
+    func flecthWeatherDataSearch() {
+        ApiWeatherService.shared.givingTheWeather(city: "new york") { result in
+            switch result {
+            case .success(let weatherInfo):
+                DispatchQueue.main.async {
+                    print(weatherInfo)
     
+                    self.cityWeather.text = weatherInfo.name ?? "Gotham"
+                    self.countryWeather.text = weatherInfo.sys?.country  ?? "DCUniverse"
+                    
+                }
+            case .failure(let error):
+                            print(error.localizedDescription)
+            }
+        }
+      
+    }
 
     
 }
