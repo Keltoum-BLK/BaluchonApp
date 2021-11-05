@@ -64,7 +64,7 @@ class WeatherController: UIViewController {
                     self.cityWeather.text = weatherLocation.city.name
                     self.countryWeather.text = weatherLocation.country.country
                     self.weatherTemperature.text = String(weatherLocation.temp.temp) + "°C"
-                    print(weatherLocation)
+                    print(weatherLocation.city.name)
                 }
             case .failure(let error):
                             print(error.localizedDescription)

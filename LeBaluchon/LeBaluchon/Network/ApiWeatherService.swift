@@ -17,7 +17,7 @@ class ApiWeatherService {
     enum APIError: Error {
         case decoding
         case server
-        case emptyResponse
+        case network
     }
     //MARK: Properties
     private var dataTask: URLSessionDataTask?
@@ -37,7 +37,7 @@ class ApiWeatherService {
         urlComponents.path = "/data/2.5/weather"
         urlComponents.queryItems = [
             URLQueryItem(name: "q", value: city),
-            URLQueryItem(name: "api", value: SecretsKeys.apiKeyWeather),
+            URLQueryItem(name: "appid", value: SecretsKeys.apiKeyWeather),
             URLQueryItem(name: "units", value: "metric"),
             URLQueryItem(name: "lang", value: "fr")]
         
@@ -55,7 +55,7 @@ class ApiWeatherService {
                     return
                 }
                 guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    completion(.failure(.emptyResponse))
+                    completion(.failure(.network))
                     print("OUtch")
                     return
                 }
