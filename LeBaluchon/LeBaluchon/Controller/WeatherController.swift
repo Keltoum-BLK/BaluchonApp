@@ -61,15 +61,13 @@ class WeatherController: UIViewController {
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
-                    self.cityWeather.text = weatherLocation.city.name
-                    self.countryWeather.text = weatherLocation.country.country
-                    self.weatherTemperature.text = String(weatherLocation.temp.temp) + "°C"
-                    print(weatherLocation.city.name)
+                    print(weatherLocation)
                 }
             case .failure(let error):
                             print(error.localizedDescription)
             }
         }
+      
     }
     
     
