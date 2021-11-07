@@ -11,7 +11,7 @@ struct PageWeather: Decodable {
     
     let sys: Sys?
     let name: String?
-    let temp: Main?
+    let main: Main?
     let weather: [Weather]?
     
     struct Weather: Decodable {
@@ -29,7 +29,7 @@ struct PageWeather: Decodable {
         }
     }
     
-    struct Sys : Decodable {
+    struct Sys: Decodable {
         let country: String?
         let sunrise: Int?
         let sunset: Int?
@@ -40,6 +40,8 @@ struct PageWeather: Decodable {
             case sunset
         }
     }
+    
+  
 }
 
 
