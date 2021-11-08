@@ -473,7 +473,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quelle ville voulez-vous consulter?" textAlignment="natural" minimumFontSize="9" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="to0-Sl-DRG">
-                                                <rect key="frame" x="0.0" y="0.0" width="347.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IM5-MO-aoI"/>
@@ -485,8 +485,11 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLz-PX-ErI">
-                                                <rect key="frame" x="347.5" y="0.0" width="26.5" height="30"/>
+                                                <rect key="frame" x="334" y="0.0" width="40" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="q37-yB-6iH"/>
+                                                </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal">
