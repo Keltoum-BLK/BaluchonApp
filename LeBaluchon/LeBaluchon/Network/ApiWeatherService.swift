@@ -60,7 +60,7 @@ class ApiWeatherService {
                     return
                 }
                 completion(.success(weatherInfo))
-                dump(weatherInfo)
+//                dump(weatherInfo)
             }
         }
         dataTask?.resume()
@@ -74,7 +74,7 @@ class ApiWeatherService {
         urlComponents.path = "/data/2.5/weather"
         urlComponents.queryItems = [
             URLQueryItem(name: "lat", value: String(latitude)),
-            URLQueryItem(name: "lat", value: String(longitude)),
+            URLQueryItem(name: "lon", value: String(longitude)),
             URLQueryItem(name: "appid", value: SecretsKeys.apiKeyWeather),
             URLQueryItem(name: "units", value: "metric"),
             URLQueryItem(name: "lang", value: "fr")]
@@ -98,7 +98,7 @@ class ApiWeatherService {
                     return
                 }
                 completion(.success(weatherInfo))
-                dump(weatherInfo)
+//                dump(weatherInfo)
             }
         }
         dataTask?.resume()

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class Constants {
@@ -24,6 +25,24 @@ class Constants {
             return "Nopic"
         } else {
             return image
+        }
+    }
+    
+    func timeStamp(time: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.autoupdatingCurrent
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let dateString = formatter.string(from: date)
+        return String(dateString)
+    }
+    
+    func alertSearchCityAction(city: String, controller: UIViewController){
+        if city == "", !ApiWeatherService.APIError.decoding.localizedDescription.isEmpty, !ApiWeatherService.APIError.server.localizedDescription.isEmpty, !ApiWeatherService.APIError.network.localizedDescription.isEmpty {
+            let alert = UIAlertController(title: "Oups! un accident", message: "Vous devez sairsir correctement la ville que vous cherchez.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(ok)
+            controller.present(alert, animated: true, completion: nil)
         }
     }
 }

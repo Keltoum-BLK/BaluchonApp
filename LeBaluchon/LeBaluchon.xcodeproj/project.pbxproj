@@ -12,6 +12,7 @@
 		B93088F226F7964800D1CF4E /* LaunchLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B93088F126F7964800D1CF4E /* LaunchLogo.gif */; };
 		B94F6E952714344A0068C92A /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E942714344A0068C92A /* LaunchController.swift */; };
 		B94F6E97271478370068C92A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E96271478370068C92A /* Constants.swift */; };
+		B9735994273928BD00D6BA09 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9735993273928BD00D6BA09 /* CoreLocation.framework */; };
 		B985395E26F4F29F00F368C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985395D26F4F29F00F368C6 /* AppDelegate.swift */; };
 		B985396026F4F29F00F368C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985395F26F4F29F00F368C6 /* SceneDelegate.swift */; };
 		B985396526F4F29F00F368C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B985396326F4F29F00F368C6 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		B93088F126F7964800D1CF4E /* LaunchLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LaunchLogo.gif; path = ../../../images/LaunchLogo.gif; sourceTree = "<group>"; };
 		B94F6E942714344A0068C92A /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		B94F6E96271478370068C92A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B9735993273928BD00D6BA09 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B985395A26F4F29F00F368C6 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B985395D26F4F29F00F368C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B985395F26F4F29F00F368C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9735994273928BD00D6BA09 /* CoreLocation.framework in Frameworks */,
 				E6D5E1D935F130D5C7F712BF /* Pods_LeBaluchon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +127,7 @@
 		03C0B06DA8AA60F36A6FC757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9735993273928BD00D6BA09 /* CoreLocation.framework */,
 				23A0623248132485D4070EC7 /* Pods_LeBaluchon.framework */,
 				C5096817C17022258FB788FF /* Pods_LeBaluchon_LeBaluchonUITests.framework */,
 				109562FDA81C38F607507A12 /* Pods_LeBaluchonTests.framework */,
