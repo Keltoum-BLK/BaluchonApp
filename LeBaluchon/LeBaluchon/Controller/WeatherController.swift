@@ -10,7 +10,7 @@ import UIKit
 class WeatherController: UIViewController {
 
    //MARK: Properties
-    private var infoIcon: PageWeather?
+    
     
     @IBOutlet weak var weatherHeaderBackground: UIView!
     @IBOutlet weak var myLocationLabel: UIView!
@@ -34,7 +34,7 @@ class WeatherController: UIViewController {
         super.viewDidLoad()
         setUp()
         flecthWeatherDataLocationDefault()
-        flecthWeatherDataSearch(city: "Bamako")
+        flecthWeatherDataSearch(city: "sidney")
         
         // Do any additional setup after loading the view.
     }
@@ -63,10 +63,8 @@ class WeatherController: UIViewController {
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
-                    print(weatherLocation)
-                   
                     self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?[0].description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
-                    self.weatherLocationIcon.image = UIImage(named: self.upDatePic(image: weatherLocation.weather?[0].icon ?? "Nopic"))
+                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?[0].icon ?? "Nopic"))
                 }
             case .failure(let error):
                             print(error.localizedDescription)
@@ -80,26 +78,17 @@ class WeatherController: UIViewController {
             switch result {
             case .success(let weatherInfo):
                 DispatchQueue.main.async {
-                    print(weatherInfo)
-    
                     self.cityWeather.text = weatherInfo.name ?? "Gotham"
                     self.countryWeather.text = weatherInfo.sys?.country  ?? "DCUniverse"
                     self.weatherTemperature.text = "\(Int(weatherInfo.main?.temp ?? 22)) °C"
-                    self.weatherIcon.image = UIImage(named: self.upDatePic(image:  weatherInfo.weather?[0].icon ?? "Nopic"))
+                    self.weatherIcon.image = UIImage(named: Constants.shared.upDatePic(image:  weatherInfo.weather?[0].icon ?? "Nopic"))
                 }
             case .failure(let error):
                             print(error.localizedDescription)
             }
         }
     }
-    // mettre cette méthode dans Constants
-    func upDatePic(image: String) -> String {
-        if image == "", image != infoIcon?.weather?[0].icon {
-            return "Nopic"
-        } else {
-            return image
-        }
-    }
+  
 }
 
 

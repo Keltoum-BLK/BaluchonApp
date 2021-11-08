@@ -43,30 +43,62 @@ class ApiWeatherService {
         
         guard let urlWeather = urlComponents.url?.absoluteString else { return }
         
-        //        let urlLocalizedWeather = "api.openweathermap.org/data/2.5/weather?q=paris&appid=d39aa9247aa0e8e120ee04f68df6ff6b&units=metric&lang=fr"
-        //        guard let urlPercentEscapes = urlLocalizedWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let url = URL(string: urlWeather) else { return }
+        
+        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard error == nil else { completion(.failure(.server))
+                    return
+                }
+                guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    completion(.failure(.network))
+                    return
+                }
+                
+                guard let weatherInfo = try? JSONDecoder().decode(PageWeather.self, from: data) else {
+                    completion(.failure(.decoding))
+                    return
+                }
+                completion(.success(weatherInfo))
+                dump(weatherInfo)
+            }
+        }
+        dataTask?.resume()
+    }
+    
+    func givingLocationWeather(latitude: Double, longitude: Double, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
+        //api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&appid=d39aa9247aa0e8e120ee04f68df6ff6b
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.openweathermap.org"
+        urlComponents.path = "/data/2.5/weather"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "lat", value: String(latitude)),
+            URLQueryItem(name: "lat", value: String(longitude)),
+            URLQueryItem(name: "appid", value: SecretsKeys.apiKeyWeather),
+            URLQueryItem(name: "units", value: "metric"),
+            URLQueryItem(name: "lang", value: "fr")]
+        
+        guard let urlWeather = urlComponents.url?.absoluteString else { return }
         
         guard let url = URL(string: urlWeather) else { return }
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard error == nil else { completion(.failure(.server))
-                    print("Houla")
                     return
                 }
                 guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     completion(.failure(.network))
-                    print("OUtch")
                     return
                 }
                 
                 guard let weatherInfo = try? JSONDecoder().decode(PageWeather.self, from: data) else {
                     completion(.failure(.decoding))
-                    print("Aie")
                     return
                 }
                 completion(.success(weatherInfo))
-                print("Yeah")
+                dump(weatherInfo)
             }
         }
         dataTask?.resume()
