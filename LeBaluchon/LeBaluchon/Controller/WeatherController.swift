@@ -27,7 +27,11 @@ class WeatherController: UIViewController {
     @IBOutlet weak var sunsetTime: UILabel!
     @IBOutlet weak var sunriseIcon: UIImageView!
     @IBOutlet weak var sunsetIcon: UIImageView!
-    @IBOutlet weak var searchCity: UITextField!
+    @IBOutlet weak var searchCity: UITextField! {
+        didSet {
+            searchCity.putTextInBlack(text: "Saisis la ville ici. 📍", textField: searchCity)
+        }
+    }
     @IBOutlet weak var sunTimeContainer: UIStackView!
     @IBOutlet weak var weatherContainer: UIStackView!
     
@@ -139,8 +143,6 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             flecthWeatherDataLocationDefault()
         } else {
             fletchWeatherLocation()
-            print(manager.location?.coordinate.latitude ?? 0, manager.location?.coordinate.longitude ?? 0)
-            
         }
     }
     

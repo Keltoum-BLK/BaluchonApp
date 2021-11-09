@@ -10,8 +10,16 @@ import UIKit
 class TranslateController: UIViewController {
     
     @IBOutlet weak var translateHeader: UIView!
-    @IBOutlet weak var translateField: UITextField!
-    @IBOutlet weak var fieldTranslated: UITextField!
+    @IBOutlet weak var translateField: UITextField! {
+        didSet {
+            translateField.putTextInBlack(text: "Que veux-tu traduire?", textField: translateField)
+        }
+    }
+    @IBOutlet weak var fieldTranslated: UITextField! {
+        didSet {
+            fieldTranslated.putTextInBlack(text: "Voici la traduction.", textField: fieldTranslated)
+        }
+    }
     @IBOutlet weak var translateContainer: UIStackView!
     @IBOutlet weak var pickLanguage: UIPickerView!
     @IBOutlet weak var firstChoice: UIButton!
@@ -99,5 +107,9 @@ extension TranslateController : UIPickerViewDelegate, UIPickerViewDataSource {
         translateField.isHidden = false
         fieldTranslated.isHidden = false
         
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: pickerArray[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
 }
