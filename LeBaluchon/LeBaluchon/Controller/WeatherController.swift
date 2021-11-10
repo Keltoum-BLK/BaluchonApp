@@ -18,7 +18,7 @@ class WeatherController: UIViewController {
     @IBOutlet weak var myLocationLabel: UIView!
     @IBOutlet weak var locationPlace: UILabel!
     @IBOutlet weak var weatherLocationIcon: UIImageView!
-    @IBOutlet weak var searchWeatherLocation: UIButton!
+    @IBOutlet weak var searchBTN: UIButton!
     @IBOutlet weak var countryWeather: UILabel!
     @IBOutlet weak var cityWeather: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -27,9 +27,9 @@ class WeatherController: UIViewController {
     @IBOutlet weak var sunsetTime: UILabel!
     @IBOutlet weak var sunriseIcon: UIImageView!
     @IBOutlet weak var sunsetIcon: UIImageView!
-    @IBOutlet weak var searchCity: UITextField! {
+    @IBOutlet weak var searchField: UITextField! {
         didSet {
-            searchCity.putTextInBlack(text: "Saisis la ville ici. 📍", textField: searchCity)
+            searchField.putTextInBlack(text: "Saisis la ville ici. 📍", textField: searchField)
         }
     }
     @IBOutlet weak var sunTimeContainer: UIStackView!
@@ -45,8 +45,11 @@ class WeatherController: UIViewController {
         flecthWeatherDataSearch(city: "new york")
     }
     
+    //MARK: Methods
+    //Set of the weather UI and interface.
     func setUp() {
-        searchCity.delegate = self
+        searchField.delegate = self
+        searchField.layer.cornerRadius = 20
         
         weatherHeaderBackground.layer.cornerRadius = 20
         weatherHeaderBackground.layer.shadowColor = UIColor.black.cgColor
@@ -60,20 +63,20 @@ class WeatherController: UIViewController {
         myLocationLabel.layer.shadowOffset = CGSize(width: 0, height: 10)
         myLocationLabel.layer.shadowRadius = 10
         
-        searchWeatherLocation.layer.cornerRadius = 10
+        searchBTN.layer.cornerRadius = 10
         
         sunsetIcon.layer.cornerRadius = 40
         sunriseIcon.layer.cornerRadius = 40
     }
     
-    
+    //weather location default informations
     func flecthWeatherDataLocationDefault() {
         ApiWeatherService.shared.givingTheWeather(city: "paris") { result in
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
-                    self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?[0].description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
-                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?[0].icon ?? "Nopic"))
+                    self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?.first?.description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
+                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -81,30 +84,32 @@ class WeatherController: UIViewController {
         }
         
     }
-    
+    //flecht the data with the searchField's text
     func flecthWeatherDataSearch(city: String) {
         ApiWeatherService.shared.givingTheWeather(city: city) { result in
-            Constants.shared.alertSearchCityAction(city: city, controller: WeatherController())
             switch result {
             case .success(let weatherInfo):
                 DispatchQueue.main.async {
                     self.cityWeather.text = weatherInfo.name ?? "Gotham"
                     self.countryWeather.text = weatherInfo.sys?.country  ?? "DCUniverse"
                     self.weatherTemperature.text = "\(Int(weatherInfo.main?.temp ?? 22)) °C"
-                    self.weatherIcon.image = UIImage(named: Constants.shared.upDatePic(image:  weatherInfo.weather?[0].icon ?? "Nopic"))
+                    self.weatherIcon.image = UIImage(named: Constants.shared.upDatePic(image:  weatherInfo.weather?.first?.icon ?? "Nopic"))
                     self.sunriseTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunrise ?? 0)
                     self.sunsetTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunset ?? 0)
                     
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-            }
         }
     }
-    @IBAction func searchBTN(_ sender: Any) {
-        searchCity.resignFirstResponder()
-        if let text = searchCity.text {
-            flecthWeatherDataSearch(city: text)
+}
+    
+    @IBAction func searchAction(_ sender: Any) {
+        if searchField.text != "" {
+            searchField.resignFirstResponder()
+            flecthWeatherDataSearch(city: searchField.text ?? "boston")
+        } else if searchField.text == ""{
+            Constants.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
         }
     }
 }
@@ -116,12 +121,6 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyKilometer
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
-        //        if manager.authorizationStatus == .authorizedWhenInUse, manager.authorizationStatus == .authorizedAlways {
-        //           locationWeather()
-        //        } else {
-        //            flecthWeatherDataLocationDefault()
-        //        }
     }
     
     func fletchWeatherLocation() {
@@ -129,8 +128,8 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
-                    self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?[0].description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
-                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?[0].icon ?? "Nopic"))
+                    self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?.first?.description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
+                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -147,8 +146,8 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchCity.resignFirstResponder()
-        if let text = searchCity.text {
+        searchField.resignFirstResponder()
+        if let text = searchField.text {
             flecthWeatherDataSearch(city: text)
         }
         return true

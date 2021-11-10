@@ -38,8 +38,17 @@ class Constants {
     }
     
     func alertSearchCityAction(city: String, controller: UIViewController){
-        if city == "", !ApiWeatherService.APIError.decoding.localizedDescription.isEmpty, !ApiWeatherService.APIError.server.localizedDescription.isEmpty, !ApiWeatherService.APIError.network.localizedDescription.isEmpty {
-            let alert = UIAlertController(title: "Oups! un accident", message: "Vous devez sairsir correctement la ville que vous cherchez.", preferredStyle: .alert)
+        if city == "" {
+            let alert = UIAlertController(title: "Oups! un accident", message: "Vous devez sairsir une ville.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(ok)
+            controller.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func alertWrongName(city: String, controller: UIViewController){
+        if city == "" {
+            let alert = UIAlertController(title: "Oups! un accident", message: "Vous devez sairsir une ville.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(ok)
             controller.present(alert, animated: true, completion: nil)

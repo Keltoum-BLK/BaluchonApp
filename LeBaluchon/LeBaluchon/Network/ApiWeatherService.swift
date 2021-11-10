@@ -22,6 +22,7 @@ class ApiWeatherService {
     //MARK: Properties
     private var dataTask: URLSessionDataTask?
     var weatherSession = URLSession(configuration: .default)
+    var weatherController = WeatherController()
     
     init(weatherSession: URLSession) {
         
@@ -30,7 +31,6 @@ class ApiWeatherService {
     
     //MARK: Methods
     func givingTheWeather(city: String, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
-        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
@@ -67,7 +67,6 @@ class ApiWeatherService {
     }
     
     func givingLocationWeather(latitude: Double, longitude: Double, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
-        //api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&appid=d39aa9247aa0e8e120ee04f68df6ff6b
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
