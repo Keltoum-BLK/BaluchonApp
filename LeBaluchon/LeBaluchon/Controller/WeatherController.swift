@@ -147,8 +147,11 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchField.resignFirstResponder()
-        if let text = searchField.text {
-            flecthWeatherDataSearch(city: text)
+        if searchField.text != "" {
+            searchField.resignFirstResponder()
+            flecthWeatherDataSearch(city: searchField.text ?? "boston")
+        } else if searchField.text == ""{
+            Constants.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
         }
         return true
     }

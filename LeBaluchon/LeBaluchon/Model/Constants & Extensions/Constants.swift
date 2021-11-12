@@ -10,18 +10,23 @@ import UIKit
 
 
 class Constants {
-   
+   //MARK: Proporties
     static let shared = Constants()
     private var infoIcon: PageWeather?
     
     let languageArray = ["Anglais","Arabe", "Coréen", "Japonais", "Espagnol","Français", "Portuguais"]
     
+    
+    //MARK: METHOD FOR SWITCH IN TRANSLATE AND CURRENCY VIEW
     func swapString(string1 : inout String, string2: inout String) {
         (string1, string2) = (string2, string1)
     }
+  
     
+    
+    //MARK: METHODS FOR WEATHER VIEW
     func upDatePic(image: String) -> String {
-        if image == "", image != infoIcon?.weather?[0].icon {
+        if image == "", image != infoIcon?.weather?.first?.icon {
             return "Nopic"
         } else {
             return image

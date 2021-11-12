@@ -23,7 +23,6 @@ class TranslateController: UIViewController {
     @IBOutlet weak var translateContainer: UIStackView!
     @IBOutlet weak var pickLanguage: UIPickerView!
     @IBOutlet weak var firstChoice: UIButton!
-    @IBOutlet weak var goTranslateBtn: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
     @IBOutlet weak var switchChoice: UIButton!
     
@@ -53,7 +52,7 @@ class TranslateController: UIViewController {
         translateContainer.layer.shadowOffset = CGSize(width: 0, height: 20)
         translateContainer.layer.shadowRadius = 20
         switchChoice.layer.cornerRadius = 20
-        goTranslateBtn.layer.cornerRadius = 20
+
     }
     
     
@@ -71,7 +70,7 @@ class TranslateController: UIViewController {
         firstChoice.setTitle(secondChoice.titleLabel?.text, for: .normal)
         secondChoice.setTitle(firstButtonText, for: .normal)
         
-        Constants.shared.swapString(string1: &(translateField.text)!, string2: &(fieldTranslated.text)!)
+//        Constants.shared.swapString(string1: &(translateField.text)!, string2: &(fieldTranslated.text)!)
         
     }
     
