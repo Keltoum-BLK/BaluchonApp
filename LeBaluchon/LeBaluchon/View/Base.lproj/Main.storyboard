@@ -125,11 +125,11 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-zi-b1M">
                                 <rect key="frame" x="20" y="200" width="350" height="561"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-Fv-f6R">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-Fv-f6R">
                                         <rect key="frame" x="10" y="0.0" width="330" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-qs-lBb">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="40"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Langue 1">
@@ -139,21 +139,18 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                     <action selector="selectLanguages:" destination="IUq-5D-iv1" eventType="touchUpInside" id="aB0-ca-4Ja"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37e-Tb-3UW">
-                                                <rect key="frame" x="113.33333333333334" y="0.0" width="103.33333333333334" height="40"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbb-mF-AVb">
+                                                <rect key="frame" x="122.33333333333334" y="0.0" width="65" height="40"/>
+                                                <color key="backgroundColor" red="0.051608831009470703" green="0.73405934343434343" blue="0.16733589423687217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="24"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <imageReference key="image" image="arrow.triangle.2.circlepath" catalog="system" symbolScale="large"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
-                                                </state>
+                                                <state key="normal" title="Go!!"/>
                                                 <connections>
-                                                    <action selector="switchLanguages:" destination="IUq-5D-iv1" eventType="touchUpInside" id="mxc-36-G9l"/>
+                                                    <action selector="TranslateAction:" destination="IUq-5D-iv1" eventType="touchUpInside" id="Qa8-q6-aaH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNo-eR-mhh">
-                                                <rect key="frame" x="226.66666666666671" y="0.0" width="103.33333333333334" height="40"/>
+                                                <rect key="frame" x="197.33333333333337" y="0.0" width="132.66666666666663" height="40"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Langue 2">
@@ -174,6 +171,9 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="IUq-5D-iv1" id="g9V-sH-OTv"/>
+                                                </connections>
                                             </textField>
                                             <pickerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtZ-wS-cYn">
                                                 <rect key="frame" x="0.0" y="230.66666666666669" width="330" height="0.0"/>
@@ -226,13 +226,13 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                     <tabBarItem key="tabBarItem" title="" image="icons8-google-traduction-32" id="ref-nM-cME"/>
                     <navigationItem key="navigationItem" title="Translate" id="t3U-ex-dmZ"/>
                     <connections>
-                        <outlet property="fieldTranslated" destination="BXQ-ZE-60v" id="TZR-Ve-otZ"/>
                         <outlet property="firstChoice" destination="tGl-qs-lBb" id="k3S-Ig-C9i"/>
+                        <outlet property="originalTextField" destination="Kl0-DA-QNU" id="fYA-Qs-akD"/>
                         <outlet property="pickLanguage" destination="BtZ-wS-cYn" id="3mu-X1-cDA"/>
                         <outlet property="secondChoice" destination="kNo-eR-mhh" id="FMl-3G-UNb"/>
-                        <outlet property="switchChoice" destination="37e-Tb-3UW" id="MhZ-wS-gIb"/>
+                        <outlet property="textTranslatedField" destination="BXQ-ZE-60v" id="srM-bs-zff"/>
+                        <outlet property="translateBTN" destination="lbb-mF-AVb" id="Za4-2Z-2TB"/>
                         <outlet property="translateContainer" destination="QV7-zi-b1M" id="oDF-el-fxk"/>
-                        <outlet property="translateField" destination="Kl0-DA-QNU" id="yUm-Vl-4dt"/>
                         <outlet property="translateHeader" destination="0uq-uX-YgW" id="1sM-5o-fAu"/>
                     </connections>
                 </viewController>
@@ -300,19 +300,19 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R4R-Bq-2iM">
-                                        <rect key="frame" x="10" y="50" width="330" height="485"/>
+                                        <rect key="frame" x="10" y="50" width="330" height="457"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ton montant à convertir." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvU-Gd-PiZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="237.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="223.66666666666666"/>
                                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQw-Pa-5SI">
-                                                <rect key="frame" x="0.0" y="242.66666666666669" width="330" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="228.66666666666669" width="330" height="0.0"/>
                                             </pickerView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ton résultat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7C-Gj-xfB">
-                                                <rect key="frame" x="0.0" y="247.66666666666669" width="330" height="237.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="233.66666666666669" width="330" height="223.33333333333331"/>
                                                 <color key="backgroundColor" red="0.0" green="0.62952452459999997" blue="0.75701972149999996" alpha="0.47555360099337746" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
@@ -321,13 +321,14 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: Fixer.io" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jo-c3-cRh">
-                                        <rect key="frame" x="135.33333333333334" y="545" width="79.666666666666657" height="12"/>
+                                        <rect key="frame" x="135.33333333333334" y="517" width="79.666666666666657" height="40"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="R4R-Bq-2iM" secondAttribute="bottom" constant="50" id="9d2-5e-yOZ"/>
                                     <constraint firstAttribute="trailing" secondItem="R4R-Bq-2iM" secondAttribute="trailing" constant="10" id="BLz-gB-1Lp"/>
                                     <constraint firstItem="R4R-Bq-2iM" firstAttribute="leading" secondItem="yQX-4o-KfF" secondAttribute="leading" constant="10" id="I3x-il-yfy"/>
                                     <constraint firstAttribute="trailing" secondItem="5Oq-3e-Anj" secondAttribute="trailing" constant="10" id="VP0-Mj-6Bx"/>

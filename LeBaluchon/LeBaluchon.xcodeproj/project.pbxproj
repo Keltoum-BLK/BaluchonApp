@@ -10,6 +10,7 @@
 		02EE98B663FEBE998DCC9A57 /* Pods_LeBaluchon_LeBaluchonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5096817C17022258FB788FF /* Pods_LeBaluchon_LeBaluchonUITests.framework */; };
 		0659553918268E6829F06EC5 /* Pods_LeBaluchonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109562FDA81C38F607507A12 /* Pods_LeBaluchonTests.framework */; };
 		B93088F226F7964800D1CF4E /* LaunchLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B93088F126F7964800D1CF4E /* LaunchLogo.gif */; };
+		B931444C273EC9DC009FC1DE /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931444B273EC9DC009FC1DE /* Languages.swift */; };
 		B94F6E952714344A0068C92A /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E942714344A0068C92A /* LaunchController.swift */; };
 		B94F6E97271478370068C92A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E96271478370068C92A /* Constants.swift */; };
 		B9735994273928BD00D6BA09 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9735993273928BD00D6BA09 /* CoreLocation.framework */; };
@@ -62,6 +63,7 @@
 		9B7C2270FE146FE957980A2E /* Pods-LeBaluchon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.debug.xcconfig"; path = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A4E328410953FA5809FFC0 /* Pods-LeBaluchon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon.release.xcconfig"; path = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.release.xcconfig"; sourceTree = "<group>"; };
 		B93088F126F7964800D1CF4E /* LaunchLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LaunchLogo.gif; path = ../../../images/LaunchLogo.gif; sourceTree = "<group>"; };
+		B931444B273EC9DC009FC1DE /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		B94F6E942714344A0068C92A /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		B94F6E96271478370068C92A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B9735993273928BD00D6BA09 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -163,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				B98ED280270B02BD00DCB134 /* ApiCurrencyService.swift */,
-				B9857ECD271048FF00F3ECAC /* ApiWeatherService.swift */,
 				B9857ECF2710490F00F3ECAC /* ApiTranslateService.swift */,
+				B9857ECD271048FF00F3ECAC /* ApiWeatherService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -237,6 +239,7 @@
 		B98ED278270AFD8C00DCB134 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B931444B273EC9DC009FC1DE /* Languages.swift */,
 				B98ED286270B3B6000DCB134 /* Translate.swift */,
 				B98ED282270B031300DCB134 /* Weather.swift */,
 				B98ED284270B3B5600DCB134 /* Currency.swift */,
@@ -256,8 +259,8 @@
 		B98ED27A270AFDA100DCB134 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B985399026F4F38100F368C6 /* CurrencyViewController.swift */,
 				B94F6E942714344A0068C92A /* LaunchController.swift */,
+				B985399026F4F38100F368C6 /* CurrencyViewController.swift */,
 				B98ED27B270AFE3000DCB134 /* TranslateController.swift */,
 				B98ED27D270AFE5B00DCB134 /* WeatherController.swift */,
 			);
@@ -531,6 +534,7 @@
 				B985399126F4F38100F368C6 /* CurrencyViewController.swift in Sources */,
 				B985399526F4FEB300F368C6 /* Extension UIView.swift in Sources */,
 				B94F6E97271478370068C92A /* Constants.swift in Sources */,
+				B931444C273EC9DC009FC1DE /* Languages.swift in Sources */,
 				B98ED283270B031300DCB134 /* Weather.swift in Sources */,
 				B98ED287270B3B6000DCB134 /* Translate.swift in Sources */,
 				B98ED27C270AFE3000DCB134 /* TranslateController.swift in Sources */,

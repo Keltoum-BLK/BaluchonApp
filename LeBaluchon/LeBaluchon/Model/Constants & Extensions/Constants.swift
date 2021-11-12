@@ -59,4 +59,13 @@ class Constants {
             controller.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func alertTextEmpty(text: String, controller: UIViewController){
+        if text == "" {
+            let alert = UIAlertController(title: "Oups! un accident", message: "Tu as oublié ce que tu voulais traduire.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(ok)
+            controller.present(alert, animated: true, completion: nil)
+        }
+    }
 }

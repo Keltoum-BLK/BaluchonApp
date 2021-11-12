@@ -9,10 +9,24 @@ import Foundation
 
 
 struct Translate: Decodable {
-
-    struct TextTrasnlated: Decodable {
+    let data: Datas?
+    
+    enum CodingKeys: String, CodingKey {
+        case data
+    }
+    struct Datas: Decodable {
+        let translations: [Translation]?
         
+        enum CodingKeys: String, CodingKey {
+            case translations = "translations"
+        }
+    }
+    struct Translation : Decodable {
+        let translatedText: String?
         
+        enum CodingKeys: String, CodingKey {
+            case translatedText = "translatedText"
+        }
     }
     
 }
