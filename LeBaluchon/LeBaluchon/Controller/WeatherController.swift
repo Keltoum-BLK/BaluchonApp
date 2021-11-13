@@ -96,9 +96,13 @@ class WeatherController: UIViewController {
                     self.weatherIcon.image = UIImage(named: Constants.shared.upDatePic(image:  weatherInfo.weather?.first?.icon ?? "Nopic"))
                     self.sunriseTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunrise ?? 0)
                     self.sunsetTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunset ?? 0)
-                    
+                    print("=> sunrise \(weatherInfo.sys?.sunrise ?? 0)", "=> sunset \(weatherInfo.sys?.sunset ?? 0)")
                 }
             case .failure(let error):
+                DispatchQueue.main.async {
+                    //TODO: renommer la méthode "une erreur est survenue"
+                    AlertManager.shared.alertWrongName(city: error.localizedDescription, controller: self)
+                }
                 print(error.localizedDescription)
         }
     }
@@ -109,7 +113,7 @@ class WeatherController: UIViewController {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
         } else if searchField.text == ""{
-            Constants.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
+            AlertManager.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
         }
     }
 }
@@ -151,7 +155,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
         } else if searchField.text == ""{
-            Constants.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
+            AlertManager.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
         }
         return true
     }

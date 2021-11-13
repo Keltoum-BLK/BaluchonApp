@@ -10,6 +10,7 @@ import UIKit
 class TranslateController: UIViewController {
     
     var pickerArray: [Language]?
+    private var alreadyTranslate = false
     
     @IBOutlet weak var translateHeader: UIView!
     @IBOutlet weak var originalTextField: UITextField! {
@@ -39,6 +40,7 @@ class TranslateController: UIViewController {
     
     
     func setUp() {
+        originalTextField.delegate = self
       
         translateHeader.layer.cornerRadius = 20
         translateHeader.layer.cornerRadius = 20
@@ -56,8 +58,6 @@ class TranslateController: UIViewController {
         
         firstChoice.setTitle("Français", for: .normal)
         secondChoice.setTitle("Anglais", for: .normal)
-        
-        
     }
     
     func fletchListOfLanguages() {
@@ -81,7 +81,7 @@ class TranslateController: UIViewController {
         guard let source = pickerArray?[sourceRow].language else { return }
         guard let target = pickerArray?[targetRow].language else { return }
         
-        ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "Bonjour", target: target) { result in
+        ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "no Text", target: target) { result in
             switch result {
             case .success(let translate):
             DispatchQueue.main.async {
@@ -92,6 +92,12 @@ class TranslateController: UIViewController {
             }
         }
         
+    }
+    
+    func resetTextField() {
+        if alreadyTranslate {
+            originalTextField.text = ""
+        }
     }
     
     @IBAction func selectLanguages(_ sender: Any) {
@@ -105,19 +111,19 @@ class TranslateController: UIViewController {
         if originalTextField.text != "" {
             originalTextField.resignFirstResponder()
            fletchDataTranslation(pickerView: pickLanguage)
+            alreadyTranslate = true
+         
         } else if originalTextField.text == ""{
-            Constants.shared.alertTextEmpty(text: originalTextField.text ?? "Pas bien", controller: self)
+            AlertManager.shared.alertTextEmpty(text: originalTextField.text ?? "no text", controller: self)
         }
     }
 }
 
-
-extension TranslateController : UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
   
     func setupDelegate() {
         pickLanguage.delegate = self
         pickLanguage.dataSource = self
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -147,7 +153,7 @@ extension TranslateController : UIPickerViewDelegate, UIPickerViewDataSource, UI
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: pickerArray?[row].name ?? "Midgard", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        return NSAttributedString(string: pickerArray?[row].name ?? "no name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -155,8 +161,10 @@ extension TranslateController : UIPickerViewDelegate, UIPickerViewDataSource, UI
         if originalTextField.text != "" {
             originalTextField.resignFirstResponder()
            fletchDataTranslation(pickerView: pickLanguage)
+            alreadyTranslate = true
+            
         } else if originalTextField.text == ""{
-            Constants.shared.alertTextEmpty(text: originalTextField.text ?? "Pas bien", controller: self)
+            AlertManager.shared.alertTextEmpty(text: originalTextField.text ?? "no text", controller: self)
         }
         return true
     }

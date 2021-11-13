@@ -25,7 +25,6 @@ class ApiWeatherService {
     var weatherController = WeatherController()
     
     init(weatherSession: URLSession) {
-        
         self.weatherSession = weatherSession
     }
     
@@ -60,7 +59,7 @@ class ApiWeatherService {
                     return
                 }
                 completion(.success(weatherInfo))
-//                dump(weatherInfo)
+                dump(weatherInfo)
             }
         }
         dataTask?.resume()
