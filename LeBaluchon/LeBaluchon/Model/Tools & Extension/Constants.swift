@@ -39,7 +39,6 @@ class Constants {
 //        formatter.timeZone = TimeZone.current
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
         let dateString = formatter.string(from: date)
-        print("=>", formatter.dateFormat)
         return String(dateString)
     }
     

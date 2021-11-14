@@ -32,7 +32,7 @@
 		B98ED27E270AFE5B00DCB134 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED27D270AFE5B00DCB134 /* WeatherController.swift */; };
 		B98ED281270B02BD00DCB134 /* ApiCurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED280270B02BD00DCB134 /* ApiCurrencyService.swift */; };
 		B98ED283270B031300DCB134 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED282270B031300DCB134 /* Weather.swift */; };
-		B98ED285270B3B5600DCB134 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED284270B3B5600DCB134 /* Currency.swift */; };
+		B98ED285270B3B5600DCB134 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED284270B3B5600DCB134 /* Symbols.swift */; };
 		B98ED287270B3B6000DCB134 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED286270B3B6000DCB134 /* Translate.swift */; };
 		B9A6B871270C47F1007DC772 /* Odin Rounded - Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9A6B870270C47F1007DC772 /* Odin Rounded - Bold.otf */; };
 		B9ACF2DD271ED07D00319D20 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACF2DC271ED07D00319D20 /* Secrets.swift */; };
@@ -92,7 +92,7 @@
 		B98ED27D270AFE5B00DCB134 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		B98ED280270B02BD00DCB134 /* ApiCurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCurrencyService.swift; sourceTree = "<group>"; };
 		B98ED282270B031300DCB134 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		B98ED284270B3B5600DCB134 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		B98ED284270B3B5600DCB134 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		B98ED286270B3B6000DCB134 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		B9A6B870270C47F1007DC772 /* Odin Rounded - Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Odin Rounded - Bold.otf"; path = "../../../../../P12/P12Come-Chill/Come&Chill/Come&Chill/Font/Odin Rounded - Bold.otf"; sourceTree = "<group>"; };
 		B9ACF2DC271ED07D00319D20 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 				B931444B273EC9DC009FC1DE /* Languages.swift */,
 				B98ED286270B3B6000DCB134 /* Translate.swift */,
 				B98ED282270B031300DCB134 /* Weather.swift */,
-				B98ED284270B3B5600DCB134 /* Currency.swift */,
+				B98ED284270B3B5600DCB134 /* Symbols.swift */,
 				B91B7999273C0955008539E6 /* Tools & Extension */,
 			);
 			path = Model;
@@ -542,7 +542,7 @@
 				B9557197273FAFF70079855F /* AlertManager.swift in Sources */,
 				B98ED287270B3B6000DCB134 /* Translate.swift in Sources */,
 				B98ED27C270AFE3000DCB134 /* TranslateController.swift in Sources */,
-				B98ED285270B3B5600DCB134 /* Currency.swift in Sources */,
+				B98ED285270B3B5600DCB134 /* Symbols.swift in Sources */,
 				B98ED27E270AFE5B00DCB134 /* WeatherController.swift in Sources */,
 				B9857ECE271048FF00F3ECAC /* ApiWeatherService.swift in Sources */,
 				B9857ED02710490F00F3ECAC /* ApiTranslateService.swift in Sources */,

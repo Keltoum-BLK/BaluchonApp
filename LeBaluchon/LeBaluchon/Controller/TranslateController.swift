@@ -41,7 +41,15 @@ class TranslateController: UIViewController {
     
     func setUp() {
         originalTextField.delegate = self
-      
+        
+        firstChoice.titleLabel?.numberOfLines = 0
+        firstChoice.titleLabel?.adjustsFontSizeToFitWidth = true
+        firstChoice.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        
+        secondChoice.titleLabel?.numberOfLines = 0
+        secondChoice.titleLabel?.adjustsFontSizeToFitWidth = true
+        secondChoice.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
+        
         translateHeader.layer.cornerRadius = 20
         translateHeader.layer.cornerRadius = 20
         translateHeader.layer.shadowColor = UIColor.black.cgColor
@@ -56,8 +64,7 @@ class TranslateController: UIViewController {
         translateContainer.layer.shadowRadius = 20
         translateBTN.layer.cornerRadius = 20
         
-        firstChoice.setTitle("Français", for: .normal)
-        secondChoice.setTitle("Anglais", for: .normal)
+        defaultLaunchLanguages()
     }
     
     func fletchListOfLanguages() {
@@ -67,7 +74,6 @@ class TranslateController: UIViewController {
                 DispatchQueue.main.async {
                     self.pickerArray = listOf.data?.languages
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -92,6 +98,20 @@ class TranslateController: UIViewController {
             }
         }
         
+    }
+    func defaultLaunchLanguages() {
+        ApiTranslateService.shared.getListLanguages { result in
+            switch result {
+                case .success(let listOf):
+                DispatchQueue.main.async {
+                    self.firstChoice.setTitle(listOf.data?.languages?[29].name, for: .normal)
+                    self.secondChoice.setTitle(listOf.data?.languages?[4].name, for: .normal)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func resetTextField() {
