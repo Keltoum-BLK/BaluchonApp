@@ -36,6 +36,7 @@
 		B98ED287270B3B6000DCB134 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98ED286270B3B6000DCB134 /* Translate.swift */; };
 		B9A6B871270C47F1007DC772 /* Odin Rounded - Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9A6B870270C47F1007DC772 /* Odin Rounded - Bold.otf */; };
 		B9ACF2DD271ED07D00319D20 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACF2DC271ED07D00319D20 /* Secrets.swift */; };
+		B9F009EC27429797006FF648 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F009EB27429797006FF648 /* Currency.swift */; };
 		E6D5E1D935F130D5C7F712BF /* Pods_LeBaluchon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A0623248132485D4070EC7 /* Pods_LeBaluchon.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		B98ED286270B3B6000DCB134 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		B9A6B870270C47F1007DC772 /* Odin Rounded - Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Odin Rounded - Bold.otf"; path = "../../../../../P12/P12Come-Chill/Come&Chill/Come&Chill/Font/Odin Rounded - Bold.otf"; sourceTree = "<group>"; };
 		B9ACF2DC271ED07D00319D20 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		B9F009EB27429797006FF648 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C5096817C17022258FB788FF /* Pods_LeBaluchon_LeBaluchonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBaluchon_LeBaluchonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A6C67D0D70262E8531F12D /* Pods-LeBaluchonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchonTests.debug.xcconfig"; path = "Target Support Files/Pods-LeBaluchonTests/Pods-LeBaluchonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB81017770372FB2D5A8086B /* Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig"; path = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests/Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				B98ED286270B3B6000DCB134 /* Translate.swift */,
 				B98ED282270B031300DCB134 /* Weather.swift */,
 				B98ED284270B3B5600DCB134 /* Symbols.swift */,
+				B9F009EB27429797006FF648 /* Currency.swift */,
 				B91B7999273C0955008539E6 /* Tools & Extension */,
 			);
 			path = Model;
@@ -546,6 +549,7 @@
 				B98ED27E270AFE5B00DCB134 /* WeatherController.swift in Sources */,
 				B9857ECE271048FF00F3ECAC /* ApiWeatherService.swift in Sources */,
 				B9857ED02710490F00F3ECAC /* ApiTranslateService.swift in Sources */,
+				B9F009EC27429797006FF648 /* Currency.swift in Sources */,
 				B98ED281270B02BD00DCB134 /* ApiCurrencyService.swift in Sources */,
 				B985399326F4F3AC00F368C6 /* LogoAnimation.swift in Sources */,
 				B983457F273B284700C2A295 /* ExtensionTextField.swift in Sources */,

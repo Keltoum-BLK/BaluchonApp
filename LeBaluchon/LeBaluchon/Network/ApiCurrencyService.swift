@@ -30,17 +30,9 @@ class ApiCurrencyService {
     }
    
     func getListSymbols(completion: @escaping (Result<Symbols, APIError>) -> Void) {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "data.fixer.io"
-        urlComponents.path = "/api/symbols"
-        urlComponents.queryItems = [
-            URLQueryItem(name: "access_key", value: SecretsKeys.apiKeyCurrency)]
         
-        guard let urlSymbols = urlComponents.url?.absoluteString else { return }
-        guard let url = URL(string: urlSymbols) else { return }
-       
-        print(url)
+        guard let url = URL(string: "http://data.fixer.io/api/symbols?access_key=\(SecretsKeys.apiKeyCurrency)") else { return }
+        
         dataTask = URLSession.shared.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
@@ -52,16 +44,36 @@ class ApiCurrencyService {
                 return
             }
             guard let listOfSymbols = try? JSONDecoder().decode(Symbols.self, from: data) else { completion(.failure(.decoding))
+                print("ici")
                 return
             }
             completion(.success(listOfSymbols))
-                dump(listOfSymbols)
+                
         }
     }
-    dataTask?.resume()
+        dataTask?.resume()
 }
-    func getTheChange(currency1: String, countToChange: Double, currency2: String, countToGet: Double) {
-        
+    func getTheChange(completion :  @escaping (Result<Latest, APIError>) -> Void) {
+        guard let url = URL(string: "http://data.fixer.io/api/latest?access_key=\(SecretsKeys.apiKeyCurrency)") else { return }
+   
+        dataTask = URLSession.shared.dataTask(with: url)  { (data, response, error) in
+            DispatchQueue.main.async {
+            guard error == nil else { completion(.failure(.server))
+                print("outch")
+                return }
+            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.network))
+                print("aie")
+                return
+            }
+            guard let listOfValues = try? JSONDecoder().decode(Latest.self, from: data) else { completion(.failure(.decoding))
+                print("ici")
+                return
+            }
+            completion(.success(listOfValues))
+        }
+    }
+        dataTask?.resume()
     }
 
 }

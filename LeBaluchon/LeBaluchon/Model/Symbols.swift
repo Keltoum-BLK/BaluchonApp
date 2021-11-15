@@ -8,20 +8,15 @@
 import Foundation
 
 struct Symbols: Decodable {
-    let success: Bool?
-    let symbols: [String: String]?
+    let success: Bool
+    let symbols: [String : String]
     
     enum CodingKeys: String,CodingKey {
         case success
-        case symbols = "symbols"
+        case symbols
     }
 }
 struct Currency: Decodable {
-    let symbol: String?
-    let name: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case symbol
-        case name
-    }
+    var code: String
+    var name: String
 }

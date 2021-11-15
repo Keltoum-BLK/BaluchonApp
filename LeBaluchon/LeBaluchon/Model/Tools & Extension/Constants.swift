@@ -43,4 +43,29 @@ class Constants {
     }
     
     
+    func createSymbolsList(dictionnary : [String : String]) -> [Currency] {
+        var list = [Currency]()
+        for (keys, values) in dictionnary {
+           let currency = Currency(code: keys, name: values)
+            list.append(currency)
+        }
+        let listArr = list.sorted(by: { $0.name < $1.name})
+        return listArr
+    }
+ 
+    func createCurrencyList(dictionnary : [String : Double]) -> [CurrencyValue] {
+        var list = [CurrencyValue]()
+        for (keys, values) in dictionnary {
+           let currency = CurrencyValue(code: keys, value: values)
+            list.append(currency)
+        }
+        let listArr = list.sorted(by: { $0.code ?? "NIL" < $1.code ?? "NoCode"})
+        return listArr
+    }
+    
+    func getTheChange(start with: String, with currencyvalue: Double) -> String {
+        let result = Double(with) ?? 0 * currencyvalue
+        let resultStr = String(result)
+        return resultStr
+    }
 }
