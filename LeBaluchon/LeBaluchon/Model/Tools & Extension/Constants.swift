@@ -64,7 +64,9 @@ class Constants {
     }
     
     func getTheChange(start with: String, with currencyvalue: Double) -> String {
-        let result = Double(with) ?? 0 * currencyvalue
+        let doubleStr = Double(with)
+        guard let multiply = doubleStr else { return "no info"}
+        let result = currencyvalue * multiply
         let resultStr = String(result)
         return resultStr
     }

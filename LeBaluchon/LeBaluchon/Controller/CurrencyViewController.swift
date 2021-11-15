@@ -14,7 +14,8 @@ class CurrencyViewController: UIViewController {
     private var pickerSymbols = [Currency]()
     private var pickerValues = [CurrencyValue]()
     private var alreadyConvert = false
-    
+    private var rowSelected = 0
+    private var codeSelected = ""
     @IBOutlet weak var currencyHeader: UIView!
     @IBOutlet weak var startingCurrencyBTN: UIButton!
     @IBOutlet weak var startingCurrencyField: UITextField! {
@@ -32,6 +33,7 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var pickerCurrency: UIPickerView!
     @IBOutlet weak var currencyContainer: UIStackView!
     
+    @IBOutlet weak var choiceContainer: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHeader()
@@ -59,7 +61,7 @@ class CurrencyViewController: UIViewController {
         startingCurrencyBTN.titleLabel?.lineBreakMode = .byClipping
         
         
-        returnCurrencyBTN.titleLabel?.numberOfLines = 0
+        returnCurrencyBTN.titleLabel?.numberOfLines = 2
         returnCurrencyBTN.titleLabel?.adjustsFontSizeToFitWidth = true
         returnCurrencyBTN.titleLabel?.lineBreakMode = .byClipping
         
@@ -69,7 +71,7 @@ class CurrencyViewController: UIViewController {
         currencyContainer.layer.shadowOpacity = 0.5
         currencyContainer.layer.shadowOffset = CGSize(width: 0, height: 20)
         currencyContainer.layer.shadowRadius = 20
-        
+        choiceContainer.layer.cornerRadius = 20
         defaultCurrencies()
     }
     
@@ -108,7 +110,7 @@ class CurrencyViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.pickerSymbols = Constants.shared.createSymbolsList(dictionnary: listOf.symbols)
                     self.startingCurrencyBTN.setTitle(self.pickerSymbols[51].name, for: .normal)
-                    self.returnCurrencyBTN.setTitle(self.pickerSymbols[158].name, for: .normal)
+                    self.returnCurrencyBTN.setTitle("Choisis", for: .normal)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -116,9 +118,11 @@ class CurrencyViewController: UIViewController {
         }
     }
     
-    func getCurrencyChnage(with picker: UIPickerView) {
-    
-        
+    func getCurrencyChange(with picker: UIPickerView) {
+        guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
+        returnCurrencyField.text =  Constants.shared.getTheChange(start: startingCurrencyField.text ?? "0", with: codeValue)
+        print(rowSelected)
+        print(codeSelected)
     }
     
     @IBAction func selectCurrency(_ sender: Any) {
@@ -131,6 +135,7 @@ class CurrencyViewController: UIViewController {
         startingCurrencyField.resignFirstResponder()
         if startingCurrencyField.text != "" {
             startingCurrencyField.resignFirstResponder()
+            getCurrencyChange(with: pickerCurrency)
         } else if startingCurrencyField.text == "" {
             AlertManager.shared.alertTextEmpty(text: startingCurrencyField.text ?? "no text", controller: self)
         }
@@ -159,12 +164,15 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         return pickerSymbols[row].name
     }
 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let firstCurrency = pickerView.selectedRow(inComponent: 0)
-       
-
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+    
         startingCurrencyBTN.setTitle(pickerSymbols[51].name, for: .normal)
-        returnCurrencyBTN.setTitle(pickerSymbols[firstCurrency].name, for: .normal)
+        returnCurrencyBTN.setTitle(pickerSymbols[row].name, for: .normal)
+        
+        if pickerView == pickerCurrency {
+            self.rowSelected = row
+            self.codeSelected = pickerSymbols[row].code
+        }
 
         pickerCurrency.isHidden = true
         startingCurrencyField.isHidden = false
