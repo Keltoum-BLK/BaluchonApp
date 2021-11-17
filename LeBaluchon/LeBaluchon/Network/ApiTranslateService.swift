@@ -69,7 +69,8 @@ class ApiTranslateService {
             URLQueryItem(name: "key", value: SecretsKeys.apiKeyTranslate),
             URLQueryItem(name: "source", value: source),
             URLQueryItem(name: "q", value: q),
-            URLQueryItem(name: "target", value: target)]
+            URLQueryItem(name: "target", value: target),
+            URLQueryItem(name: "format", value: "text"),]
         
         guard let urlTranslate = urlComponents.url?.absoluteString else { return }
         guard let url = URL(string: urlTranslate) else { return }

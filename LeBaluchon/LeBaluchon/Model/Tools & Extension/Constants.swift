@@ -13,9 +13,7 @@ class Constants {
    //MARK: Proporties
     static let shared = Constants()
     private var infoIcon: PageWeather?
-    
-    let languageArray = ["Anglais","Arabe", "Coréen", "Japonais", "Espagnol","Français", "Portuguais"]
-    
+
     
     //MARK: METHOD FOR SWITCH IN TRANSLATE AND CURRENCY VIEW
     func swapString(string1 : inout String, string2: inout String) {
@@ -63,11 +61,17 @@ class Constants {
         return listArr
     }
     
-    func getTheChange(start with: String, with currencyvalue: Double) -> String {
-        let doubleStr = Double(with)
-        guard let multiply = doubleStr else { return "no info"}
-        let result = currencyvalue * multiply
-        let resultStr = String(result)
-        return resultStr
+    func getTheChange(amount: String, with currencyvalue: Double, controller: UIViewController) -> String {
+        if amount == "0" || amount.first == "." || amount.first == " " {
+            AlertManager.shared.alertGiveAmount(amount: amount, controller: controller)
+            return "Error"
+        } else {
+            let doubleStr = Double(amount)
+            guard let multiply = doubleStr else { return "no info"}
+            var result = currencyvalue * multiply
+            result = round(result * 100) / 100
+            let resultStr = String(result)
+            return resultStr
+        }
     }
 }

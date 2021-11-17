@@ -119,10 +119,14 @@ class CurrencyViewController: UIViewController {
     }
     
     func getCurrencyChange(with picker: UIPickerView) {
-        guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
-        returnCurrencyField.text =  Constants.shared.getTheChange(start: startingCurrencyField.text ?? "0", with: codeValue)
-        print(rowSelected)
-        print(codeSelected)
+        if codeSelected.isEmpty {
+            AlertManager.shared.alertGiveAmount(amount: startingCurrencyField.text ?? "no info", controller: self)
+        } else {
+            guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
+            returnCurrencyField.text =  Constants.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue, controller: self)
+            print(rowSelected)
+            print(codeSelected)
+        }
     }
     
     @IBAction func selectCurrency(_ sender: Any) {
@@ -136,10 +140,8 @@ class CurrencyViewController: UIViewController {
         if startingCurrencyField.text != "" {
             startingCurrencyField.resignFirstResponder()
             getCurrencyChange(with: pickerCurrency)
-        } else if startingCurrencyField.text == "" {
-            AlertManager.shared.alertTextEmpty(text: startingCurrencyField.text ?? "no text", controller: self)
         }
-        
+
     }
     
 }

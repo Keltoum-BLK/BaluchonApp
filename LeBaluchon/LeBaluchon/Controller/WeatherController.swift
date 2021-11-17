@@ -100,8 +100,8 @@ class WeatherController: UIViewController {
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                    //TODO: renommer la méthode "une erreur est survenue"
-                    AlertManager.shared.alertWrongName(city: error.localizedDescription, controller: self)
+                let description = "Veuillez saisir un nom de ville correct."
+                    AlertManager.shared.alertServerAccess(city: error.localizedDescription + description, controller: self)
                 }
                 print(error.localizedDescription)
         }
@@ -109,12 +109,8 @@ class WeatherController: UIViewController {
 }
     
     @IBAction func searchAction(_ sender: Any) {
-        if searchField.text != "" {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
-        } else if searchField.text == ""{
-            AlertManager.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
-        }
     }
 }
 
@@ -155,7 +151,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
         } else if searchField.text == ""{
-            AlertManager.shared.alertSearchCityAction(city: searchField.text ?? "boston", controller: self)
+            AlertManager.shared.alertAddCity(city: searchField.text ?? "boston", controller: self)
         }
         return true
     }

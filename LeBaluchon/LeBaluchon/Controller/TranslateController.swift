@@ -87,17 +87,21 @@ class TranslateController: UIViewController {
         guard let source = pickerArray?[sourceRow].language else { return }
         guard let target = pickerArray?[targetRow].language else { return }
         
-        ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "no Text", target: target) { result in
-            switch result {
-            case .success(let translate):
-            DispatchQueue.main.async {
-                self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
-            }
-        case .failure(let error):
-            print(error.localizedDescription)
+        if source == target {
+            AlertManager.shared.alertSameLanguage(controller: self)
+        } else {
+            ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "no Text", target: target) { result in
+                switch result {
+                case .success(let translate):
+                    DispatchQueue.main.async {
+                        self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
+                    }
+                case .failure(let error):
+                    AlertManager.shared.AlertEmptyChoiceLanguage(error: error.localizedDescription, controller: self)
+                    print(error.localizedDescription)
+                }
             }
         }
-        
     }
     func defaultLaunchLanguages() {
         ApiTranslateService.shared.getListLanguages { result in
@@ -134,7 +138,7 @@ class TranslateController: UIViewController {
             alreadyTranslate = true
          
         } else if originalTextField.text == ""{
-            AlertManager.shared.alertTextEmpty(text: originalTextField.text ?? "no text", controller: self)
+            AlertManager.shared.alertGiveElementToTranslate(text: originalTextField.text ?? "no text", controller: self)
         }
     }
 }
@@ -184,7 +188,7 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
             alreadyTranslate = true
             
         } else if originalTextField.text == ""{
-            AlertManager.shared.alertTextEmpty(text: originalTextField.text ?? "no text", controller: self)
+            AlertManager.shared.alertGiveElementToTranslate(text: originalTextField.text ?? "no text", controller: self)
         }
         return true
     }

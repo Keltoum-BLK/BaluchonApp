@@ -159,9 +159,9 @@
 		B91B7999273C0955008539E6 /* Tools & Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B9557196273FAFF70079855F /* AlertManager.swift */,
 				B94F6E96271478370068C92A /* Constants.swift */,
 				B983457E273B284700C2A295 /* ExtensionTextField.swift */,
-				B9557196273FAFF70079855F /* AlertManager.swift */,
 			);
 			path = "Tools & Extension";
 			sourceTree = "<group>";
