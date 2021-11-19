@@ -23,12 +23,10 @@ class AlertManager {
     }
     
     func alertServerAccess(city: String, controller: UIViewController){
-        
         let alert = UIAlertController(title: "Une erreur est survenue", message: city, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         controller.present(alert, animated: true, completion: nil)
-        
     }
     
     func alertGiveElementToTranslate(text: String, controller: UIViewController){

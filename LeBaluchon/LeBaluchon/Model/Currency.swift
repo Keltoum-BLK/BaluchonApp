@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//MARK: STRUCT AND PROPERTIES 
 struct Latest: Decodable {
     let rates: [String : Double]?
     

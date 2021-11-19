@@ -9,7 +9,7 @@ import UIKit
 import SwiftyGif
 
 class LogoAnimation: UIView {
-
+//MARK: properties
      let logoGifImageView: UIImageView = {
         guard let gifImage = try? UIImage(gifName: "LaunchLogo.gif") else {
             return UIImageView()
@@ -27,7 +27,7 @@ class LogoAnimation: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+  //MARK: Method 
     func commonInit(){
         backgroundColor = UIColor(white: 246 / 255, alpha: 1)
         addSubview(logoGifImageView)

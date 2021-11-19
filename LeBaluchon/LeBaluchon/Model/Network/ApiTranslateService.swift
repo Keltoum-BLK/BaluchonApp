@@ -26,7 +26,7 @@ class ApiTranslateService {
         
         self.translationSession = translationSession
     }
-    
+    //MARK: Methods
     func getListLanguages(completion: @escaping (Result<Languages, APIError>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"

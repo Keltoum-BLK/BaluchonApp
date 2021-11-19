@@ -8,10 +8,10 @@
 import UIKit
 
 class TranslateController: UIViewController {
-    
-    var pickerArray: [Language]?
+    //MARK: Properties
+    private var pickerArray: [Language]?
     private var alreadyTranslate = false
-    
+    //IBOUTLET Properties
     @IBOutlet weak var translateHeader: UIView!
     @IBOutlet weak var originalTextField: UITextField! {
         didSet {
@@ -38,7 +38,7 @@ class TranslateController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+   //MARK: Methods
     func setUp() {
         originalTextField.delegate = self
         
@@ -66,7 +66,7 @@ class TranslateController: UIViewController {
         
         defaultLaunchLanguages()
     }
-    
+   //Initalisation of pickerArray's property
     func fletchListOfLanguages() {
         ApiTranslateService.shared.getListLanguages { result in
             switch result {
@@ -79,7 +79,7 @@ class TranslateController: UIViewController {
             }
         }
     }
-    
+    //Get the translation
     func fletchDataTranslation(pickerView: UIPickerView) {
         let sourceRow = pickerView.selectedRow(inComponent: 0)
         let targetRow = pickerView.selectedRow(inComponent: 1)
@@ -103,6 +103,7 @@ class TranslateController: UIViewController {
             }
         }
     }
+    //Added default languages when the launch app.
     func defaultLaunchLanguages() {
         ApiTranslateService.shared.getListLanguages { result in
             switch result {
@@ -123,13 +124,13 @@ class TranslateController: UIViewController {
             originalTextField.text = ""
         }
     }
-    
+    //appearance of hidden picker
     @IBAction func selectLanguages(_ sender: Any) {
         originalTextField.isHidden = true
         textTranslatedField.isHidden = true
         pickLanguage.isHidden = false
     }
-    
+  //action to translate and keyboard animation
     @IBAction func TranslateAction(_ sender: Any) {
         originalTextField.resignFirstResponder()
         if originalTextField.text != "" {
@@ -144,7 +145,8 @@ class TranslateController: UIViewController {
 }
 
 extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-  
+    
+  //MARK: methods to implementation of pickerView
     func setupDelegate() {
         pickLanguage.delegate = self
         pickLanguage.dataSource = self
@@ -179,7 +181,7 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: pickerArray?[row].name ?? "no name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
-    
+    //action keyboard return key and animation
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         originalTextField.resignFirstResponder()
         if originalTextField.text != "" {

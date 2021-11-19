@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//MARK: STRUCT AND PROPERTIES 
 struct Translate: Decodable {
     let data: Datas?
     

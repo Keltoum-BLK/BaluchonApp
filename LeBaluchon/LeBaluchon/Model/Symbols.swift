@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//MARK: STRUCT AND PROPERTIES 
 struct Symbols: Decodable {
     let success: Bool
     let symbols: [String : String]

@@ -11,9 +11,11 @@ import CoreLocation
 class WeatherController: UIViewController {
     
     //MARK: Properties
+    //Locoation properties
     private let manager = CLLocationManager()
     let location = [CLLocation]()
     
+    //IBOUTLET properties
     @IBOutlet weak var weatherHeaderBackground: UIView!
     @IBOutlet weak var myLocationLabel: UIView!
     @IBOutlet weak var locationPlace: UILabel!
@@ -97,6 +99,7 @@ class WeatherController: UIViewController {
                     self.sunriseTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunrise ?? 0)
                     self.sunsetTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunset ?? 0)
                     print("=> sunrise \(weatherInfo.sys?.sunrise ?? 0)", "=> sunset \(weatherInfo.sys?.sunset ?? 0)")
+                    print(self.sunriseTime.text ?? "hello")
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -113,16 +116,17 @@ class WeatherController: UIViewController {
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
     }
 }
-
+//MARK: Extension for implementation of Core Localisation
 extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
-    
+ 
+    //MARK: methods
     func setupLocation() {
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyKilometer
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
     }
-    
+    //Add localization information to the view
     func fletchWeatherLocation() {
         ApiWeatherService.shared.givingLocationWeather(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0) { result in
             switch result {
@@ -144,7 +148,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             fletchWeatherLocation()
         }
     }
-    
+    //Keyboard action and animation
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchField.resignFirstResponder()
         if searchField.text != "" {

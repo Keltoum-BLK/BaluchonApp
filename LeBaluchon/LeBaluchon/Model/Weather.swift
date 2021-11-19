@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//MARK: STRUCT AND PROPERTIES 
 struct PageWeather: Decodable {
     
     let sys: Sys?

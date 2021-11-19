@@ -13,9 +13,10 @@ class CurrencyViewController: UIViewController {
     //MARK: Properties
     private var pickerSymbols = [Currency]()
     private var pickerValues = [CurrencyValue]()
-    private var alreadyConvert = false
     private var rowSelected = 0
     private var codeSelected = ""
+    
+    //IBOUTLET Properties
     @IBOutlet weak var currencyHeader: UIView!
     @IBOutlet weak var startingCurrencyBTN: UIButton!
     @IBOutlet weak var startingCurrencyField: UITextField! {
@@ -32,8 +33,9 @@ class CurrencyViewController: UIViewController {
     }
     @IBOutlet weak var pickerCurrency: UIPickerView!
     @IBOutlet weak var currencyContainer: UIStackView!
-    
     @IBOutlet weak var choiceContainer: UIStackView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHeader()
@@ -43,7 +45,9 @@ class CurrencyViewController: UIViewController {
         fletchListOfCurrency()
         
     }
+    //MARK: Methods
     
+    //SetUP Title Page
     func setUpHeader() {
         currencyHeader.layer.cornerRadius = 20
         currencyHeader.layer.shadowColor = UIColor.black.cgColor
@@ -52,7 +56,7 @@ class CurrencyViewController: UIViewController {
         currencyHeader.layer.shadowRadius = 20
     
     }
-
+    //Setup widgets
     func setup() {
         startingCurrencyField.delegate = self
         
@@ -74,13 +78,13 @@ class CurrencyViewController: UIViewController {
         choiceContainer.layer.cornerRadius = 20
         defaultCurrencies()
     }
-    
+   
+    //Get the symbols list
     func fletchListOfCurrenciesNames() {
         ApiCurrencyService.shared.getListSymbols { result in
             switch result {
             case .success(let listOf):
                 DispatchQueue.main.async {
-//                    guard let list = listOf.symbols else { return }
                     self.pickerSymbols = Constants.shared.createSymbolsList(dictionnary: listOf.symbols)
                 }
             case .failure(let error):
@@ -88,6 +92,7 @@ class CurrencyViewController: UIViewController {
             }
         }
     }
+    //Get Currencies Values in a array.
     func fletchListOfCurrency() {
         ApiCurrencyService.shared.getTheChange { result in
             switch result {
@@ -103,6 +108,7 @@ class CurrencyViewController: UIViewController {
             }
         }
     }
+    //get the currency default in the launch page.
     func defaultCurrencies() {
         ApiCurrencyService.shared.getListSymbols { result in
             switch result {
@@ -117,7 +123,7 @@ class CurrencyViewController: UIViewController {
             }
         }
     }
-    
+    //Get the currency change
     func getCurrencyChange(with picker: UIPickerView) {
         if codeSelected.isEmpty {
             AlertManager.shared.alertGiveAmount(amount: startingCurrencyField.text ?? "no info", controller: self)
@@ -128,24 +134,23 @@ class CurrencyViewController: UIViewController {
             print(codeSelected)
         }
     }
-    
+    //appearance of hidden picker
     @IBAction func selectCurrency(_ sender: Any) {
         startingCurrencyField.isHidden = true
         returnCurrencyField.isHidden = true
         pickerCurrency.isHidden = false
     }
-    
+    //action and animation of keyboard
     @IBAction func getCurrencyAction(_ sender: Any) {
         startingCurrencyField.resignFirstResponder()
         if startingCurrencyField.text != "" {
             startingCurrencyField.resignFirstResponder()
             getCurrencyChange(with: pickerCurrency)
         }
-
     }
-    
 }
 
+//MARK: Implementation of pickerView and Textfield methods.
 extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
 
@@ -165,7 +170,7 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerSymbols[row].name
     }
-
+    //pick the currency wished
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
     
         startingCurrencyBTN.setTitle(pickerSymbols[51].name, for: .normal)
