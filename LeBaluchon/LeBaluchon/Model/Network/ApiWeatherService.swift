@@ -44,7 +44,7 @@ class ApiWeatherService {
         
         guard let url = URL(string: urlWeather) else { return }
         
-        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        dataTask = weatherSession.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard error == nil else { completion(.failure(.server))
                     return
