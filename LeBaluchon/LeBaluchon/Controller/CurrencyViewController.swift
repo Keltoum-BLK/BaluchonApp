@@ -85,7 +85,7 @@ class CurrencyViewController: UIViewController {
             switch result {
             case .success(let listOf):
                 DispatchQueue.main.async {
-                    self.pickerSymbols = Constants.shared.createSymbolsList(dictionnary: listOf.symbols)
+                    self.pickerSymbols = listOf.createSymbolsList(dictionnary: listOf.symbols)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -96,12 +96,11 @@ class CurrencyViewController: UIViewController {
     func fletchListOfCurrency() {
         ApiCurrencyService.shared.getTheChange { result in
             switch result {
-            case .success(let list):
+            case .success(let valueList):
                 DispatchQueue.main.async {
-                    guard let listValues = list.rates else { return }
-                    self.pickerValues = Constants.shared.createCurrencyList(dictionnary: list.rates ?? listValues)
+//                    guard let listValues = list.rates else { return }
+                    self.pickerValues = valueList.createCurrencyList(dictionnary: valueList.rates)
                     dump(self.pickerValues)
-
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -112,9 +111,9 @@ class CurrencyViewController: UIViewController {
     func defaultCurrencies() {
         ApiCurrencyService.shared.getListSymbols { result in
             switch result {
-            case .success(let listOf):
+            case .success(let symbols):
                 DispatchQueue.main.async {
-                    self.pickerSymbols = Constants.shared.createSymbolsList(dictionnary: listOf.symbols)
+                    self.pickerSymbols = symbols.createSymbolsList(dictionnary: symbols.symbols)
                     self.startingCurrencyBTN.setTitle(self.pickerSymbols[51].name, for: .normal)
                     self.returnCurrencyBTN.setTitle("Choisis", for: .normal)
                 }
@@ -126,10 +125,10 @@ class CurrencyViewController: UIViewController {
     //Get the currency change
     func getCurrencyChange(with picker: UIPickerView) {
         if codeSelected.isEmpty {
-            AlertManager.shared.alertGiveAmount(amount: startingCurrencyField.text ?? "no info", controller: self)
+            Tools.shared.alertGiveAmount(amount: startingCurrencyField.text ?? "no info", controller: self)
         } else {
             guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
-            returnCurrencyField.text =  Constants.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue, controller: self)
+            returnCurrencyField.text =  Tools.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue, controller: self)
             print(rowSelected)
             print(codeSelected)
         }

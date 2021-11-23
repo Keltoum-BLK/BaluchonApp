@@ -41,6 +41,23 @@ struct PageWeather: Decodable {
         }
     }
     
+    //MARK: METHODS FOR WEATHER VIEW
+    func upDatePic(image: String) -> String {
+        if image == "", image != self.weather?.first?.icon {
+            return "Nopic"
+        } else {
+            return image
+        }
+    }
+    
+    func timeStamp(time: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let dateString = formatter.string(from: date)
+        return String(dateString)
+    }
   
 }
 

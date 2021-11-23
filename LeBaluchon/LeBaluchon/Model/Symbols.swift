@@ -15,6 +15,16 @@ struct Symbols: Decodable {
         case success
         case symbols
     }
+    
+    func createSymbolsList(dictionnary : [String : String]) -> [Currency] {
+        var list = [Currency]()
+        for (keys, values) in dictionnary {
+           let currency = Currency(code: keys, name: values)
+            list.append(currency)
+        }
+        let listArr = list.sorted(by: { $0.name < $1.name})
+        return listArr
+    }
 }
 struct Currency: Decodable {
     var code: String

@@ -39,7 +39,7 @@ class ApiTranslateService {
         guard let urlLanguages = urlComponents.url?.absoluteString else { return }
         guard let url = URL(string: urlLanguages) else { return }
        
-        dataTask = URLSession.shared.dataTask(with: url)  { (data, response, error) in
+        dataTask = translationSession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
                 print("outch")

@@ -34,7 +34,7 @@ class ApiCurrencyService {
         //using the type of url syntaxe for use the scheme http after update infoplist
         guard let url = URL(string: "http://data.fixer.io/api/symbols?access_key=\(SecretsKeys.apiKeyCurrency)") else { return }
         
-        dataTask = URLSession.shared.dataTask(with: url)  { (data, response, error) in
+        dataTask = currencySession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
                 print("outch")

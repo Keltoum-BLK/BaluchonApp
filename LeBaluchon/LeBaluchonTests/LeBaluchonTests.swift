@@ -10,11 +10,11 @@ import XCTest
 
 class LeBaluchonTests: XCTestCase {
     
-    private var constants: Constants!
+    private var tools: Tools!
 
     override func setUp() {
         super.setUp()
-        constants = Constants()
+        tools = Tools()
     }
     
     override class func tearDown() {
@@ -22,18 +22,29 @@ class LeBaluchonTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-        constants = nil
+        tools = nil
     }
     
     //MARK: Tests on Constants Class
-    func testGivenStringDateValue_WhenHavingAInt_ThenHavingADateAndHours() {
-        let timeStamp = 1637331057
+    func testGivenElements_WhenMultuplyElements_ThenReturnStringValue() {
+    
+        let amountText = "25"
         
-        constants.resultStr = constants.timeStamp(time: timeStamp)
+        let result = tools.getTheChange(amount: amountText, with: 1.50, controller: CurrencyViewController())
+        print(result)
         
-        XCTAssert(constants.resultStr == "19-11-2021 15:10")
+        
+        XCTAssert(result == "37.5")
     }
     
     
     //MARK: Tests on AlertManager Class
+    //Alert in WeatherController
+    func testGivenAName_WhenTheNameIsIncorrect_ThenResultAnAlert() {
+        let city = ""
+        
+        Tools.shared.alertSearchCity(city: city, controller: WeatherController())
+        
+        XCTAssertEqual(city == "", Tools.shared.alertSearchCity(city: "", controller: WeatherController()) == Tools.shared.alertSearchCity(city: "", controller: WeatherController()))
+    }
 }

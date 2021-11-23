@@ -78,7 +78,7 @@ class WeatherController: UIViewController {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
                     self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?.first?.description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
-                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
+                    self.weatherLocationIcon.image = UIImage(named: weatherLocation.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -95,16 +95,16 @@ class WeatherController: UIViewController {
                     self.cityWeather.text = weatherInfo.name ?? "Gotham"
                     self.countryWeather.text = weatherInfo.sys?.country  ?? "DCUniverse"
                     self.weatherTemperature.text = "\(Int(weatherInfo.main?.temp ?? 22)) °C"
-                    self.weatherIcon.image = UIImage(named: Constants.shared.upDatePic(image:  weatherInfo.weather?.first?.icon ?? "Nopic"))
-                    self.sunriseTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunrise ?? 0)
-                    self.sunsetTime.text = Constants.shared.timeStamp(time: weatherInfo.sys?.sunset ?? 0)
+                    self.weatherIcon.image = UIImage(named: weatherInfo.upDatePic(image: weatherInfo.weather?.first?.icon ?? "Nopic"))
+                    self.sunriseTime.text = weatherInfo.timeStamp(time: weatherInfo.sys?.sunrise ?? 0)
+                    self.sunsetTime.text = weatherInfo.timeStamp(time: weatherInfo.sys?.sunset ?? 0)
                     print("=> sunrise \(weatherInfo.sys?.sunrise ?? 0)", "=> sunset \(weatherInfo.sys?.sunset ?? 0)")
                     print(self.sunriseTime.text ?? "hello")
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
                 let description = "Veuillez saisir un nom de ville correct."
-                    AlertManager.shared.alertServerAccess(city: error.localizedDescription + description, controller: self)
+                    Tools.shared.alertServerAccess(city: error.localizedDescription + description, controller: self)
                 }
                 print(error.localizedDescription)
         }
@@ -133,7 +133,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
                     self.locationPlace.text = "\(Int(weatherLocation.main?.temp ?? 0))°C, \(weatherLocation.weather?.first?.description ?? "BatSignal"), \(weatherLocation.name ?? "Gotham"), \(weatherLocation.sys?.country  ?? "DCUniverse")"
-                    self.weatherLocationIcon.image = UIImage(named: Constants.shared.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
+                    self.weatherLocationIcon.image = UIImage(named: weatherLocation.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -155,7 +155,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
         } else if searchField.text == ""{
-            AlertManager.shared.alertAddCity(city: searchField.text ?? "boston", controller: self)
+            Tools.shared.alertSearchCity(city: searchField.text ?? "boston", controller: self)
         }
         return true
     }
