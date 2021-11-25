@@ -19,7 +19,7 @@ class MockCurrency: XCTestCase {
         currencyService = ApiCurrencyService(currencySession: session)
     }
     //MARK: Currency Tests API getSymbolsList()
-    func testWeatherPostFailWithCurrencyIncorrectData() {
+    func testGetTheCurrencyShouldPostFailWithCurrencyIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -43,7 +43,7 @@ class MockCurrency: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testWeatherPostFailWithError() {
+    func testGetTheCurrencyShouldPostFailWithError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
@@ -68,7 +68,7 @@ class MockCurrency: XCTestCase {
     }
     
     
-    func testWeatherPostSuccessWithCurrencyCorrectData() {
+    func testGetTheCurrencyShouldPostSuccessWithCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -100,7 +100,7 @@ class MockCurrency: XCTestCase {
     }
     
     //MARK: Currency Tests API getChange()
-    func testWeatherPostFailWithIncorrectDataValues() {
+    func testGetTheCurrencyValueShouldPostFailWithIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -124,7 +124,7 @@ class MockCurrency: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testWeatherPostFailWithErrorValues() {
+    func testGetTheCurrencyValueShouldPostFailWithError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
@@ -149,7 +149,7 @@ class MockCurrency: XCTestCase {
     }
     
     
-    func testWeatherPostSuccessWithCurrencyValueCorrectData() {
+    func testGetTheCurrencyValueShouldPostSuccessWithCorrectData() {
 
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!

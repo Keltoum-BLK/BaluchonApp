@@ -19,7 +19,7 @@ class MockTranslate: XCTestCase {
         translationService = ApiTranslateService(translationSession: session)
     }
     //MARK: Translation Test API getLanguagesList()
-    func testWeatherPostFailWithIncorrectData() {
+    func testGetLanguageChoiceShouldPostFailWithIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -43,7 +43,7 @@ class MockTranslate: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testWeatherPostFailWithError() {
+    func testGetLanguageChoiceShouldrPostFailWithError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
@@ -68,7 +68,7 @@ class MockTranslate: XCTestCase {
     }
     
     
-    func testWeatherPostSuccessWithCorrectData() {
+    func tesGetLanguageChoiceShouldPostSuccessWithCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -99,7 +99,7 @@ class MockTranslate: XCTestCase {
     
 //MARK: Translation Test API translate()
     
-    func testWeatherPostFailWithTranslationIncorrectData() {
+    func testGetTranslateShouldPostFailWithTranslationIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -123,7 +123,7 @@ class MockTranslate: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testWeatherPostFailWithTranslationError() {
+    func testGetTranslateShouldPostFailWithTranslationError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
@@ -148,7 +148,7 @@ class MockTranslate: XCTestCase {
     }
     
     
-    func testWeatherPostSuccessWithTranslationCorrectData() {
+    func testGetTranslateShouldPostSuccessWithTranslationCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!

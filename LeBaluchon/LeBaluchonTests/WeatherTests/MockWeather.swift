@@ -20,7 +20,7 @@ class MockWeather: XCTestCase {
         weatherService = ApiWeatherService(weatherSession: session)
     }
     
-    func testWeatherPostFailWithIncorrectData() {
+    func testGetWeatherShouldPostFailWithIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -44,7 +44,7 @@ class MockWeather: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testWeatherPostFailWithError() {
+    func testGetWeatherShouldPostFailWithError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
@@ -68,7 +68,7 @@ class MockWeather: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testWeatherPostSuccessWithNoErrorAndCorrectWeatherData() {
+    func testGetWeatherShouldPostSuccessWithNoErrorAndCorrectWeatherData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -107,7 +107,7 @@ class MockWeather: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testWeatherPostFailWithLocationIncorrectData() {
+    func testGetWeatherShouldPostFailWithLocationIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -132,7 +132,7 @@ class MockWeather: XCTestCase {
     }
     
     
-    func testWeatherPostFailWithLocationError() {
+    func testGetWeatherLocationShouldPostFailWithError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
@@ -156,7 +156,7 @@ class MockWeather: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testWeatherPostSuccessWithNoErrorAndLocationCorrectData() {
+    func testGetWeatherLocationShouldPostSuccessWithNoErrorAndCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
