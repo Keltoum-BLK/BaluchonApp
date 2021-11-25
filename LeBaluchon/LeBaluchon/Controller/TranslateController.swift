@@ -64,7 +64,7 @@ class TranslateController: UIViewController {
         translateContainer.layer.shadowRadius = 20
         translateBTN.layer.cornerRadius = 20
         
-        defaultLaunchLanguages()
+        setupLanguagesInViewDidLoad()
     }
    //Initalisation of pickerArray's property
     func fletchListOfLanguages() {
@@ -104,13 +104,13 @@ class TranslateController: UIViewController {
         }
     }
     //Added default languages when the launch app.
-    func defaultLaunchLanguages() {
+    func setupLanguagesInViewDidLoad() {
         ApiTranslateService.shared.getListLanguages { result in
             switch result {
-                case .success(let listOf):
+                case .success(let setupLanguages):
                 DispatchQueue.main.async {
-                    self.firstChoice.setTitle(listOf.data?.languages?[29].name, for: .normal)
-                    self.secondChoice.setTitle(listOf.data?.languages?[4].name, for: .normal)
+                    self.firstChoice.setTitle(setupLanguages.data?.languages?[29].name, for: .normal)
+                    self.secondChoice.setTitle(setupLanguages.data?.languages?[4].name, for: .normal)
                 }
                 
             case .failure(let error):

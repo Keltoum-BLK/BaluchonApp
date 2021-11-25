@@ -57,7 +57,7 @@ class ApiCurrencyService {
     func getTheChange(completion :  @escaping (Result<Latest, APIError>) -> Void) {
         guard let url = URL(string: "http://data.fixer.io/api/latest?access_key=\(SecretsKeys.apiKeyCurrency)") else { return }
    
-        dataTask = URLSession.shared.dataTask(with: url)  { (data, response, error) in
+        dataTask = currencySession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
                 print("outch")

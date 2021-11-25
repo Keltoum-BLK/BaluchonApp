@@ -23,7 +23,6 @@ class ApiTranslateService {
     var translationSession = URLSession(configuration: .default)
     
     init(translationSession: URLSession) {
-        
         self.translationSession = translationSession
     }
     //MARK: Methods
@@ -75,7 +74,7 @@ class ApiTranslateService {
         guard let urlTranslate = urlComponents.url?.absoluteString else { return }
         guard let url = URL(string: urlTranslate) else { return }
        
-        dataTask = URLSession.shared.dataTask(with: url)  { (data, response, error) in
+        dataTask = translationSession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
                 print("nope")

@@ -1,37 +1,36 @@
 //
-//  WeatherServiceTests.swift
+//  MockTranslate.swift
 //  LeBaluchonTests
 //
-//  Created by Kel_Jellysh on 20/11/2021.
+//  Created by Kel_Jellysh on 25/11/2021.
 //
 
-
-@testable import LeBaluchon
 import XCTest
+@testable import LeBaluchon
 
-class MockWeather: XCTestCase {
+class MockTranslate: XCTestCase {
     
-    var weatherService: ApiWeatherService!
+    var translationService: ApiTranslateService!
     
     override func setUp() {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLTestProtocol.self]
         let session = URLSession(configuration: configuration)
-        weatherService = ApiWeatherService(weatherSession: session)
+        translationService = ApiTranslateService(translationSession: session)
     }
-    
+
     func testWeatherPostFailWithIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
             let error: Error? = nil
-            let data = FakeResponseData.weatherIncorrectData
+            let data = FakeResponseData.languagesIncorrectData
             return (response, data, error)
         }
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingTheWeather(city: "Paris") { (result) in
+        translationService.getListLanguages { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -43,82 +42,19 @@ class MockWeather: XCTestCase {
         }
         wait(for: [expectation], timeout: 1)
     }
-    
+
     func testWeatherPostFailWithError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
             let error: Error? = nil
-            let data = FakeResponseData.weatherIncorrectData
+            let data = FakeResponseData.languagesIncorrectData
             return (response, data, error)
         }
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingTheWeather(city: "") { (result) in
-            print(result)
-            guard case .failure(let error) = result else { XCTFail("failure")
-                return
-            }
-            
-            XCTAssertNotNil(error)
-            
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
-    }
-    
-    func testWeatherPostSuccessWithNoErrorAndCorrectWeatherData() {
-        
-        URLTestProtocol.loadingHandler = { request in
-            let response: HTTPURLResponse = FakeResponseData.responseOK!
-            let error: Error? = nil
-            let data = FakeResponseData.weatherCorrectData
-            return (response, data, error)
-        }
-   
-        let expectation = XCTestExpectation(description: "wait for change")
-        
-        weatherService.givingTheWeather(city: "Paris") { (result) in
-            print(result)
-            guard case .success(let weatherInfo) = result else {
-                return
-            }
-            let city = "Paris"
-            let country = "FR"
-            let description = "couvert"
-            let temperature = 10.96
-            let sunrise = 1637305560
-            let sunset = 1637337981
-            let icon = "04d"
-            XCTAssertNotNil(weatherInfo)
-            
-            XCTAssertEqual(city, weatherInfo.name)
-            XCTAssertEqual(country, weatherInfo.sys?.country)
-            XCTAssertEqual(description, weatherInfo.weather?.first?.description)
-            XCTAssertEqual(temperature, weatherInfo.main?.temp)
-            XCTAssertEqual(sunrise, weatherInfo.sys?.sunrise)
-            XCTAssertEqual(sunset, weatherInfo.sys?.sunset)
-            XCTAssertEqual(icon, weatherInfo.weather?.first?.icon)
-            
-            
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
-    }
-    
-    func testWeatherPostFailWithLocationIncorrectData() {
-        
-        URLTestProtocol.loadingHandler = { request in
-            let response: HTTPURLResponse = FakeResponseData.responseOK!
-            let error: Error? = nil
-            let data = FakeResponseData.weatherIncorrectData
-            return (response, data, error)
-        }
-   
-        let expectation = XCTestExpectation(description: "wait for change")
-        
-        weatherService.givingLocationWeather(latitude: 48.8534, longitude: 2.3488) { (result) in
+        translationService.getListLanguages { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -132,18 +68,73 @@ class MockWeather: XCTestCase {
     }
     
     
-    func testWeatherPostFailWithLocationError() {
+    func testWeatherPostFailWithCorrectData() {
+        
+        URLTestProtocol.loadingHandler = { request in
+            let response: HTTPURLResponse = FakeResponseData.responseOK!
+            let error: Error? = nil
+            let data = FakeResponseData.languageCorrectData
+            return (response, data, error)
+        }
+   
+        let expectation = XCTestExpectation(description: "wait for change")
+        
+        translationService.getListLanguages { (result) in
+            guard case .success(let pickLanguage) = result else {
+                return
+            }
+             
+            guard let languagesArray = pickLanguage.data?.languages else { return }
+            
+            let language = "af"
+            
+            XCTAssertNotNil(languagesArray)
+            
+            XCTAssertEqual(language, languagesArray.first?.language)
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+    }
+    
+//MARK: Translation Test API
+    
+    func testWeatherPostFailWithTranslationIncorrectData() {
+        
+        URLTestProtocol.loadingHandler = { request in
+            let response: HTTPURLResponse = FakeResponseData.responseOK!
+            let error: Error? = nil
+            let data = FakeResponseData.translationIncorrectData
+            return (response, data, error)
+        }
+   
+        let expectation = XCTestExpectation(description: "wait for change")
+        
+        translationService.translate(source: "fr", q: "en", target: "Bonjour") { (result) in
+            print(result)
+            guard case .failure(let error) = result else { XCTFail("failure")
+                return
+            }
+            
+            XCTAssertNotNil(error)
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func testWeatherPostFailWithTranslationError() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseKO!
             let error: Error? = nil
-            let data = FakeResponseData.weatherIncorrectData
+            let data = FakeResponseData.translationIncorrectData
             return (response, data, error)
         }
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingLocationWeather(latitude: 0, longitude: 0) { (result) in
+        translationService.translate(source: "fr", q: "en", target: "") { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -156,44 +147,34 @@ class MockWeather: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testWeatherPostSuccessWithNoErrorAndLocationCorrectData() {
+    
+    func testWeatherPostFailWithTranslationCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
             let error: Error? = nil
-            let data = FakeResponseData.weatherCorrectData
+            let data = FakeResponseData.translationCorrectData
             return (response, data, error)
         }
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingLocationWeather(latitude: 48.8534, longitude: 2.3488) { (result) in
-            print(result)
-            guard case .success(let weatherInfo) = result else {
+        translationService.translate(source: "fr", q: "en", target: "Bonjour") { (result) in
+            guard case .success(let translatedText) = result else {
                 return
             }
-            let city = "Paris"
-            let country = "FR"
-            let description = "couvert"
-            let temperature = 10.96
-            let sunrise = 1637305560
-            let sunset = 1637337981
-            let icon = "04d"
+             
+            let text = "Hello"
             
-            XCTAssertNotNil(weatherInfo)
+            XCTAssertNotNil(translatedText)
             
-            XCTAssertEqual(city, weatherInfo.name)
-            XCTAssertEqual(country, weatherInfo.sys?.country)
-            XCTAssertEqual(description, weatherInfo.weather?.first?.description)
-            XCTAssertEqual(temperature, weatherInfo.main?.temp)
-            XCTAssertEqual(sunrise, weatherInfo.sys?.sunrise)
-            XCTAssertEqual(sunset, weatherInfo.sys?.sunset)
-            XCTAssertEqual(icon, weatherInfo.weather?.first?.icon)
-            
+            XCTAssertEqual(text, translatedText.data?.translations?.first?.translatedText)
             
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
     }
     
+
+
 }
