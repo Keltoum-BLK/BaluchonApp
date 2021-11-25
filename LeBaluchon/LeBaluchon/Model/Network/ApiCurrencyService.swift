@@ -30,7 +30,7 @@ class ApiCurrencyService {
     }
    
     //MARK: Methods
-    func getListSymbols(completion: @escaping (Result<Symbols, APIError>) -> Void) {
+    func getSymbolsList(completion: @escaping (Result<Symbols, APIError>) -> Void) {
         //using the type of url syntaxe for use the scheme http after update infoplist
         guard let url = URL(string: "http://data.fixer.io/api/symbols?access_key=\(SecretsKeys.apiKeyCurrency)") else { return }
         
@@ -54,7 +54,7 @@ class ApiCurrencyService {
     }
         dataTask?.resume()
 }
-    func getTheChange(completion :  @escaping (Result<Latest, APIError>) -> Void) {
+    func getTheCurrencyValue(completion :  @escaping (Result<Latest, APIError>) -> Void) {
         guard let url = URL(string: "http://data.fixer.io/api/latest?access_key=\(SecretsKeys.apiKeyCurrency)") else { return }
    
         dataTask = currencySession.dataTask(with: url)  { (data, response, error) in

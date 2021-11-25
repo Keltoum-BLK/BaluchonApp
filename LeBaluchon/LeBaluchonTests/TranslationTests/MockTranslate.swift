@@ -18,7 +18,7 @@ class MockTranslate: XCTestCase {
         let session = URLSession(configuration: configuration)
         translationService = ApiTranslateService(translationSession: session)
     }
-
+    //MARK: Translation Test API getLanguagesList()
     func testWeatherPostFailWithIncorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
@@ -30,7 +30,7 @@ class MockTranslate: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        translationService.getListLanguages { (result) in
+        translationService.getLanguagesList { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -54,7 +54,7 @@ class MockTranslate: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        translationService.getListLanguages { (result) in
+        translationService.getLanguagesList { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -68,7 +68,7 @@ class MockTranslate: XCTestCase {
     }
     
     
-    func testWeatherPostFailWithCorrectData() {
+    func testWeatherPostSuccessWithCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!
@@ -79,7 +79,7 @@ class MockTranslate: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        translationService.getListLanguages { (result) in
+        translationService.getLanguagesList { (result) in
             guard case .success(let pickLanguage) = result else {
                 return
             }
@@ -97,7 +97,7 @@ class MockTranslate: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-//MARK: Translation Test API
+//MARK: Translation Test API translate()
     
     func testWeatherPostFailWithTranslationIncorrectData() {
         
@@ -148,7 +148,7 @@ class MockTranslate: XCTestCase {
     }
     
     
-    func testWeatherPostFailWithTranslationCorrectData() {
+    func testWeatherPostSuccessWithTranslationCorrectData() {
         
         URLTestProtocol.loadingHandler = { request in
             let response: HTTPURLResponse = FakeResponseData.responseOK!

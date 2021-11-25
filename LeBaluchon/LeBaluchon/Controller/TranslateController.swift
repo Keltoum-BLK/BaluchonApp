@@ -68,7 +68,7 @@ class TranslateController: UIViewController {
     }
    //Initalisation of pickerArray's property
     func fletchListOfLanguages() {
-        ApiTranslateService.shared.getListLanguages { result in
+        ApiTranslateService.shared.getLanguagesList { result in
             switch result {
                 case .success(let listOf):
                 DispatchQueue.main.async {
@@ -105,7 +105,7 @@ class TranslateController: UIViewController {
     }
     //Added default languages when the launch app.
     func setupLanguagesInViewDidLoad() {
-        ApiTranslateService.shared.getListLanguages { result in
+        ApiTranslateService.shared.getLanguagesList { result in
             switch result {
                 case .success(let setupLanguages):
                 DispatchQueue.main.async {

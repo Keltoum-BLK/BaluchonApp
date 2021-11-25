@@ -55,5 +55,5 @@ class FakeResponseData {
         let data = try! Data(contentsOf: url!)
         return data
     }
-    static let currencyValueincorrectData = "Error" .data(using: .utf8)!
+    static let currencyValueIncorrectData = "Error" .data(using: .utf8)!
 }

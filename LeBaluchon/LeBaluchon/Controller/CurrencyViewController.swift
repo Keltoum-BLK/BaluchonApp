@@ -81,7 +81,7 @@ class CurrencyViewController: UIViewController {
    
     //Get the symbols list
     func fletchListOfCurrenciesNames() {
-        ApiCurrencyService.shared.getListSymbols { result in
+        ApiCurrencyService.shared.getSymbolsList { result in
             switch result {
             case .success(let listOf):
                 DispatchQueue.main.async {
@@ -94,7 +94,7 @@ class CurrencyViewController: UIViewController {
     }
     //Get Currencies Values in a array.
     func fletchListOfCurrency() {
-        ApiCurrencyService.shared.getTheChange { result in
+        ApiCurrencyService.shared.getTheCurrencyValue { result in
             switch result {
             case .success(let valueList):
                 DispatchQueue.main.async {
@@ -109,7 +109,7 @@ class CurrencyViewController: UIViewController {
     }
     //get the currency default in the launch page.
     func defaultCurrencies() {
-        ApiCurrencyService.shared.getListSymbols { result in
+        ApiCurrencyService.shared.getSymbolsList { result in
             switch result {
             case .success(let symbols):
                 DispatchQueue.main.async {
