@@ -88,7 +88,7 @@ class CurrencyViewController: UIViewController {
                     self.pickerSymbols = listOf.createSymbolsList(dictionnary: listOf.symbols)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.description)
             }
         }
     }
@@ -103,7 +103,7 @@ class CurrencyViewController: UIViewController {
                     dump(self.pickerValues)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.description)
             }
         }
     }
@@ -118,7 +118,7 @@ class CurrencyViewController: UIViewController {
                     self.returnCurrencyBTN.setTitle("Choisis", for: .normal)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.description)
             }
         }
     }

@@ -103,10 +103,10 @@ class WeatherController: UIViewController {
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                let description = "Saisis un nom de ville correct."
-                    self.alertServerAccess(city: error.localizedDescription + description)
+                let description = "\nSaisis un nom de ville correct."
+                    self.alertServerAccess(city: error.description + description)
                 }
-                print(error.localizedDescription)
+                print(error.description)
         }
     }
 }
@@ -136,7 +136,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
                     self.weatherLocationIcon.image = UIImage(named: weatherLocation.upDatePic(image: weatherLocation.weather?.first?.icon ?? "Nopic"))
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.description)
             }
         }
     }

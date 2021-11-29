@@ -11,13 +11,7 @@ class ApiTranslateService {
     //MARK: Singleton
     static let shared = ApiTranslateService()
     private init() {}
-    
-    //MARK: Error Manager
-    enum APIError: Error {
-        case decoding
-        case server
-        case network
-    }
+
     //MARK: Properties
     private var dataTask: URLSessionDataTask?
     var translationSession = URLSession(configuration: .default)

@@ -13,13 +13,7 @@ class ApiCurrencyService {
     //MARK: Singleton
     static let shared = ApiCurrencyService()
     private init() {}
-    
-    //MARK: Error Manager
-    enum APIError: Error {
-        case decoding
-        case server
-        case network
-    }
+
     //MARK: Properties
     private var dataTask: URLSessionDataTask?
     var currencySession = URLSession(configuration: .default)

@@ -75,7 +75,7 @@ class TranslateController: UIViewController {
                     self.pickerArray = listOf.data?.languages
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.description)
             }
         }
     }
@@ -97,8 +97,8 @@ class TranslateController: UIViewController {
                         self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
                     }
                 case .failure(let error):
-                    self.AlertSelectLanguages(error: error.localizedDescription + "Sélectionnes les langues pour réaliser la traduction.")
-                    print(error.localizedDescription)
+                    self.AlertSelectLanguages(error: error.description + "\nSélectionnes les langues pour réaliser la traduction.")
+                    print(error.description)
                 }
             }
         }
@@ -114,7 +114,7 @@ class TranslateController: UIViewController {
                 }
                 
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.description)
             }
         }
     }
