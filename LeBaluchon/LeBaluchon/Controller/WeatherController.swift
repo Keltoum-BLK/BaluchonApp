@@ -105,8 +105,12 @@ class WeatherController: UIViewController {
 }
     
     @IBAction func searchAction(_ sender: Any) {
+        if searchField.text != nil {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
+        } else {
+            self.alertSearchCity(city: searchField.text ?? "boston")
+        }
     }
 }
 //MARK: Extension for implementation of Core Localisation
@@ -143,11 +147,10 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     }
     //Keyboard action and animation
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchField.resignFirstResponder()
-        if searchField.text != "" {
+        if searchField.text != nil {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
-        } else if searchField.text == ""{
+        } else {
             self.alertSearchCity(city: searchField.text ?? "boston")
         }
         return true

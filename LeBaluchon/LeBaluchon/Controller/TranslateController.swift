@@ -10,7 +10,6 @@ import UIKit
 class TranslateController: UIViewController {
     //MARK: Properties
     private var pickerArray: [Language]?
-    private var alreadyTranslate = false
     //IBOUTLET Properties
     @IBOutlet weak var translateHeader: UIView!
     @IBOutlet weak var originalTextField: UITextField! {
@@ -114,11 +113,6 @@ class TranslateController: UIViewController {
         }
     }
     
-    func resetTextField() {
-        if alreadyTranslate {
-            originalTextField.text = ""
-        }
-    }
     //appearance of hidden picker
     @IBAction func selectLanguages(_ sender: Any) {
         originalTextField.isHidden = true
@@ -131,8 +125,6 @@ class TranslateController: UIViewController {
         if originalTextField.text != "" {
             originalTextField.resignFirstResponder()
            fletchDataTranslation(pickerView: pickLanguage)
-            alreadyTranslate = true
-         
         } else if originalTextField.text == ""{
             self.alertGetElementToTranslate(text: originalTextField.text ?? "no text")
         }
@@ -182,7 +174,7 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
         if originalTextField.text != "" {
             originalTextField.resignFirstResponder()
            fletchDataTranslation(pickerView: pickLanguage)
-            alreadyTranslate = true
+           
             
         } else if originalTextField.text == ""{
             self.alertGetElementToTranslate(text: originalTextField.text ?? "no text")

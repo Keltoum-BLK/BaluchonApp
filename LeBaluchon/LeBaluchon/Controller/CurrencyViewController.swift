@@ -76,8 +76,7 @@ class CurrencyViewController: UIViewController {
         ApiCurrencyService.shared.getSymbolsList { result in
             switch result {
             case .success(let listOf):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async { 
                     self.pickerSymbols = listOf.createSymbolsList(dictionnary: listOf.symbols)
                 }
             case .failure(let error):
