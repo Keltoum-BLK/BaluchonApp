@@ -13,7 +13,6 @@ class CurrencyViewController: UIViewController {
     //MARK: Properties
     private var pickerSymbols = [Currency]()
     private var pickerValues = [CurrencyValue]()
-    private var rowSelected = 0
     private var codeSelected = ""
     
     //IBOUTLET Properties
@@ -49,12 +48,7 @@ class CurrencyViewController: UIViewController {
     
     //SetUP Title Page
     func setUpHeader() {
-        currencyHeader.layer.cornerRadius = 20
-        currencyHeader.layer.shadowColor = UIColor.black.cgColor
-        currencyHeader.layer.shadowOpacity = 0.5
-        currencyHeader.layer.shadowOffset = CGSize(width: 0, height: 20)
-        currencyHeader.layer.shadowRadius = 20
-    
+        currencyHeader.addShadow()
     }
     //Setup widgets
     func setup() {
@@ -71,10 +65,8 @@ class CurrencyViewController: UIViewController {
         
         converthBTN.layer.cornerRadius = 20
         
-        currencyContainer.layer.shadowColor = UIColor.black.cgColor
-        currencyContainer.layer.shadowOpacity = 0.5
-        currencyContainer.layer.shadowOffset = CGSize(width: 0, height: 20)
-        currencyContainer.layer.shadowRadius = 20
+        currencyContainer.addShadow()
+        
         choiceContainer.layer.cornerRadius = 20
         defaultCurrencies()
     }
@@ -84,7 +76,8 @@ class CurrencyViewController: UIViewController {
         ApiCurrencyService.shared.getSymbolsList { result in
             switch result {
             case .success(let listOf):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     self.pickerSymbols = listOf.createSymbolsList(dictionnary: listOf.symbols)
                 }
             case .failure(let error):
@@ -97,8 +90,8 @@ class CurrencyViewController: UIViewController {
         ApiCurrencyService.shared.getTheCurrencyValue { result in
             switch result {
             case .success(let valueList):
-                DispatchQueue.main.async {
-//                    guard let listValues = list.rates else { return }
+                DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
                     self.pickerValues = valueList.createCurrencyList(dictionnary: valueList.rates)
                     dump(self.pickerValues)
                 }
@@ -112,7 +105,8 @@ class CurrencyViewController: UIViewController {
         ApiCurrencyService.shared.getSymbolsList { result in
             switch result {
             case .success(let symbols):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     self.pickerSymbols = symbols.createSymbolsList(dictionnary: symbols.symbols)
                     self.startingCurrencyBTN.setTitle(self.pickerSymbols[51].name, for: .normal)
                     self.returnCurrencyBTN.setTitle("Choisis", for: .normal)
@@ -130,7 +124,6 @@ class CurrencyViewController: UIViewController {
             guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
             
             returnCurrencyField.text =  Tool.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue)
-            print(rowSelected)
             print(codeSelected)
         }
     }
@@ -179,7 +172,6 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         returnCurrencyBTN.setTitle(pickerSymbols[row].name, for: .normal)
         
         if pickerView == pickerCurrency {
-            self.rowSelected = row
             self.codeSelected = pickerSymbols[row].code
         }
 

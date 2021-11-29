@@ -50,18 +50,10 @@ class TranslateController: UIViewController {
         secondChoice.titleLabel?.adjustsFontSizeToFitWidth = true
         secondChoice.titleLabel?.lineBreakMode = NSLineBreakMode.byClipping
         
-        translateHeader.layer.cornerRadius = 20
-        translateHeader.layer.cornerRadius = 20
-        translateHeader.layer.shadowColor = UIColor.black.cgColor
-        translateHeader.layer.shadowOpacity = 0.5
-        translateHeader.layer.shadowOffset = CGSize(width: 0, height: 20)
-        translateHeader.layer.shadowRadius = 20
+        translateHeader.addShadow()
         
-        translateContainer.layer.cornerRadius = 20
-        translateContainer.layer.shadowColor = UIColor.black.cgColor
-        translateContainer.layer.shadowOpacity = 0.5
-        translateContainer.layer.shadowOffset = CGSize(width: 0, height: 20)
-        translateContainer.layer.shadowRadius = 20
+        translateContainer.addShadow()
+        
         translateBTN.layer.cornerRadius = 20
         
         setupLanguagesInViewDidLoad()
@@ -71,7 +63,8 @@ class TranslateController: UIViewController {
         ApiTranslateService.shared.getLanguagesList { result in
             switch result {
                 case .success(let listOf):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     self.pickerArray = listOf.data?.languages
                 }
             case .failure(let error):
@@ -93,7 +86,8 @@ class TranslateController: UIViewController {
             ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "no Text", target: target) { result in
                 switch result {
                 case .success(let translate):
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async {[weak self] in
+                        guard let self = self else { return }
                         self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
                     }
                 case .failure(let error):
@@ -106,9 +100,10 @@ class TranslateController: UIViewController {
     //Added default languages when the launch app.
     func setupLanguagesInViewDidLoad() {
         ApiTranslateService.shared.getLanguagesList { result in
-            switch result {
+            switch result { 
                 case .success(let setupLanguages):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     self.firstChoice.setTitle(setupLanguages.data?.languages?[29].name, for: .normal)
                     self.secondChoice.setTitle(setupLanguages.data?.languages?[4].name, for: .normal)
                 }

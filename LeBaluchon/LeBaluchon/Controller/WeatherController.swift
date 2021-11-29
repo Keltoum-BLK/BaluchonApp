@@ -13,7 +13,7 @@ class WeatherController: UIViewController {
     //MARK: Properties
     //Locoation properties
     private let manager = CLLocationManager()
-    let location = [CLLocation]()
+    private let location = [CLLocation]()
     
     //IBOUTLET properties
     @IBOutlet weak var weatherHeaderBackground: UIView!
@@ -53,17 +53,9 @@ class WeatherController: UIViewController {
         searchField.delegate = self
         searchField.layer.cornerRadius = 20
         
-        weatherHeaderBackground.layer.cornerRadius = 20
-        weatherHeaderBackground.layer.shadowColor = UIColor.black.cgColor
-        weatherHeaderBackground.layer.shadowOpacity = 0.5
-        weatherHeaderBackground.layer.shadowOffset = CGSize(width: 0, height: 20)
-        weatherHeaderBackground.layer.shadowRadius = 20
+        weatherHeaderBackground.addShadow()
         
-        myLocationLabel.layer.cornerRadius = 10
-        myLocationLabel.layer.shadowColor = UIColor.black.cgColor
-        myLocationLabel.layer.shadowOpacity = 0.5
-        myLocationLabel.layer.shadowOffset = CGSize(width: 0, height: 10)
-        myLocationLabel.layer.shadowRadius = 10
+        myLocationLabel.addShadow()
         
         searchBTN.layer.cornerRadius = 10
         
@@ -91,7 +83,8 @@ class WeatherController: UIViewController {
         ApiWeatherService.shared.givingTheWeather(city: city) { result in
             switch result {
             case .success(let weatherInfo):
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     self.cityWeather.text = weatherInfo.name ?? "Gotham"
                     self.countryWeather.text = weatherInfo.sys?.country  ?? "DCUniverse"
                     self.weatherTemperature.text = "\(Int(weatherInfo.main?.temp ?? 22)) °C"
