@@ -10,11 +10,11 @@ import XCTest
 
 class LeBaluchonTests: XCTestCase {
     
-    private var tools: Tools!
+    private var tools: Tool!
 
     override func setUp() {
         super.setUp()
-        tools = Tools()
+        tools = Tool()
     }
     
     override class func tearDown() {
@@ -30,7 +30,7 @@ class LeBaluchonTests: XCTestCase {
     
         let amountText = "25"
         
-        let result = tools.getTheChange(amount: amountText, with: 1.50, controller: CurrencyViewController())
+        let result = tools.getTheChange(amount: amountText, with: 1.50)
         print(result)
         
         
@@ -42,9 +42,10 @@ class LeBaluchonTests: XCTestCase {
     //Alert in WeatherController
     func testGivenAName_WhenTheNameIsIncorrect_ThenResultAnAlert() {
         let city = ""
+        let weatherVC = WeatherController()
         
-        Tools.shared.alertSearchCity(city: city, controller: WeatherController())
+        weatherVC.alertSearchCity(city: city)
         
-        XCTAssertEqual(city == "", Tools.shared.alertSearchCity(city: "", controller: WeatherController()) == Tools.shared.alertSearchCity(city: "", controller: WeatherController()))
+        XCTAssertEqual(city == "", weatherVC.alertSearchCity(city: "") == weatherVC.alertSearchCity(city: ""))
     }
 }

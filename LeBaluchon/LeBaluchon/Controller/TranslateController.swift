@@ -88,7 +88,7 @@ class TranslateController: UIViewController {
         guard let target = pickerArray?[targetRow].language else { return }
         
         if source == target {
-            Tools.shared.alertSameLanguage(controller: self)
+            self.alertSameLanguage()
         } else {
             ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "no Text", target: target) { result in
                 switch result {
@@ -97,7 +97,7 @@ class TranslateController: UIViewController {
                         self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
                     }
                 case .failure(let error):
-                    Tools.shared.AlertSelectLanguages(error: error.localizedDescription, controller: self)
+                    self.AlertSelectLanguages(error: error.localizedDescription + "Sélectionnes les langues pour réaliser la traduction.")
                     print(error.localizedDescription)
                 }
             }
@@ -139,7 +139,7 @@ class TranslateController: UIViewController {
             alreadyTranslate = true
          
         } else if originalTextField.text == ""{
-            Tools.shared.alertGetElementToTranslate(text: originalTextField.text ?? "no text", controller: self)
+            self.alertGetElementToTranslate(text: originalTextField.text ?? "no text")
         }
     }
 }
@@ -190,7 +190,7 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
             alreadyTranslate = true
             
         } else if originalTextField.text == ""{
-            Tools.shared.alertGetElementToTranslate(text: originalTextField.text ?? "no text", controller: self)
+            self.alertGetElementToTranslate(text: originalTextField.text ?? "no text")
         }
         return true
     }

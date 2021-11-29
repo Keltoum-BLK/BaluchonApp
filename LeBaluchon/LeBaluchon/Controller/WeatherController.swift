@@ -103,8 +103,8 @@ class WeatherController: UIViewController {
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                let description = "Veuillez saisir un nom de ville correct."
-                    Tools.shared.alertServerAccess(city: error.localizedDescription + description, controller: self)
+                let description = "Saisis un nom de ville correct."
+                    self.alertServerAccess(city: error.localizedDescription + description)
                 }
                 print(error.localizedDescription)
         }
@@ -155,7 +155,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
         } else if searchField.text == ""{
-            Tools.shared.alertSearchCity(city: searchField.text ?? "boston", controller: self)
+            self.alertSearchCity(city: searchField.text ?? "boston")
         }
         return true
     }

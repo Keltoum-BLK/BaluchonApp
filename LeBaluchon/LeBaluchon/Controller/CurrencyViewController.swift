@@ -124,11 +124,12 @@ class CurrencyViewController: UIViewController {
     }
     //Get the currency change
     func getCurrencyChange(with picker: UIPickerView) {
-        if codeSelected.isEmpty {
-            Tools.shared.alertGiveAmount(amount: startingCurrencyField.text ?? "no info", controller: self)
+        if codeSelected.isEmpty || startingCurrencyField.text?.first == "0" || startingCurrencyField.text?.first == "." || startingCurrencyField.text == "" {
+            self.alertWithValueError(value: startingCurrencyField.text ?? "no info")
         } else {
             guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
-            returnCurrencyField.text =  Tools.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue, controller: self)
+            
+            returnCurrencyField.text =  Tool.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue)
             print(rowSelected)
             print(codeSelected)
         }
@@ -145,6 +146,8 @@ class CurrencyViewController: UIViewController {
         if startingCurrencyField.text != "" {
             startingCurrencyField.resignFirstResponder()
             getCurrencyChange(with: pickerCurrency)
+        } else {
+            self.alertWithValueError(value: startingCurrencyField.text ?? "no info")
         }
     }
 }
