@@ -23,7 +23,7 @@ class ApiWeatherService {
     }
     
     //MARK: Methods
-    func givingTheWeather(city: String, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
+    func getTheWeather(city: String, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
@@ -58,7 +58,7 @@ class ApiWeatherService {
         dataTask?.resume()
     }
     
-    func givingLocationWeather(latitude: Double, longitude: Double, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
+    func getLocationWeather(latitude: Double, longitude: Double, completion: @escaping (Result<PageWeather, APIError>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"

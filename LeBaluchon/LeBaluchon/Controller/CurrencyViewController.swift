@@ -118,7 +118,7 @@ class CurrencyViewController: UIViewController {
     //Get the currency change
     func getCurrencyChange(with picker: UIPickerView) {
         if codeSelected.isEmpty || startingCurrencyField.text?.first == "0" || startingCurrencyField.text?.first == "." || startingCurrencyField.text == "" {
-            self.alertWithValueError(value: startingCurrencyField.text ?? "no info")
+            self.alertWithValueError(value: startingCurrencyField.text ?? "no info", message: "Tu as oublié le montant ou la devise.")
         } else {
             guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
             
@@ -139,7 +139,7 @@ class CurrencyViewController: UIViewController {
             startingCurrencyField.resignFirstResponder()
             getCurrencyChange(with: pickerCurrency)
         } else {
-            self.alertWithValueError(value: startingCurrencyField.text ?? "no info")
+            self.alertWithValueError(value: startingCurrencyField.text ?? "no info", message: "Tu as oublié le montant ou la devise.")
         }
     }
 }

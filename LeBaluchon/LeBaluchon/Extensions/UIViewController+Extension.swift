@@ -11,47 +11,31 @@ import UIKit
 extension UIViewController {
     
     //MARK: Alert methods
-    func alertSearchCity(city: String){
-        if city == "", city.first == "." {
+    func alertSearchCityIncorrect(city: String){
+        if city == "", city.first == ".", city.isEmpty {
             let alert = UIAlertController(title: "Une erreur est survenue", message: "Vous devez sairsir une ville.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    func alertServerAccess(city: String){
-        let alert = UIAlertController(title: "Une erreur est survenue", message: city, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func alertGetElementToTranslate(text: String){
-        if text == "" {
-            let alert = UIAlertController(title: "Une erreur est survenue", message: "Tu as oublié ce que tu voulais traduire.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(ok)
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func AlertSelectLanguages(error: String) {
+    //method to detect error in API Call request
+    func alertServerAccess(error: String) {
         let alert = UIAlertController(title: "Une erreur est survenue", message: error, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
-    
+    // alert when user wants to use the same language to translate as the first choice
     func alertSameLanguage() {
         let alert = UIAlertController(title: "Une erreur est survenue", message: "Tu ne peux pas traduire dans la même langue.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func alertWithValueError(value: String) {
-        let alert = UIAlertController(title: "Une erreur est survenue", message: "Tu as oublié le montant ou la devise.", preferredStyle: .alert)
+    //alert when the value is incorrect and has a specific message
+    func alertWithValueError(value: String, message : String) {
+        let alert = UIAlertController(title: "Une erreur est survenue", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)

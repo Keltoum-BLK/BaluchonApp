@@ -90,7 +90,7 @@ class TranslateController: UIViewController {
                         self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
                     }
                 case .failure(let error):
-                    self.AlertSelectLanguages(error: error.description + "\nSélectionnes les langues pour réaliser la traduction.")
+                    self.alertServerAccess(error: error.description + "\nSélectionnes les langues pour réaliser la traduction.")
                     print(error.description)
                 }
             }
@@ -126,7 +126,7 @@ class TranslateController: UIViewController {
             originalTextField.resignFirstResponder()
            fletchDataTranslation(pickerView: pickLanguage)
         } else if originalTextField.text == ""{
-            self.alertGetElementToTranslate(text: originalTextField.text ?? "no text")
+            self.alertWithValueError(value: originalTextField.text ?? "no text", message: "Tu as oublié ce que tu voulais traduire.")
         }
     }
 }
@@ -177,7 +177,7 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
            
             
         } else if originalTextField.text == ""{
-            self.alertGetElementToTranslate(text: originalTextField.text ?? "no text")
+            self.alertWithValueError(value: originalTextField.text ?? "no text", message: "Tu as oublié ce que tu voulais traduire.")
         }
         return true
     }

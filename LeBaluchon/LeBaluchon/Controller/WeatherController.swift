@@ -65,7 +65,7 @@ class WeatherController: UIViewController {
     
     //weather location default informations
     func flecthWeatherDataLocationDefault() {
-        ApiWeatherService.shared.givingTheWeather(city: "paris") { result in
+        ApiWeatherService.shared.getTheWeather(city: "paris") { result in
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
@@ -80,7 +80,7 @@ class WeatherController: UIViewController {
     }
     //flecht the data with the searchField's text
     func flecthWeatherDataSearch(city: String) {
-        ApiWeatherService.shared.givingTheWeather(city: city) { result in
+        ApiWeatherService.shared.getTheWeather(city: city) { result in
             switch result {
             case .success(let weatherInfo):
                 DispatchQueue.main.async { [weak self] in
@@ -96,26 +96,23 @@ class WeatherController: UIViewController {
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                let description = "\nSaisis un nom de ville correct."
-                    self.alertServerAccess(city: error.description + description)
+                    let description = "\nSaisis un nom de ville correct."
+                    self.alertServerAccess(error: error.description + description)
                 }
                 print(error.description)
+            }
         }
     }
-}
     
     @IBAction func searchAction(_ sender: Any) {
-        if searchField.text != nil {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
-        } else {
-            self.alertSearchCity(city: searchField.text ?? "boston")
-        }
+            self.alertSearchCityIncorrect(city: searchField.text ?? "boston")
     }
 }
 //MARK: Extension for implementation of Core Localisation
 extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
- 
+    
     //MARK: methods
     func setupLocation() {
         manager.delegate = self
@@ -125,7 +122,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     }
     //Add localization information to the view
     func fletchWeatherLocation() {
-        ApiWeatherService.shared.givingLocationWeather(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0) { result in
+        ApiWeatherService.shared.getLocationWeather(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0) { result in
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {
@@ -147,12 +144,9 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     }
     //Keyboard action and animation
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchField.text != nil {
             searchField.resignFirstResponder()
             flecthWeatherDataSearch(city: searchField.text ?? "boston")
-        } else {
-            self.alertSearchCity(city: searchField.text ?? "boston")
-        }
+            self.alertSearchCityIncorrect(city: searchField.text ?? "boston")
         return true
     }
 }
