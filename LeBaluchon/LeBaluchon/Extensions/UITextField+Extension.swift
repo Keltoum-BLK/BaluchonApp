@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//MARK: Method to put placeholder text color in black
 extension UITextField {
     
     func putTextInBlack(text: String, textField: UITextField) {

@@ -35,18 +35,15 @@ class ApiTranslateService {
         dataTask = translationSession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
-                print("outch")
                 return }
             guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 completion(.failure(.network))
-                print("aie")
                 return
             }
             guard let listOfLanguages = try? JSONDecoder().decode(Languages.self, from: data) else { completion(.failure(.decoding))
                 return
             }
             completion(.success(listOfLanguages))
-                dump(listOfLanguages)
         }
     }
     dataTask?.resume()
@@ -71,19 +68,15 @@ class ApiTranslateService {
         dataTask = translationSession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
-                print("nope")
                 return }
             guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 completion(.failure(.network))
-                print("nya")
                 return
             }
             guard let translation = try? JSONDecoder().decode(Translate.self, from: data) else { completion(.failure(.decoding))
-                print("Daaah")
                 return
             }
             completion(.success(translation))
-                dump(translation)
             }
         }
         dataTask?.resume()

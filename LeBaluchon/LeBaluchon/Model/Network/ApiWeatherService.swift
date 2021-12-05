@@ -89,7 +89,6 @@ class ApiWeatherService {
                     return
                 }
                 completion(.success(weatherInfo))
-//                dump(weatherInfo)
             }
         }
         dataTask?.resume()

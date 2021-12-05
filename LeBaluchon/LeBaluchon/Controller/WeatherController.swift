@@ -91,8 +91,6 @@ class WeatherController: UIViewController {
                     self.weatherIcon.image = UIImage(named: weatherInfo.upDatePic(image: weatherInfo.weather?.first?.icon ?? "Nopic"))
                     self.sunriseTime.text = weatherInfo.timeStamp(time: weatherInfo.sys?.sunrise ?? 0)
                     self.sunsetTime.text = weatherInfo.timeStamp(time: weatherInfo.sys?.sunset ?? 0)
-                    print("=> sunrise \(weatherInfo.sys?.sunrise ?? 0)", "=> sunset \(weatherInfo.sys?.sunset ?? 0)")
-                    print(self.sunriseTime.text ?? "hello")
                 }
             case .failure(let error):
                 DispatchQueue.main.async {

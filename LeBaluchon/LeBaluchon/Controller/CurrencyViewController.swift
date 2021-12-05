@@ -92,7 +92,6 @@ class CurrencyViewController: UIViewController {
                 DispatchQueue.main.async { [weak self] in
                         guard let self = self else { return }
                     self.pickerValues = valueList.createCurrencyList(dictionnary: valueList.rates)
-                    dump(self.pickerValues)
                 }
             case .failure(let error):
                 print(error.description)
@@ -123,7 +122,6 @@ class CurrencyViewController: UIViewController {
             guard let codeValue = pickerValues.first(where: { $0.code == codeSelected })?.value else { return }
             
             returnCurrencyField.text =  Tool.shared.getTheChange(amount: startingCurrencyField.text ?? "0", with: codeValue)
-            print(codeSelected)
         }
     }
     //appearance of hidden picker

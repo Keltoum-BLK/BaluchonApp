@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//MARK: Method to add shadow
 extension UIView {
 func addShadow() {
         layer.cornerRadius = 20

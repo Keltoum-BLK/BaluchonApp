@@ -31,7 +31,7 @@ class MockWeather: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingTheWeather(city: "Paris") { (result) in
+        weatherService.getTheWeather(city: "Paris") { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -55,7 +55,7 @@ class MockWeather: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingTheWeather(city: "") { (result) in
+        weatherService.getTheWeather(city: "") { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -79,7 +79,7 @@ class MockWeather: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingTheWeather(city: "Paris") { (result) in
+        weatherService.getTheWeather(city: "Paris") { (result) in
             print(result)
             guard case .success(let weatherInfo) = result else {
                 return
@@ -118,7 +118,7 @@ class MockWeather: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingLocationWeather(latitude: 48.8534, longitude: 2.3488) { (result) in
+        weatherService.getLocationWeather(latitude: 48.8534, longitude: 2.3488) { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -143,7 +143,7 @@ class MockWeather: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingLocationWeather(latitude: 0, longitude: 0) { (result) in
+        weatherService.getLocationWeather(latitude: 0, longitude: 0) { (result) in
             print(result)
             guard case .failure(let error) = result else { XCTFail("failure")
                 return
@@ -167,7 +167,7 @@ class MockWeather: XCTestCase {
    
         let expectation = XCTestExpectation(description: "wait for change")
         
-        weatherService.givingLocationWeather(latitude: 48.8534, longitude: 2.3488) { (result) in
+        weatherService.getLocationWeather(latitude: 48.8534, longitude: 2.3488) { (result) in
             print(result)
             guard case .success(let weatherInfo) = result else {
                 return

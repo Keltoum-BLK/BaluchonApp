@@ -44,8 +44,8 @@ class LeBaluchonTests: XCTestCase {
         let city = ""
         let weatherVC = WeatherController()
         
-        weatherVC.alertSearchCity(city: city)
+        weatherVC.alertSearchCityIncorrect(city: city)
         
-        XCTAssertEqual(city == "", weatherVC.alertSearchCity(city: "") == weatherVC.alertSearchCity(city: ""))
+        XCTAssertEqual(city == "", weatherVC.alertSearchCityIncorrect(city: "") == weatherVC.alertSearchCityIncorrect(city: ""))
     }
 }

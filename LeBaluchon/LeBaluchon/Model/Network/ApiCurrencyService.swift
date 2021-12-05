@@ -31,15 +31,12 @@ class ApiCurrencyService {
         dataTask = currencySession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
-                print("outch")
                 return }
             guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 completion(.failure(.network))
-                print("aie")
                 return
             }
             guard let listOfSymbols = try? JSONDecoder().decode(Symbols.self, from: data) else { completion(.failure(.decoding))
-                print("ici")
                 return
             }
             completion(.success(listOfSymbols))
@@ -54,15 +51,12 @@ class ApiCurrencyService {
         dataTask = currencySession.dataTask(with: url)  { (data, response, error) in
             DispatchQueue.main.async {
             guard error == nil else { completion(.failure(.server))
-                print("outch")
                 return }
             guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 completion(.failure(.network))
-                print("aie")
                 return
             }
             guard let listOfValues = try? JSONDecoder().decode(Latest.self, from: data) else { completion(.failure(.decoding))
-                print("ici")
                 return
             }
             completion(.success(listOfValues))
