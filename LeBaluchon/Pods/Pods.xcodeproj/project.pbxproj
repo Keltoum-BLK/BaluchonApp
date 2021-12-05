@@ -1,0 +1,983 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010A0905E78FBEEC753046A56BF2EB32 /* Pods-LeBaluchon-LeBaluchonUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 651340CD43F4243E20E7DFF5593CE629 /* Pods-LeBaluchon-LeBaluchonUITests-dummy.m */; };
+		055B6AB89F4FF0A5649F35885F1CCE1A /* Pods-LeBaluchon-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B22878F6E5BCE77691EBA96BA05B9B /* Pods-LeBaluchon-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18787BC93C6F9F98215D83D6C8E4B321 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B60AF6614D64F3D2CFDBE80A08BB4 /* UIImage+SwiftyGif.swift */; };
+		28F5887CDD99BB3309D6090690AD5DE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3065E2BE9086203E03544765833F3AD0 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377424865D0A4B080C12074625830949 /* SwiftyGifManager.swift */; };
+		405050B9784BAC93E1DFFF0324383968 /* NSImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B52C47AF3AD4FF693B13A449AA2D125 /* NSImage+SwiftyGif.swift */; };
+		44C104EDA31E763CE552A1D01BC3891F /* SwiftyGif-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A43CE304B61A1C6A50636E95D9C560 /* SwiftyGif-dummy.m */; };
+		52506BF10E8040941B9249B4E669CA73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		66EC0547427939AD32218F0FF3847266 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC18DD7E3546EAFA103629372AC0253 /* UIImageView+SwiftyGif.swift */; };
+		6D6C5268B479D1D35A9BC841C7E5D745 /* Pods-LeBaluchon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1199284BD5630DD37ECEAC8C9B28A /* Pods-LeBaluchon-dummy.m */; };
+		7BA54ACF267BA77EA33BDA944F2DDD48 /* Pods-LeBaluchonTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 676AE39A6F7D054E320FD7E92C47F8B1 /* Pods-LeBaluchonTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		820DF80319EA5D7B60BAA599C8F7BE7C /* Pods-LeBaluchon-LeBaluchonUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7203E4E029CC06B348EAEA4BA47823BA /* Pods-LeBaluchon-LeBaluchonUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		984A5286A50FF78065BB89744DF89B0A /* SwiftyGif.h in Headers */ = {isa = PBXBuildFile; fileRef = 606C5570AEABF3D39FFD699EA7335A43 /* SwiftyGif.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2335991FBEC28A2AEBDCCFBAAB1DDC3 /* Pods-LeBaluchonTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF4A1348F73E86ACED8EE55285C1F5 /* Pods-LeBaluchonTests-dummy.m */; };
+		B9390098ADF1A8263380CE687157CAD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CFDD91221A0FA7168BBA23F34763C6FA /* NSImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54766F758072238D54AF87C10A726D57 /* NSImageView+SwiftyGif.swift */; };
+		D0B0AD263ECA0204B157C9D4039655BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FD4CF0BD215828CFD67DB3E72A12EBF2 /* SwiftyGif-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCCB713721B11371FE750849F4FB5034 /* SwiftyGif-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64A81598EDF055025D437457ABF395BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15AEBAFA43912F898FC2E1A73025C946;
+			remoteInfo = SwiftyGif;
+		};
+		C0ED0E08784454E6B43BFF2EC6062F88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15AEBAFA43912F898FC2E1A73025C946;
+			remoteInfo = SwiftyGif;
+		};
+		C37F2133EA1B0E274C21DB8943B59C38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CB050D560B193053A872D2B538B2F96;
+			remoteInfo = "Pods-LeBaluchon";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E9DC7C80D92637FC32D4B0EA9EDCEC /* Pods-LeBaluchonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeBaluchonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		06751B5890745A1C29488F6A712B2391 /* SwiftyGif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyGif.debug.xcconfig; sourceTree = "<group>"; };
+		0B249DF04C8B6604C05B7CB142BB8030 /* Pods-LeBaluchon */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LeBaluchon"; path = Pods_LeBaluchon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D58588D2DD7B93BCFF9DD7B599CCB94 /* SwiftyGif-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyGif-Info.plist"; sourceTree = "<group>"; };
+		0F1EE9B183D4337E0A3820B4AA3DE5B8 /* Pods-LeBaluchon-LeBaluchonUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeBaluchon-LeBaluchonUITests-frameworks.sh"; sourceTree = "<group>"; };
+		0FC18DD7E3546EAFA103629372AC0253 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+SwiftyGif.swift"; path = "SwiftyGif/UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		145157633FFD284F5E0A34DD382F3BC5 /* Pods-LeBaluchon-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeBaluchon-Info.plist"; sourceTree = "<group>"; };
+		21ABF3DDEE6059EAAF064E6B0F55C1B3 /* Pods-LeBaluchonTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeBaluchonTests-Info.plist"; sourceTree = "<group>"; };
+		21EAC3565C76080E0523AA0DDFC8B6FC /* SwiftyGif-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyGif-prefix.pch"; sourceTree = "<group>"; };
+		2EB3E467D8E744A40E50C97BCD858C6F /* Pods-LeBaluchon-LeBaluchonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeBaluchon-LeBaluchonUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F2B60AF6614D64F3D2CFDBE80A08BB4 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+SwiftyGif.swift"; path = "SwiftyGif/UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		377424865D0A4B080C12074625830949 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyGifManager.swift; path = SwiftyGif/SwiftyGifManager.swift; sourceTree = "<group>"; };
+		3ED20BE973B24160349F2259832EE97B /* Pods-LeBaluchonTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeBaluchonTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		52161D3A82770225AB831A6756222A89 /* Pods-LeBaluchon-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LeBaluchon-frameworks.sh"; sourceTree = "<group>"; };
+		54766F758072238D54AF87C10A726D57 /* NSImageView+SwiftyGif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSImageView+SwiftyGif.swift"; path = "SwiftyGif/NSImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		606C5570AEABF3D39FFD699EA7335A43 /* SwiftyGif.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyGif.h; path = SwiftyGif/SwiftyGif.h; sourceTree = "<group>"; };
+		651340CD43F4243E20E7DFF5593CE629 /* Pods-LeBaluchon-LeBaluchonUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeBaluchon-LeBaluchonUITests-dummy.m"; sourceTree = "<group>"; };
+		676AE39A6F7D054E320FD7E92C47F8B1 /* Pods-LeBaluchonTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeBaluchonTests-umbrella.h"; sourceTree = "<group>"; };
+		70D496A5CD27CB937BF42A86675ABBA9 /* Pods-LeBaluchon-LeBaluchonUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeBaluchon-LeBaluchonUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7203E4E029CC06B348EAEA4BA47823BA /* Pods-LeBaluchon-LeBaluchonUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeBaluchon-LeBaluchonUITests-umbrella.h"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A82FC3A7C4645F0E84228F7D3300BC4 /* Pods-LeBaluchon-LeBaluchonUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LeBaluchon-LeBaluchonUITests"; path = Pods_LeBaluchon_LeBaluchonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD67EFB9A7864151301DC2890207AA2 /* SwiftyGif.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyGif.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B52C47AF3AD4FF693B13A449AA2D125 /* NSImage+SwiftyGif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSImage+SwiftyGif.swift"; path = "SwiftyGif/NSImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		7C5D677A803E71D3B5962F2A17C935E3 /* Pods-LeBaluchon-LeBaluchonUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeBaluchon-LeBaluchonUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7C9CDF50496EEB659CBCEC37E886E062 /* Pods-LeBaluchonTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LeBaluchonTests.modulemap"; sourceTree = "<group>"; };
+		7F2BCB366F3B330BE036C93FEB31ABE5 /* Pods-LeBaluchonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeBaluchonTests.release.xcconfig"; sourceTree = "<group>"; };
+		7FF1199284BD5630DD37ECEAC8C9B28A /* Pods-LeBaluchon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeBaluchon-dummy.m"; sourceTree = "<group>"; };
+		90A43CE304B61A1C6A50636E95D9C560 /* SwiftyGif-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyGif-dummy.m"; sourceTree = "<group>"; };
+		90CFCB402D4671CE9EBB556D0C955858 /* Pods-LeBaluchon-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeBaluchon-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B411D9536D33CB5CD0044564CDD4AC17 /* Pods-LeBaluchonTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LeBaluchonTests"; path = Pods_LeBaluchonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6906592A339CF81C2460D6AF236FDF8 /* Pods-LeBaluchon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeBaluchon.release.xcconfig"; sourceTree = "<group>"; };
+		C9E5F8DB3DC06465FCAA9D78642B316F /* Pods-LeBaluchon-LeBaluchonUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LeBaluchon-LeBaluchonUITests.modulemap"; sourceTree = "<group>"; };
+		CCCB713721B11371FE750849F4FB5034 /* SwiftyGif-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyGif-umbrella.h"; sourceTree = "<group>"; };
+		CFDF38128905150587868259030ACC29 /* Pods-LeBaluchon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeBaluchon.debug.xcconfig"; sourceTree = "<group>"; };
+		D034A3C6401932DEEF662793DB514F5B /* Pods-LeBaluchon.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LeBaluchon.modulemap"; sourceTree = "<group>"; };
+		DE5ADFECC7164D297DBC5EAA5D525BA0 /* SwiftyGif.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyGif.modulemap; sourceTree = "<group>"; };
+		DEBF4A1348F73E86ACED8EE55285C1F5 /* Pods-LeBaluchonTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LeBaluchonTests-dummy.m"; sourceTree = "<group>"; };
+		EB76DADE5E7DA1E3BEA9870FE5B22130 /* Pods-LeBaluchonTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LeBaluchonTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ED5479620271BA8F6129B49B754AE0C5 /* SwiftyGif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyGif.release.xcconfig; sourceTree = "<group>"; };
+		F4B4FDD09FD21D368F5AA79487A48889 /* Pods-LeBaluchon-LeBaluchonUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeBaluchon-LeBaluchonUITests-Info.plist"; sourceTree = "<group>"; };
+		F92AA5BC4C111D79B011E4A0ADC19D70 /* Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F9B22878F6E5BCE77691EBA96BA05B9B /* Pods-LeBaluchon-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LeBaluchon-umbrella.h"; sourceTree = "<group>"; };
+		FB66219EF75652EC68BC62D5FC7CF102 /* Pods-LeBaluchon-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LeBaluchon-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		399E3E5F80639F351914530D9E18AF9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F5887CDD99BB3309D6090690AD5DE7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508BB26F85F4986F185D8FEE5AEEC4A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B0AD263ECA0204B157C9D4039655BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B7C6DB74CFE01B41B4AE36E1E28E183 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52506BF10E8040941B9249B4E669CA73 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF2D61918FAA980F7F05E4C92FA1B9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9390098ADF1A8263380CE687157CAD6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0613C4DD888C5E5653D837CC221BC7BF /* Pods-LeBaluchonTests */ = {
+			isa = PBXGroup;
+			children = (
+				7C9CDF50496EEB659CBCEC37E886E062 /* Pods-LeBaluchonTests.modulemap */,
+				EB76DADE5E7DA1E3BEA9870FE5B22130 /* Pods-LeBaluchonTests-acknowledgements.markdown */,
+				3ED20BE973B24160349F2259832EE97B /* Pods-LeBaluchonTests-acknowledgements.plist */,
+				DEBF4A1348F73E86ACED8EE55285C1F5 /* Pods-LeBaluchonTests-dummy.m */,
+				21ABF3DDEE6059EAAF064E6B0F55C1B3 /* Pods-LeBaluchonTests-Info.plist */,
+				676AE39A6F7D054E320FD7E92C47F8B1 /* Pods-LeBaluchonTests-umbrella.h */,
+				00E9DC7C80D92637FC32D4B0EA9EDCEC /* Pods-LeBaluchonTests.debug.xcconfig */,
+				7F2BCB366F3B330BE036C93FEB31ABE5 /* Pods-LeBaluchonTests.release.xcconfig */,
+			);
+			name = "Pods-LeBaluchonTests";
+			path = "Target Support Files/Pods-LeBaluchonTests";
+			sourceTree = "<group>";
+		};
+		17A4D418259F830D8F472A1CFA294163 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B249DF04C8B6604C05B7CB142BB8030 /* Pods-LeBaluchon */,
+				7A82FC3A7C4645F0E84228F7D3300BC4 /* Pods-LeBaluchon-LeBaluchonUITests */,
+				B411D9536D33CB5CD0044564CDD4AC17 /* Pods-LeBaluchonTests */,
+				7AD67EFB9A7864151301DC2890207AA2 /* SwiftyGif.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		687B93ED8B63236D83BFB635A24C32AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CAEA2CEE4EC2BBE9EFBEB389D21A /* SwiftyGif */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76804B5D3A792B816082AF0781F4AE72 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE5ADFECC7164D297DBC5EAA5D525BA0 /* SwiftyGif.modulemap */,
+				90A43CE304B61A1C6A50636E95D9C560 /* SwiftyGif-dummy.m */,
+				0D58588D2DD7B93BCFF9DD7B599CCB94 /* SwiftyGif-Info.plist */,
+				21EAC3565C76080E0523AA0DDFC8B6FC /* SwiftyGif-prefix.pch */,
+				CCCB713721B11371FE750849F4FB5034 /* SwiftyGif-umbrella.h */,
+				06751B5890745A1C29488F6A712B2391 /* SwiftyGif.debug.xcconfig */,
+				ED5479620271BA8F6129B49B754AE0C5 /* SwiftyGif.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyGif";
+			sourceTree = "<group>";
+		};
+		78D7AD727AFE433A534644854D61AF7D /* Pods-LeBaluchon */ = {
+			isa = PBXGroup;
+			children = (
+				D034A3C6401932DEEF662793DB514F5B /* Pods-LeBaluchon.modulemap */,
+				90CFCB402D4671CE9EBB556D0C955858 /* Pods-LeBaluchon-acknowledgements.markdown */,
+				FB66219EF75652EC68BC62D5FC7CF102 /* Pods-LeBaluchon-acknowledgements.plist */,
+				7FF1199284BD5630DD37ECEAC8C9B28A /* Pods-LeBaluchon-dummy.m */,
+				52161D3A82770225AB831A6756222A89 /* Pods-LeBaluchon-frameworks.sh */,
+				145157633FFD284F5E0A34DD382F3BC5 /* Pods-LeBaluchon-Info.plist */,
+				F9B22878F6E5BCE77691EBA96BA05B9B /* Pods-LeBaluchon-umbrella.h */,
+				CFDF38128905150587868259030ACC29 /* Pods-LeBaluchon.debug.xcconfig */,
+				C6906592A339CF81C2460D6AF236FDF8 /* Pods-LeBaluchon.release.xcconfig */,
+			);
+			name = "Pods-LeBaluchon";
+			path = "Target Support Files/Pods-LeBaluchon";
+			sourceTree = "<group>";
+		};
+		7B984C0E83B1950A1B7D3661469D13EE /* Pods-LeBaluchon-LeBaluchonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9E5F8DB3DC06465FCAA9D78642B316F /* Pods-LeBaluchon-LeBaluchonUITests.modulemap */,
+				70D496A5CD27CB937BF42A86675ABBA9 /* Pods-LeBaluchon-LeBaluchonUITests-acknowledgements.markdown */,
+				7C5D677A803E71D3B5962F2A17C935E3 /* Pods-LeBaluchon-LeBaluchonUITests-acknowledgements.plist */,
+				651340CD43F4243E20E7DFF5593CE629 /* Pods-LeBaluchon-LeBaluchonUITests-dummy.m */,
+				0F1EE9B183D4337E0A3820B4AA3DE5B8 /* Pods-LeBaluchon-LeBaluchonUITests-frameworks.sh */,
+				F4B4FDD09FD21D368F5AA79487A48889 /* Pods-LeBaluchon-LeBaluchonUITests-Info.plist */,
+				7203E4E029CC06B348EAEA4BA47823BA /* Pods-LeBaluchon-LeBaluchonUITests-umbrella.h */,
+				2EB3E467D8E744A40E50C97BCD858C6F /* Pods-LeBaluchon-LeBaluchonUITests.debug.xcconfig */,
+				F92AA5BC4C111D79B011E4A0ADC19D70 /* Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig */,
+			);
+			name = "Pods-LeBaluchon-LeBaluchonUITests";
+			path = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests";
+			sourceTree = "<group>";
+		};
+		7BD046B66FD878D92266B1A725748C2A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78D7AD727AFE433A534644854D61AF7D /* Pods-LeBaluchon */,
+				7B984C0E83B1950A1B7D3661469D13EE /* Pods-LeBaluchon-LeBaluchonUITests */,
+				0613C4DD888C5E5653D837CC221BC7BF /* Pods-LeBaluchonTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9C49CAEA2CEE4EC2BBE9EFBEB389D21A /* SwiftyGif */ = {
+			isa = PBXGroup;
+			children = (
+				7B52C47AF3AD4FF693B13A449AA2D125 /* NSImage+SwiftyGif.swift */,
+				54766F758072238D54AF87C10A726D57 /* NSImageView+SwiftyGif.swift */,
+				606C5570AEABF3D39FFD699EA7335A43 /* SwiftyGif.h */,
+				377424865D0A4B080C12074625830949 /* SwiftyGifManager.swift */,
+				2F2B60AF6614D64F3D2CFDBE80A08BB4 /* UIImage+SwiftyGif.swift */,
+				0FC18DD7E3546EAFA103629372AC0253 /* UIImageView+SwiftyGif.swift */,
+				76804B5D3A792B816082AF0781F4AE72 /* Support Files */,
+			);
+			path = SwiftyGif;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				687B93ED8B63236D83BFB635A24C32AA /* Pods */,
+				17A4D418259F830D8F472A1CFA294163 /* Products */,
+				7BD046B66FD878D92266B1A725748C2A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0BA09C79D8AAA9A830E52EB37B3F50CC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				820DF80319EA5D7B60BAA599C8F7BE7C /* Pods-LeBaluchon-LeBaluchonUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29B9CF608B04DA44AE98EA6DDEB0FE3C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BA54ACF267BA77EA33BDA944F2DDD48 /* Pods-LeBaluchonTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA03CA6B37E820665EA855FDB1A3D38A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055B6AB89F4FF0A5649F35885F1CCE1A /* Pods-LeBaluchon-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF4D286FC6B072D27738DA6B06A58993 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				984A5286A50FF78065BB89744DF89B0A /* SwiftyGif.h in Headers */,
+				FD4CF0BD215828CFD67DB3E72A12EBF2 /* SwiftyGif-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 427D52560C4E4CEDF9569CCD4AF2D1A0 /* Build configuration list for PBXNativeTarget "SwiftyGif" */;
+			buildPhases = (
+				CF4D286FC6B072D27738DA6B06A58993 /* Headers */,
+				2CBE1D9D272092896EBAF0A13194B287 /* Sources */,
+				EBF2D61918FAA980F7F05E4C92FA1B9F /* Frameworks */,
+				F0D95F94C8E89FB526B2BDFE8CDEAA43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyGif;
+			productName = SwiftyGif;
+			productReference = 7AD67EFB9A7864151301DC2890207AA2 /* SwiftyGif.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2CB050D560B193053A872D2B538B2F96 /* Pods-LeBaluchon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A3AF37AA23081A2265AC08BC8B2F78C /* Build configuration list for PBXNativeTarget "Pods-LeBaluchon" */;
+			buildPhases = (
+				BA03CA6B37E820665EA855FDB1A3D38A /* Headers */,
+				EC4E999A2CDF79F6E03C6F62D10CE4AB /* Sources */,
+				9B7C6DB74CFE01B41B4AE36E1E28E183 /* Frameworks */,
+				3139A366B70567226A2DA1D28FF3F922 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D618A43115171C9E3817B8B66B52D7E /* PBXTargetDependency */,
+			);
+			name = "Pods-LeBaluchon";
+			productName = Pods_LeBaluchon;
+			productReference = 0B249DF04C8B6604C05B7CB142BB8030 /* Pods-LeBaluchon */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4ACB7D72BB23CBBC3EC2D57D1D08DF1 /* Pods-LeBaluchonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0C2DF3B9F0DE1C2B460E9816774A84E /* Build configuration list for PBXNativeTarget "Pods-LeBaluchonTests" */;
+			buildPhases = (
+				29B9CF608B04DA44AE98EA6DDEB0FE3C /* Headers */,
+				3BB5065DD6B510CF05CFBCC936B4AAC5 /* Sources */,
+				508BB26F85F4986F185D8FEE5AEEC4A1 /* Frameworks */,
+				B720A7238CF8AEBD637776CD954DE7C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				867AFCD80CD6C4D4FB3C55BB589DCDFB /* PBXTargetDependency */,
+			);
+			name = "Pods-LeBaluchonTests";
+			productName = Pods_LeBaluchonTests;
+			productReference = B411D9536D33CB5CD0044564CDD4AC17 /* Pods-LeBaluchonTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		FA30845CC04922500A2CE243DE50B560 /* Pods-LeBaluchon-LeBaluchonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC573D41794BFE4A42E851A965323766 /* Build configuration list for PBXNativeTarget "Pods-LeBaluchon-LeBaluchonUITests" */;
+			buildPhases = (
+				0BA09C79D8AAA9A830E52EB37B3F50CC /* Headers */,
+				A5E2483908FF7090B6AD69EFCF70AD98 /* Sources */,
+				399E3E5F80639F351914530D9E18AF9E /* Frameworks */,
+				07C600514831ACF1E61AF2BBEDA46CD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				982983F4DE60D87E4589D4D54BB3D8C0 /* PBXTargetDependency */,
+			);
+			name = "Pods-LeBaluchon-LeBaluchonUITests";
+			productName = Pods_LeBaluchon_LeBaluchonUITests;
+			productReference = 7A82FC3A7C4645F0E84228F7D3300BC4 /* Pods-LeBaluchon-LeBaluchonUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1250;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 17A4D418259F830D8F472A1CFA294163 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CB050D560B193053A872D2B538B2F96 /* Pods-LeBaluchon */,
+				FA30845CC04922500A2CE243DE50B560 /* Pods-LeBaluchon-LeBaluchonUITests */,
+				B4ACB7D72BB23CBBC3EC2D57D1D08DF1 /* Pods-LeBaluchonTests */,
+				15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07C600514831ACF1E61AF2BBEDA46CD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3139A366B70567226A2DA1D28FF3F922 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B720A7238CF8AEBD637776CD954DE7C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D95F94C8E89FB526B2BDFE8CDEAA43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CBE1D9D272092896EBAF0A13194B287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				405050B9784BAC93E1DFFF0324383968 /* NSImage+SwiftyGif.swift in Sources */,
+				CFDD91221A0FA7168BBA23F34763C6FA /* NSImageView+SwiftyGif.swift in Sources */,
+				44C104EDA31E763CE552A1D01BC3891F /* SwiftyGif-dummy.m in Sources */,
+				3065E2BE9086203E03544765833F3AD0 /* SwiftyGifManager.swift in Sources */,
+				18787BC93C6F9F98215D83D6C8E4B321 /* UIImage+SwiftyGif.swift in Sources */,
+				66EC0547427939AD32218F0FF3847266 /* UIImageView+SwiftyGif.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BB5065DD6B510CF05CFBCC936B4AAC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2335991FBEC28A2AEBDCCFBAAB1DDC3 /* Pods-LeBaluchonTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5E2483908FF7090B6AD69EFCF70AD98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010A0905E78FBEEC753046A56BF2EB32 /* Pods-LeBaluchon-LeBaluchonUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4E999A2CDF79F6E03C6F62D10CE4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D6C5268B479D1D35A9BC841C7E5D745 /* Pods-LeBaluchon-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		867AFCD80CD6C4D4FB3C55BB589DCDFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-LeBaluchon";
+			target = 2CB050D560B193053A872D2B538B2F96 /* Pods-LeBaluchon */;
+			targetProxy = C37F2133EA1B0E274C21DB8943B59C38 /* PBXContainerItemProxy */;
+		};
+		8D618A43115171C9E3817B8B66B52D7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyGif;
+			target = 15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */;
+			targetProxy = 64A81598EDF055025D437457ABF395BC /* PBXContainerItemProxy */;
+		};
+		982983F4DE60D87E4589D4D54BB3D8C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyGif;
+			target = 15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */;
+			targetProxy = C0ED0E08784454E6B43BFF2EC6062F88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		096DAE6AAC140AD40A6D2E0D5EE13FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED5479620271BA8F6129B49B754AE0C5 /* SwiftyGif.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyGif/SwiftyGif-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyGif/SwiftyGif-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyGif/SwiftyGif.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyGif;
+				PRODUCT_NAME = SwiftyGif;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		16BAB54E9E3DB48B91A9592081D37F6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06751B5890745A1C29488F6A712B2391 /* SwiftyGif.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyGif/SwiftyGif-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyGif/SwiftyGif-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyGif/SwiftyGif.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyGif;
+				PRODUCT_NAME = SwiftyGif;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A0AE39D70D5B07B6F193CC572E3B486 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00E9DC7C80D92637FC32D4B0EA9EDCEC /* Pods-LeBaluchonTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LeBaluchonTests/Pods-LeBaluchonTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeBaluchonTests/Pods-LeBaluchonTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5F6FDC60BF9BD74E34661C7C5B3AC96A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F2BCB366F3B330BE036C93FEB31ABE5 /* Pods-LeBaluchonTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LeBaluchonTests/Pods-LeBaluchonTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeBaluchonTests/Pods-LeBaluchonTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6829AFE65D6846C30325D855ADB3CB83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFDF38128905150587868259030ACC29 /* Pods-LeBaluchon.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A98C01967F8188CE29F0DC480BDCE04D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6906592A339CF81C2460D6AF236FDF8 /* Pods-LeBaluchon.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeBaluchon/Pods-LeBaluchon.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D45AC46452EA64D1FD7350C14E21A69D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EB3E467D8E744A40E50C97BCD858C6F /* Pods-LeBaluchon-LeBaluchonUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests/Pods-LeBaluchon-LeBaluchonUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests/Pods-LeBaluchon-LeBaluchonUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE8A33DF3C51A59CFFEBD1B000992EAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F92AA5BC4C111D79B011E4A0ADC19D70 /* Pods-LeBaluchon-LeBaluchonUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests/Pods-LeBaluchon-LeBaluchonUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LeBaluchon-LeBaluchonUITests/Pods-LeBaluchon-LeBaluchonUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		427D52560C4E4CEDF9569CCD4AF2D1A0 /* Build configuration list for PBXNativeTarget "SwiftyGif" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16BAB54E9E3DB48B91A9592081D37F6E /* Debug */,
+				096DAE6AAC140AD40A6D2E0D5EE13FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */,
+				C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A3AF37AA23081A2265AC08BC8B2F78C /* Build configuration list for PBXNativeTarget "Pods-LeBaluchon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6829AFE65D6846C30325D855ADB3CB83 /* Debug */,
+				A98C01967F8188CE29F0DC480BDCE04D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC573D41794BFE4A42E851A965323766 /* Build configuration list for PBXNativeTarget "Pods-LeBaluchon-LeBaluchonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45AC46452EA64D1FD7350C14E21A69D /* Debug */,
+				EE8A33DF3C51A59CFFEBD1B000992EAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0C2DF3B9F0DE1C2B460E9816774A84E /* Build configuration list for PBXNativeTarget "Pods-LeBaluchonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A0AE39D70D5B07B6F193CC572E3B486 /* Debug */,
+				5F6FDC60BF9BD74E34661C7C5B3AC96A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

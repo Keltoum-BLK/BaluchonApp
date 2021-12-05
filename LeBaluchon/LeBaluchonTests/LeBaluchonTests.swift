@@ -9,25 +9,43 @@ import XCTest
 @testable import LeBaluchon
 
 class LeBaluchonTests: XCTestCase {
+    
+    private var tools: Tool!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        tools = Tool()
     }
-
+    
+    override class func tearDown() {
+        super.tearDown()
+    }
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        tools = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    //MARK: Tests on Constants Class
+    func testGivenElements_WhenMultuplyElements_ThenReturnStringValue() {
+    
+        let amountText = "25"
+        
+        let result = tools.getTheChange(amount: amountText, with: 1.50)
+        print(result)
+        
+        
+        XCTAssert(result == "37.5")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    
+    //MARK: Tests on AlertManager Class
+    //Alert in WeatherController
+    func testGivenAName_WhenTheNameIsIncorrect_ThenResultAnAlert() {
+        let city = ""
+        let weatherVC = WeatherController()
+        
+        weatherVC.alertSearchCityIncorrect(city: city)
+        
+        XCTAssertEqual(city == "", weatherVC.alertSearchCityIncorrect(city: "") == weatherVC.alertSearchCityIncorrect(city: ""))
     }
-
 }
