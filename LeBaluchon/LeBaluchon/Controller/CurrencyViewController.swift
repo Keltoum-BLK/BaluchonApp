@@ -34,6 +34,8 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var currencyContainer: UIStackView!
     @IBOutlet weak var choiceContainer: UIStackView!
     
+    @IBOutlet weak var amountContainer: UIView!
+    @IBOutlet weak var resetBTN: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,8 @@ class CurrencyViewController: UIViewController {
         converthBTN.layer.cornerRadius = 20
         
         currencyContainer.addShadow()
+        
+        resetBTN.layer.cornerRadius = 10
         
         choiceContainer.layer.cornerRadius = 20
         defaultCurrencies()
@@ -129,6 +133,8 @@ class CurrencyViewController: UIViewController {
         startingCurrencyField.isHidden = true
         returnCurrencyField.isHidden = true
         pickerCurrency.isHidden = false
+        resetBTN.isHidden = true
+        amountContainer.isHidden = true
     }
     //action and animation of keyboard
     @IBAction func getCurrencyAction(_ sender: Any) {
@@ -138,6 +144,15 @@ class CurrencyViewController: UIViewController {
             getCurrencyChange(with: pickerCurrency)
         } else {
             self.alertWithValueError(value: startingCurrencyField.text ?? "no info", message: "Tu as oublié le montant ou la devise.")
+        }
+    }
+    
+    
+    @IBAction func resetCurrency(_ sender: Any) {
+        if startingCurrencyField.text != "" {
+        startingCurrencyField.text = Tool.shared.reset()
+        } else {
+            self.alertWithValueError(value: startingCurrencyField.text ?? "no info", message: "Tu as déjà effacé.")
         }
     }
 }
@@ -175,6 +190,8 @@ extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         pickerCurrency.isHidden = true
         startingCurrencyField.isHidden = false
         returnCurrencyField.isHidden = false
+        resetBTN.isHidden = false
+        amountContainer.isHidden = false
     }
 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
