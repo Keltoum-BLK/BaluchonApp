@@ -13,6 +13,7 @@
 		B931444C273EC9DC009FC1DE /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931444B273EC9DC009FC1DE /* Languages.swift */; };
 		B94F6E952714344A0068C92A /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E942714344A0068C92A /* LaunchController.swift */; };
 		B94F6E97271478370068C92A /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F6E96271478370068C92A /* Tool.swift */; };
+		B96A6F2F275E2D7B0061C06F /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96A6F2E275E2D7B0061C06F /* UITextView+Extension.swift */; };
 		B972E22E2748ECE800E6B4C2 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972E22D2748ECE800E6B4C2 /* FakeResponseData.swift */; };
 		B972E2312748EECA00E6B4C2 /* URLTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972E2302748EECA00E6B4C2 /* URLTestProtocol.swift */; };
 		B972E2362748EF8900E6B4C2 /* MockWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972E2352748EF8900E6B4C2 /* MockWeather.swift */; };
@@ -80,6 +81,7 @@
 		B931444B273EC9DC009FC1DE /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		B94F6E942714344A0068C92A /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		B94F6E96271478370068C92A /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		B96A6F2E275E2D7B0061C06F /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		B972E22D2748ECE800E6B4C2 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		B972E2302748EECA00E6B4C2 /* URLTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTestProtocol.swift; sourceTree = "<group>"; };
 		B972E2352748EF8900E6B4C2 /* MockWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeather.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				B983457E273B284700C2A295 /* UITextField+Extension.swift */,
 				B9FFD7522754EB930006DC2B /* UIViewController+Extension.swift */,
 				B9FFD756275502E50006DC2B /* UIView+Extension.swift */,
+				B96A6F2E275E2D7B0061C06F /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				B985399126F4F38100F368C6 /* CurrencyViewController.swift in Sources */,
 				B985399526F4FEB300F368C6 /* Extension UIView.swift in Sources */,
 				B94F6E97271478370068C92A /* Tool.swift in Sources */,
+				B96A6F2F275E2D7B0061C06F /* UITextView+Extension.swift in Sources */,
 				B931444C273EC9DC009FC1DE /* Languages.swift in Sources */,
 				B9FFD7532754EB930006DC2B /* UIViewController+Extension.swift in Sources */,
 				B98ED283270B031300DCB134 /* Weather.swift in Sources */,

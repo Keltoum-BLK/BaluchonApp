@@ -175,30 +175,27 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B7A-d9-OlB">
                                         <rect key="frame" x="10" y="50" width="330" height="501"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Que veux tu traduire?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-DA-QNU" userLabel="Text To Translate">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="245.66666666666666"/>
-                                                <color key="backgroundColor" red="0.19968473637131082" green="0.73969552529354921" blue="0.99449210150707068" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="35"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="IUq-5D-iv1" id="g9V-sH-OTv"/>
-                                                </connections>
-                                            </textField>
                                             <pickerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtZ-wS-cYn">
-                                                <rect key="frame" x="0.0" y="250.66666666666669" width="330" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="0.0"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="IUq-5D-iv1" id="CRy-B8-EGP"/>
                                                     <outlet property="delegate" destination="IUq-5D-iv1" id="jsO-ub-vme"/>
                                                 </connections>
                                             </pickerView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="La traduction est ici..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-ZE-60v">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Que veux tu traduire?" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-7M-PNx">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="245.66666666666666"/>
+                                                <color key="backgroundColor" red="0.2235293984" green="0.4941176176" blue="0.59215688710000003" alpha="0.45322847682119205" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.02766909846" green="0.067530776520000002" blue="0.0290684134" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ta traduction est ici. " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6b-M7-Oum">
                                                 <rect key="frame" x="0.0" y="255.66666666666669" width="330" height="245.33333333333331"/>
-                                                <color key="backgroundColor" red="0.98851953417663119" green="0.96475646042323371" blue="1" alpha="0.53179325331125826" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="35"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <color key="backgroundColor" red="0.96008834210000005" green="1" blue="0.9639632803" alpha="0.54263245033112595" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.02766909846" green="0.067530776520000002" blue="0.0290684134" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source Cloud Translation API" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seS-O3-gGj">
@@ -237,10 +234,10 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                     <navigationItem key="navigationItem" title="Translate" id="t3U-ex-dmZ"/>
                     <connections>
                         <outlet property="firstChoice" destination="tGl-qs-lBb" id="k3S-Ig-C9i"/>
-                        <outlet property="originalTextField" destination="Kl0-DA-QNU" id="fYA-Qs-akD"/>
+                        <outlet property="originalTextView" destination="EWh-7M-PNx" id="Kp5-Kn-Eds"/>
                         <outlet property="pickLanguage" destination="BtZ-wS-cYn" id="3mu-X1-cDA"/>
                         <outlet property="secondChoice" destination="kNo-eR-mhh" id="FMl-3G-UNb"/>
-                        <outlet property="textTranslatedField" destination="BXQ-ZE-60v" id="srM-bs-zff"/>
+                        <outlet property="textTranslatedView" destination="L6b-M7-Oum" id="ALs-fJ-d42"/>
                         <outlet property="translateBTN" destination="lbb-mF-AVb" id="Za4-2Z-2TB"/>
                         <outlet property="translateContainer" destination="QV7-zi-b1M" id="oDF-el-fxk"/>
                         <outlet property="translateHeader" destination="0uq-uX-YgW" id="1sM-5o-fAu"/>
@@ -626,7 +623,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                         <outlet property="cityWeather" destination="RYR-pW-NNE" id="i82-vs-YoY"/>
                         <outlet property="countryWeather" destination="m7Z-O2-U7X" id="WbQ-CS-k5n"/>
                         <outlet property="locationPlace" destination="OBX-1i-jvF" id="spM-f9-9uo"/>
-                        <outlet property="myLocationLabel" destination="ODf-aq-2NP" id="rRC-kF-E0t"/>
+                        <outlet property="myLocationView" destination="ODf-aq-2NP" id="mwn-G8-yPQ"/>
                         <outlet property="searchBTN" destination="JLz-PX-ErI" id="JOD-wO-yQU"/>
                         <outlet property="searchField" destination="to0-Sl-DRG" id="XQY-Wf-nU6"/>
                         <outlet property="sunTimeContainer" destination="8bg-ly-IBH" id="ac4-L4-3DC"/>

@@ -17,7 +17,7 @@ class WeatherController: UIViewController {
     
     //IBOUTLET properties
     @IBOutlet weak var weatherHeaderBackground: UIView!
-    @IBOutlet weak var myLocationLabel: UIView!
+    @IBOutlet weak var myLocationView: UIView!
     @IBOutlet weak var locationPlace: UILabel!
     @IBOutlet weak var weatherLocationIcon: UIImageView!
     @IBOutlet weak var searchBTN: UIButton!
@@ -55,7 +55,7 @@ class WeatherController: UIViewController {
         
         weatherHeaderBackground.addShadow()
         
-        myLocationLabel.addShadow()
+        myLocationView.addShadow()
         
         searchBTN.layer.cornerRadius = 10
         
