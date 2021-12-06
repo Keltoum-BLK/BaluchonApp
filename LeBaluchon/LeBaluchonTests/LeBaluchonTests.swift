@@ -48,4 +48,12 @@ class LeBaluchonTests: XCTestCase {
         
         XCTAssertEqual(city == "", weatherVC.alertSearchCityIncorrect(city: "") == weatherVC.alertSearchCityIncorrect(city: ""))
     }
+    
+    func testGivenReset_WhenResetValueCall_ThenResetApply() {
+        var text = "hello tout le monde"
+        
+        text = Tool.shared.reset()
+        
+        XCTAssert(text == "")
+    }
 }
