@@ -43,8 +43,8 @@ class WeatherController: UIViewController {
         super.viewDidLoad()
         setupLocation()
         setUp()
-        flecthWeatherDataLocationDefault()
-        flecthWeatherDataSearch(city: "new york")
+        fecthWeatherDataLocationDefault()
+        fecthWeatherDataSearch(city: "new york")
     }
     
     //MARK: Methods
@@ -64,7 +64,7 @@ class WeatherController: UIViewController {
     }
     
     //weather location default informations
-    func flecthWeatherDataLocationDefault() {
+    func fecthWeatherDataLocationDefault() {
         ApiWeatherService.shared.getTheWeather(city: "paris") { result in
             switch result {
             case .success(let weatherLocation):
@@ -79,7 +79,7 @@ class WeatherController: UIViewController {
         
     }
     //flecht the data with the searchField's text
-    func flecthWeatherDataSearch(city: String) {
+    func fecthWeatherDataSearch(city: String) {
         ApiWeatherService.shared.getTheWeather(city: city) { result in
             switch result {
             case .success(let weatherInfo):
@@ -104,7 +104,7 @@ class WeatherController: UIViewController {
     
     @IBAction func searchAction(_ sender: Any) {
             searchField.resignFirstResponder()
-            flecthWeatherDataSearch(city: searchField.text ?? "boston")
+            fecthWeatherDataSearch(city: searchField.text ?? "boston")
             self.alertSearchCityIncorrect(city: searchField.text ?? "boston")
     }
 }
@@ -119,7 +119,7 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
         manager.startUpdatingLocation()
     }
     //Add localization information to the view
-    func fletchWeatherLocation() {
+    func fetchWeatherLocation() {
         ApiWeatherService.shared.getLocationWeather(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0) { result in
             switch result {
             case .success(let weatherLocation):
@@ -135,15 +135,15 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if manager.authorizationStatus == .denied {
-            flecthWeatherDataLocationDefault()
+            fecthWeatherDataLocationDefault()
         } else {
-            fletchWeatherLocation()
+            fetchWeatherLocation()
         }
     }
     //Keyboard action and animation
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             searchField.resignFirstResponder()
-            flecthWeatherDataSearch(city: searchField.text ?? "boston")
+            fecthWeatherDataSearch(city: searchField.text ?? "boston")
             self.alertSearchCityIncorrect(city: searchField.text ?? "boston")
         return true
     }
