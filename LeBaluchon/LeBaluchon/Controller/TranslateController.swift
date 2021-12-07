@@ -112,9 +112,6 @@ class TranslateController: UIViewController {
         resetBTN.isHidden = true
         textToTranslateContainer.isHidden = true
         
-        pickLanguage.selectRow(29, inComponent: 0, animated: false)
-        pickLanguage.selectRow(4, inComponent: 1, animated: false)
-        
     }
     //action to translate and keyboard animation
     @IBAction func translateAction(_ sender: Any) {

@@ -234,9 +234,11 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="B7A-d9-OlB" firstAttribute="leading" secondItem="QV7-zi-b1M" secondAttribute="leading" constant="10" id="Aps-qZ-fih"/>
+                                    <constraint firstAttribute="trailing" secondItem="gh8-Fv-f6R" secondAttribute="trailing" id="Ddq-q8-Y79"/>
                                     <constraint firstAttribute="trailing" secondItem="B7A-d9-OlB" secondAttribute="trailing" constant="10" id="KHz-Lm-Z7w"/>
                                     <constraint firstItem="B7A-d9-OlB" firstAttribute="top" secondItem="QV7-zi-b1M" secondAttribute="top" constant="50" id="Uin-LM-oxo"/>
                                     <constraint firstAttribute="bottom" secondItem="B7A-d9-OlB" secondAttribute="bottom" constant="50" id="ZJa-hH-60K"/>
+                                    <constraint firstItem="gh8-Fv-f6R" firstAttribute="leading" secondItem="QV7-zi-b1M" secondAttribute="leading" id="arD-8y-Kdg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -361,6 +363,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ton montant à convertir." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvU-Gd-PiZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="188.5"/>
                                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go"/>
                                                     </textField>
