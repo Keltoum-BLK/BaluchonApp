@@ -80,11 +80,11 @@ class WeatherController: UIViewController {
     }
     //flecht the data with the searchField's text
     func fecthWeatherDataSearch(city: String) {
-        ApiWeatherService.shared.getTheWeather(city: city) { result in
+        ApiWeatherService.shared.getTheWeather(city: city) { [weak self]  result in
+            guard let self = self else { return }
             switch result {
             case .success(let weatherInfo):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async {
                     self.cityWeather.text = weatherInfo.name ?? "Gotham"
                     self.countryWeather.text = weatherInfo.sys?.country  ?? "DCUniverse"
                     self.weatherTemperature.text = "\(Int(weatherInfo.main?.temp ?? 22)) °C"
@@ -120,7 +120,8 @@ extension WeatherController: CLLocationManagerDelegate, UITextFieldDelegate {
     }
     //Add localization information to the view
     func fetchWeatherLocation() {
-        ApiWeatherService.shared.getLocationWeather(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0) { result in
+        ApiWeatherService.shared.getLocationWeather(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let weatherLocation):
                 DispatchQueue.main.async {

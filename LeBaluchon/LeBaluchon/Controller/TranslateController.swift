@@ -56,11 +56,11 @@ class TranslateController: UIViewController {
     
     //Initalisation of pickerArray's property
     func fetchListOfLanguages() {
-        ApiTranslateService.shared.getLanguagesList { result in
+        ApiTranslateService.shared.getLanguagesList { [weak self] result  in
+            guard let self = self else { return }
             switch result {
             case .success(let listOf):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async {
                     self.pickerArray = listOf.data?.languages
                     self.firstChoice.setTitle(self.pickerArray?[29].name, for: .normal)
                     self.secondChoice.setTitle(self.pickerArray?[4].name, for: .normal)
@@ -90,11 +90,11 @@ class TranslateController: UIViewController {
     }
     
     func fetchDataTranslation(source : String, q: String, target: String) {
-        ApiTranslateService.shared.translate(source: source, q: q, target: target) { result in
+        ApiTranslateService.shared.translate(source: source, q: q, target: target) {  [weak self] result  in
+            guard let self = self else { return }
             switch result {
             case .success(let translate):
-                DispatchQueue.main.async {[weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async {
                     self.textTranslatedView.text = translate.data?.translations?.first?.translatedText
                 }
             case .failure(let error):
