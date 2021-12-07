@@ -126,13 +126,13 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                 <rect key="frame" x="20" y="160" width="335" height="458"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-Fv-f6R">
-                                        <rect key="frame" x="10" y="0.0" width="315" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-qs-lBb">
-                                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="40"/>
-                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="40"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Langue 1">
+                                                <state key="normal" title="Choisis une langue">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
@@ -140,7 +140,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbb-mF-AVb">
-                                                <rect key="frame" x="132.5" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="142.5" y="0.0" width="40" height="40"/>
                                                 <color key="backgroundColor" red="0.051608831009470703" green="0.73405934343434343" blue="0.16733589423687217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="Z5Y-pi-Ty2"/>
@@ -157,10 +157,10 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNo-eR-mhh">
-                                                <rect key="frame" x="172.5" y="0.0" width="142.5" height="40"/>
-                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="20"/>
+                                                <rect key="frame" x="182.5" y="0.0" width="152.5" height="40"/>
+                                                <fontDescription key="fontDescription" name="Odin-Bold" family="Odin Rounded" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Langue 2">
+                                                <state key="normal" title="Choisis une langue">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
@@ -168,6 +168,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.69921875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="tGl-qs-lBb" firstAttribute="width" secondItem="kNo-eR-mhh" secondAttribute="width" multiplier="0.933086" id="Etd-GD-nF6"/>
                                         </constraints>
@@ -236,8 +237,6 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                                     <constraint firstAttribute="trailing" secondItem="B7A-d9-OlB" secondAttribute="trailing" constant="10" id="KHz-Lm-Z7w"/>
                                     <constraint firstItem="B7A-d9-OlB" firstAttribute="top" secondItem="QV7-zi-b1M" secondAttribute="top" constant="50" id="Uin-LM-oxo"/>
                                     <constraint firstAttribute="bottom" secondItem="B7A-d9-OlB" secondAttribute="bottom" constant="50" id="ZJa-hH-60K"/>
-                                    <constraint firstAttribute="trailing" secondItem="gh8-Fv-f6R" secondAttribute="trailing" constant="10" id="lmD-yD-vhl"/>
-                                    <constraint firstItem="gh8-Fv-f6R" firstAttribute="leading" secondItem="QV7-zi-b1M" secondAttribute="leading" constant="10" id="zpw-65-buu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -259,6 +258,7 @@ Vous trouverez tout ce qui vous est utile pour voyager:
                     <tabBarItem key="tabBarItem" title="" image="icons8-google-traduction-32" id="ref-nM-cME"/>
                     <navigationItem key="navigationItem" title="Translate" id="t3U-ex-dmZ"/>
                     <connections>
+                        <outlet property="choiceContainer" destination="gh8-Fv-f6R" id="PnW-sC-sQ8"/>
                         <outlet property="firstChoice" destination="tGl-qs-lBb" id="k3S-Ig-C9i"/>
                         <outlet property="originalTextView" destination="EWh-7M-PNx" id="Kp5-Kn-Eds"/>
                         <outlet property="pickLanguage" destination="BtZ-wS-cYn" id="3mu-X1-cDA"/>

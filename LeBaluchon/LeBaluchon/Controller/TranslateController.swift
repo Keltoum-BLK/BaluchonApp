@@ -7,6 +7,7 @@ class TranslateController: UIViewController {
     @IBOutlet weak var translateHeader: UIView!
     @IBOutlet weak var originalTextView: UITextView!
     @IBOutlet weak var textTranslatedView: UITextView!
+    @IBOutlet weak var choiceContainer: UIStackView!
     @IBOutlet weak var translateContainer: UIStackView!
     @IBOutlet weak var pickLanguage: UIPickerView!
     @IBOutlet weak var firstChoice: UIButton!
@@ -32,7 +33,7 @@ class TranslateController: UIViewController {
     //MARK: Layout
     
     func setupLayout() {
-        originalTextView.delegate = self
+        choiceContainer.layer.cornerRadius = 20
         
         firstChoice.titleLabel?.numberOfLines = 0
         firstChoice.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -50,6 +51,8 @@ class TranslateController: UIViewController {
         
         resetBTN.layer.cornerRadius = 10
         
+        
+        
     }
     
     //MARK: Methods
@@ -62,11 +65,6 @@ class TranslateController: UIViewController {
             case .success(let listOf):
                 DispatchQueue.main.async {
                     self.pickerArray = listOf.data?.languages
-                    self.firstChoice.setTitle(self.pickerArray?[29].name, for: .normal)
-                    self.secondChoice.setTitle(self.pickerArray?[4].name, for: .normal)
-                    self.pickLanguage.reloadAllComponents()
-                 
-                    
                 }
             case .failure(let error):
                 print(error.description)
