@@ -1,10 +1,3 @@
-//
-//  TranslateController.swift
-//  LeBaluchon
-//
-//  Created by Kel_Jellysh on 04/10/2021.
-//
-
 import UIKit
 
 class TranslateController: UIViewController {
@@ -12,34 +5,35 @@ class TranslateController: UIViewController {
     private var pickerArray: [Language]?
     //IBOUTLET Properties
     @IBOutlet weak var translateHeader: UIView!
-    @IBOutlet weak var originalTextField: UITextField! {
-        didSet {
-            originalTextField.putTextInBlack(text: "Que veux-tu traduire?", textField: originalTextField)
-        }
-    }
-    @IBOutlet weak var textTranslatedField: UITextField! {
-        didSet {
-            textTranslatedField.putTextInBlack(text: "Voici la traduction.", textField: textTranslatedField)
-        }
-    }
+    @IBOutlet weak var originalTextView: UITextView!
+    @IBOutlet weak var textTranslatedView: UITextView!
+    @IBOutlet weak var choiceContainer: UIStackView!
     @IBOutlet weak var translateContainer: UIStackView!
     @IBOutlet weak var pickLanguage: UIPickerView!
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
     @IBOutlet weak var translateBTN: UIButton!
+    @IBOutlet weak var resetBTN: UIButton!
+    @IBOutlet weak var textToTranslateContainer: UIView!
     
-   
+    //MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
-        fletchListOfLanguages()
+        setupDelegateAndDataSource()
+        fetchListOfLanguages()
+        setupLayout()
+        
         // Do any additional setup after loading the view.
     }
     
-   //MARK: Methods
-    func setUp() {
-        originalTextField.delegate = self
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    //MARK: Layout
+    
+    func setupLayout() {
+        choiceContainer.layer.cornerRadius = 20
         
         firstChoice.titleLabel?.numberOfLines = 0
         firstChoice.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -55,15 +49,21 @@ class TranslateController: UIViewController {
         
         translateBTN.layer.cornerRadius = 20
         
-        setupLanguagesInViewDidLoad()
+        resetBTN.layer.cornerRadius = 10
+        
+        
+        
     }
-   //Initalisation of pickerArray's property
-    func fletchListOfLanguages() {
-        ApiTranslateService.shared.getLanguagesList { result in
+    
+    //MARK: Methods
+    
+    //Initalisation of pickerArray's property
+    func fetchListOfLanguages() {
+        ApiTranslateService.shared.getLanguagesList { [weak self] result  in
+            guard let self = self else { return }
             switch result {
-                case .success(let listOf):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+            case .success(let listOf):
+                DispatchQueue.main.async {
                     self.pickerArray = listOf.data?.languages
                 }
             case .failure(let error):
@@ -72,7 +72,7 @@ class TranslateController: UIViewController {
         }
     }
     //Get the translation
-    func fletchDataTranslation(pickerView: UIPickerView) {
+    func getTranslation(pickerView: UIPickerView) {
         let sourceRow = pickerView.selectedRow(inComponent: 0)
         let targetRow = pickerView.selectedRow(inComponent: 1)
         
@@ -82,61 +82,64 @@ class TranslateController: UIViewController {
         if source == target {
             self.alertSameLanguage()
         } else {
-            ApiTranslateService.shared.translate(source: source, q: originalTextField.text ?? "no Text", target: target) { result in
-                switch result {
-                case .success(let translate):
-                    DispatchQueue.main.async {[weak self] in
-                        guard let self = self else { return }
-                        self.textTranslatedField.text = translate.data?.translations?.first?.translatedText
-                    }
-                case .failure(let error):
-                    self.alertServerAccess(error: error.description + "\nSélectionnes les langues pour réaliser la traduction.")
-                    print(error.description)
-                }
-            }
+            fetchDataTranslation(source: source, q: originalTextView.text ?? "no Text", target: target)
         }
+        
     }
-    //Added default languages when the launch app.
-    func setupLanguagesInViewDidLoad() {
-        ApiTranslateService.shared.getLanguagesList { result in
-            switch result { 
-                case .success(let setupLanguages):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    self.firstChoice.setTitle(setupLanguages.data?.languages?[29].name, for: .normal)
-                    self.secondChoice.setTitle(setupLanguages.data?.languages?[4].name, for: .normal)
+    
+    func fetchDataTranslation(source : String, q: String, target: String) {
+        ApiTranslateService.shared.translate(source: source, q: q, target: target) {  [weak self] result  in
+            guard let self = self else { return }
+            switch result {
+            case .success(let translate):
+                DispatchQueue.main.async {
+                    self.textTranslatedView.text = translate.data?.translations?.first?.translatedText
                 }
-                
             case .failure(let error):
-                print(error.description)
+                self.alertServerAccess(error: error.description + "\nSélectionnes les langues pour réaliser la traduction.")
             }
         }
     }
     
+    //MARK: Actions
+    
     //appearance of hidden picker
     @IBAction func selectLanguages(_ sender: Any) {
-        originalTextField.isHidden = true
-        textTranslatedField.isHidden = true
+        originalTextView.isHidden = true
+        textTranslatedView.isHidden = true
         pickLanguage.isHidden = false
+        originalTextView.resignFirstResponder()
+        resetBTN.isHidden = true
+        textToTranslateContainer.isHidden = true
+        
     }
-  //action to translate and keyboard animation
-    @IBAction func TranslateAction(_ sender: Any) {
-        originalTextField.resignFirstResponder()
-        if originalTextField.text != "" {
-            originalTextField.resignFirstResponder()
-           fletchDataTranslation(pickerView: pickLanguage)
-        } else if originalTextField.text == ""{
-            self.alertWithValueError(value: originalTextField.text ?? "no text", message: "Tu as oublié ce que tu voulais traduire.")
+    //action to translate and keyboard animation
+    @IBAction func translateAction(_ sender: Any) {
+        if originalTextView.text != "" {
+            originalTextView.resignFirstResponder()
+            getTranslation(pickerView: pickLanguage)
+        } else if originalTextView.text == ""{
+            self.alertWithValueError(value: originalTextView.text ?? "no text", message: "Tu as oublié ce que tu voulais traduire.")
+        }
+    }
+    
+    @IBAction func resetTextToTranslate(_ sender: Any) {
+        if originalTextView.text != "" {
+            originalTextView.text = Tool.shared.reset()
+        } else {
+            self.alertWithValueError(value: originalTextView.text, message: "Tu as déjà effacé.")
         }
     }
 }
 
-extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+//MARK: Delegate
+extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
-  //MARK: methods to implementation of pickerView
-    func setupDelegate() {
+    //MARK: methods to implementation of pickerView
+  private  func setupDelegateAndDataSource() {
         pickLanguage.delegate = self
         pickLanguage.dataSource = self
+        originalTextView.delegate = self
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -144,7 +147,7 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
+        
         return pickerArray?.count ?? 2
     }
     
@@ -160,25 +163,18 @@ extension TranslateController: UIPickerViewDelegate, UIPickerViewDataSource, UIT
         secondChoice.setTitle(pickerArray?[secondLanguage].name, for: .normal)
         
         pickLanguage.isHidden = true
-        originalTextField.isHidden = false
-        textTranslatedField.isHidden = false
-        
+        originalTextView.isHidden = false
+        textTranslatedView.isHidden = false
+        resetBTN.isHidden = false
+        textToTranslateContainer.isHidden = false
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: pickerArray?[row].name ?? "no name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
-    //action keyboard return key and animation
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        originalTextField.resignFirstResponder()
-        if originalTextField.text != "" {
-            originalTextField.resignFirstResponder()
-           fletchDataTranslation(pickerView: pickLanguage)
-           
-            
-        } else if originalTextField.text == ""{
-            self.alertWithValueError(value: originalTextField.text ?? "no text", message: "Tu as oublié ce que tu voulais traduire.")
-        }
-        return true
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        originalTextView.text = ""
     }
+    
 }

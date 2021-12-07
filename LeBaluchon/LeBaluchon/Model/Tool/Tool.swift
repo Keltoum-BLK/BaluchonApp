@@ -11,6 +11,11 @@ class Tool {
    //MARK: Proporties
     static let shared = Tool()
     
+    private var textView = String()
+    
+    private var alreadyReset : Bool {
+           return textView != ""
+       }
     //MARK: METHOD
     func getTheChange(amount: String, with currencyvalue: Double) -> String {
             let doubleStr = Double(amount)
@@ -21,5 +26,8 @@ class Tool {
             return resultStr
     }
     
+    func reset() -> String {
+            textView = ""
+        return textView
+    }
 }
-

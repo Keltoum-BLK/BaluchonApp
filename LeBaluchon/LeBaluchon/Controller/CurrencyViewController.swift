@@ -9,7 +9,7 @@ import UIKit
 import SwiftyGif
 
 class CurrencyViewController: UIViewController {
-
+    
     //MARK: Properties
     private var pickerSymbols = [Currency]()
     private var pickerValues = [CurrencyValue]()
@@ -34,25 +34,23 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var currencyContainer: UIStackView!
     @IBOutlet weak var choiceContainer: UIStackView!
     
+    @IBOutlet weak var amountContainer: UIView!
+    @IBOutlet weak var resetBTN: UIButton!
     
+    
+    //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpHeader()
         setup()
-        setupPicker()
-        fletchListOfCurrenciesNames()
-        fletchListOfCurrency()
+        setupDelegateAndDataSource()
+        fetchListOfCurrenciesNames()
+        fetchListOfCurrency()
         
     }
     //MARK: Methods
-    
-    //SetUP Title Page
-    func setUpHeader() {
-        currencyHeader.addShadow()
-    }
     //Setup widgets
     func setup() {
-        startingCurrencyField.delegate = self
+        currencyHeader.addShadow()
         
         startingCurrencyBTN.titleLabel?.numberOfLines = 0
         startingCurrencyBTN.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -67,45 +65,19 @@ class CurrencyViewController: UIViewController {
         
         currencyContainer.addShadow()
         
+        resetBTN.layer.cornerRadius = 10
+        
         choiceContainer.layer.cornerRadius = 20
-        defaultCurrencies()
     }
-   
+    
     //Get the symbols list
-    func fletchListOfCurrenciesNames() {
-        ApiCurrencyService.shared.getSymbolsList { result in
+    func fetchListOfCurrenciesNames() {
+        ApiCurrencyService.shared.getSymbolsList { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let listOf):
-                DispatchQueue.main.async { 
+                DispatchQueue.main.async {
                     self.pickerSymbols = listOf.createSymbolsList(dictionnary: listOf.symbols)
-                }
-            case .failure(let error):
-                print(error.description)
-            }
-        }
-    }
-    //Get Currencies Values in a array.
-    func fletchListOfCurrency() {
-        ApiCurrencyService.shared.getTheCurrencyValue { result in
-            switch result {
-            case .success(let valueList):
-                DispatchQueue.main.async { [weak self] in
-                        guard let self = self else { return }
-                    self.pickerValues = valueList.createCurrencyList(dictionnary: valueList.rates)
-                }
-            case .failure(let error):
-                print(error.description)
-            }
-        }
-    }
-    //get the currency default in the launch page.
-    func defaultCurrencies() {
-        ApiCurrencyService.shared.getSymbolsList { result in
-            switch result {
-            case .success(let symbols):
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    self.pickerSymbols = symbols.createSymbolsList(dictionnary: symbols.symbols)
                     self.startingCurrencyBTN.setTitle(self.pickerSymbols[51].name, for: .normal)
                     self.returnCurrencyBTN.setTitle("Choisis", for: .normal)
                 }
@@ -114,6 +86,21 @@ class CurrencyViewController: UIViewController {
             }
         }
     }
+    //Get Currencies Values in a array.
+    func fetchListOfCurrency() {
+        ApiCurrencyService.shared.getTheCurrencyValue { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let valueList):
+                DispatchQueue.main.async {
+                    self.pickerValues = valueList.createCurrencyList(dictionnary: valueList.rates)
+                }
+            case .failure(let error):
+                print(error.description)
+            }
+        }
+    }
+    
     //Get the currency change
     func getCurrencyChange(with picker: UIPickerView) {
         if codeSelected.isEmpty || startingCurrencyField.text?.first == "0" || startingCurrencyField.text?.first == "." || startingCurrencyField.text == "" {
@@ -126,13 +113,15 @@ class CurrencyViewController: UIViewController {
     }
     //appearance of hidden picker
     @IBAction func selectCurrency(_ sender: Any) {
+        startingCurrencyField.resignFirstResponder()
         startingCurrencyField.isHidden = true
         returnCurrencyField.isHidden = true
         pickerCurrency.isHidden = false
+        resetBTN.isHidden = true
+        amountContainer.isHidden = true
     }
     //action and animation of keyboard
     @IBAction func getCurrencyAction(_ sender: Any) {
-        startingCurrencyField.resignFirstResponder()
         if startingCurrencyField.text != "" {
             startingCurrencyField.resignFirstResponder()
             getCurrencyChange(with: pickerCurrency)
@@ -140,45 +129,57 @@ class CurrencyViewController: UIViewController {
             self.alertWithValueError(value: startingCurrencyField.text ?? "no info", message: "Tu as oublié le montant ou la devise.")
         }
     }
+    
+    
+    @IBAction func resetCurrency(_ sender: Any) {
+        if startingCurrencyField.text != "" {
+            startingCurrencyField.text = Tool.shared.reset()
+        } else {
+            self.alertWithValueError(value: startingCurrencyField.text ?? "no info", message: "Tu as déjà effacé.")
+        }
+    }
 }
 
 //MARK: Implementation of pickerView and Textfield methods.
 extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
-
-    func setupPicker() {
+    
+    
+    private func setupDelegateAndDataSource() {
         pickerCurrency.delegate = self
         pickerCurrency.dataSource = self
+        startingCurrencyField.delegate = self
     }
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerSymbols.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerSymbols[row].name
     }
     //pick the currency wished
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-    
+        
         startingCurrencyBTN.setTitle(pickerSymbols[51].name, for: .normal)
         returnCurrencyBTN.setTitle(pickerSymbols[row].name, for: .normal)
         
         if pickerView == pickerCurrency {
             self.codeSelected = pickerSymbols[row].code
         }
-
+        
         pickerCurrency.isHidden = true
         startingCurrencyField.isHidden = false
         returnCurrencyField.isHidden = false
+        resetBTN.isHidden = false
+        amountContainer.isHidden = false
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: pickerSymbols[row].name, attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
     }
-
+    
 }
